@@ -21,7 +21,7 @@ class WeaviateUpsert_VectorStores implements INode {
         this.name = 'weaviateUpsert'
         this.type = 'Weaviate'
         this.icon = 'weaviate.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Weaviate'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

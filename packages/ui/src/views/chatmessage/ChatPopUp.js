@@ -76,10 +76,10 @@ export const ChatPopUp = ({ chatflowid }) => {
 
     const clearChat = async () => {
         const confirmPayload = {
-            title: `Clear Chat History`,
-            description: `Are you sure you want to clear all chat history?`,
-            confirmButtonName: 'Clear',
-            cancelButtonName: 'Cancel'
+            title: `清除聊天记录`,
+            description: `确认清除所有聊天记录？`,
+            confirmButtonName: '确认',
+            cancelButtonName: '取消'
         }
         const isConfirmed = await confirm(confirmPayload)
 
@@ -88,7 +88,7 @@ export const ChatPopUp = ({ chatflowid }) => {
                 await chatmessageApi.deleteChatmessage(chatflowid)
                 resetChatDialog()
                 enqueueSnackbar({
-                    message: 'Succesfully cleared all chat history',
+                    message: '成功清除聊天记录',
                     options: {
                         key: new Date().getTime() + Math.random(),
                         variant: 'success',
@@ -135,7 +135,7 @@ export const ChatPopUp = ({ chatflowid }) => {
                 size='small'
                 color='secondary'
                 aria-label='chat'
-                title='Chat'
+                title='聊天测试'
                 onClick={handleToggle}
             >
                 {open ? <IconX /> : <IconMessage />}
@@ -147,7 +147,7 @@ export const ChatPopUp = ({ chatflowid }) => {
                     size='small'
                     color='error'
                     aria-label='clear'
-                    title='Clear Chat History'
+                    title='清除聊天记录'
                 >
                     <IconEraser />
                 </StyledFab>
@@ -159,7 +159,7 @@ export const ChatPopUp = ({ chatflowid }) => {
                     size='small'
                     color='primary'
                     aria-label='expand'
-                    title='Expand Chat'
+                    title='放大聊天框'
                 >
                     <IconArrowsMaximize />
                 </StyledFab>

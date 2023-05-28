@@ -17,7 +17,7 @@ class Github_DocumentLoaders implements INode {
         this.name = 'github'
         this.type = 'Document'
         this.icon = 'github.png'
-        this.category = 'Document Loaders'
+        this.category = '数据加载器'
         this.description = `Load data from a GitHub repository`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -20,7 +20,7 @@ class ChromaUpsert_VectorStores implements INode {
         this.name = 'chromaUpsert'
         this.type = 'Chroma'
         this.icon = 'chroma.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Chroma'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

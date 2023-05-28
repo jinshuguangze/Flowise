@@ -19,7 +19,7 @@ class OpenAPIToolkit_Tools implements INode {
         this.name = 'openAPIToolkit'
         this.type = 'OpenAPIToolkit'
         this.icon = 'openapi.png'
-        this.category = 'Tools'
+        this.category = '工具'
         this.description = 'Load OpenAPI specification'
         this.inputs = [
             {

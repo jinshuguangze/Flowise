@@ -17,7 +17,7 @@ class AzureOpenAI_LLMs implements INode {
         this.name = 'azureOpenAI'
         this.type = 'AzureOpenAI'
         this.icon = 'Azure.svg'
-        this.category = 'LLMs'
+        this.category = '生成型语言模型'
         this.description = 'Wrapper around Azure OpenAI large language models'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [

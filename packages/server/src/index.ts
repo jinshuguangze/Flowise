@@ -157,7 +157,7 @@ export class App {
                 id: req.params.id
             })
             if (chatflow) return res.json(chatflow)
-            return res.status(404).send(`Chatflow ${req.params.id} not found`)
+            return res.status(404).send(`Mapp ${req.params.id} 未找到`)
         })
 
         // Save chatflow
@@ -179,7 +179,7 @@ export class App {
             })
 
             if (!chatflow) {
-                res.status(404).send(`Chatflow ${req.params.id} not found`)
+                res.status(404).send(`Mapp ${req.params.id} 未找到`)
                 return
             }
 
@@ -207,7 +207,7 @@ export class App {
             const chatflow = await this.AppDataSource.getRepository(ChatFlow).findOneBy({
                 id: req.params.id
             })
-            if (!chatflow) return res.status(404).send(`Chatflow ${req.params.id} not found`)
+            if (!chatflow) return res.status(404).send(`Mapp ${req.params.id} 未找到`)
 
             /*** Get Ending Node with Directed Graph  ***/
             const flowData = chatflow.flowData
@@ -264,7 +264,7 @@ export class App {
             const chatflow = await this.AppDataSource.getRepository(ChatFlow).findOneBy({
                 id: req.params.id
             })
-            if (!chatflow) return res.status(404).send(`Chatflow ${req.params.id} not found`)
+            if (!chatflow) return res.status(404).send(`Mapp ${req.params.id} 未找到`)
             const flowData = chatflow.flowData
             const parsedFlowData: IReactFlowObject = JSON.parse(flowData)
             const nodes = parsedFlowData.nodes
@@ -503,7 +503,7 @@ export class App {
             const chatflow = await this.AppDataSource.getRepository(ChatFlow).findOneBy({
                 id: chatflowid
             })
-            if (!chatflow) return res.status(404).send(`Chatflow ${chatflowid} not found`)
+            if (!chatflow) return res.status(404).send(`Mapp ${chatflowid} 未找到`)
 
             if (!isInternal) {
                 await this.validateKey(req, res, chatflow)

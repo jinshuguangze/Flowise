@@ -61,7 +61,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                 let dataStr = JSON.stringify(generateExportFlowData(flowData))
                 let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr)
 
-                let exportFileDefaultName = `${chatflow.name} Chatflow.json`
+                let exportFileDefaultName = `${chatflow.name} Mapp.json`
 
                 let linkElement = document.createElement('a')
                 linkElement.setAttribute('href', dataUri)
@@ -104,7 +104,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
         }
 
         setAPIDialogProps({
-            title: 'Embed in website or use as API',
+            title: '嵌入网站或者使用API',
             chatflowid: chatflow.id,
             chatflowApiKeyId: chatflow.apikeyid,
             isFormDataRequired
@@ -279,7 +279,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                         </Avatar>
                     </ButtonBase>
                 )}
-                <ButtonBase title='Save Chatflow' sx={{ borderRadius: '50%', mr: 2 }}>
+                <ButtonBase title='保存Mapp' sx={{ borderRadius: '50%', mr: 2 }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -299,7 +299,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                         <IconDeviceFloppy stroke={1.5} size='1.3rem' />
                     </Avatar>
                 </ButtonBase>
-                <ButtonBase ref={settingsRef} title='Settings' sx={{ borderRadius: '50%' }}>
+                <ButtonBase ref={settingsRef} title='设置' sx={{ borderRadius: '50%' }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -330,9 +330,9 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
             <SaveChatflowDialog
                 show={flowDialogOpen}
                 dialogProps={{
-                    title: `Save New Chatflow`,
-                    confirmButtonName: 'Save',
-                    cancelButtonName: 'Cancel'
+                    title: `保存Mapp`,
+                    confirmButtonName: '保存',
+                    cancelButtonName: '取消'
                 }}
                 onCancel={() => setFlowDialogOpen(false)}
                 onConfirm={onConfirmSaveName}

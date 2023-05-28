@@ -37,7 +37,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
     const [loading, setLoading] = useState(false)
     const [messages, setMessages] = useState([
         {
-            message: 'Hi there! How can I help?',
+            message: '输入问题以测试您的Mapp',
             type: 'apiMessage'
         }
     ])
@@ -106,7 +106,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
         try {
             const params = {
                 question: userInput,
-                history: messages.filter((msg) => msg.message !== 'Hi there! How can I help?')
+                history: messages.filter((msg) => msg.message !== '输入问题以测试您的Mapp')
             }
             if (isChatFlowAvailableToStream) params.socketIOClientId = socketIOClientId
 
@@ -204,7 +204,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
             setLoading(false)
             setMessages([
                 {
-                    message: 'Hi there! How can I help?',
+                    message: '输入问题以测试您的Mapp',
                     type: 'apiMessage'
                 }
             ])
@@ -244,9 +244,9 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                                     {/* Display the correct icon depending on the message type */}
                                     {message.type === 'apiMessage' ? (
                                         <img
-                                            src='https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
+                                            src='http://www.meiguguide.com/wp-content/uploads/2019/02/022619_1258_1.jpg'
                                             alt='AI'
-                                            width='30'
+                                            width='40'
                                             height='30'
                                             className='boticon'
                                         />
@@ -305,7 +305,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                             onKeyDown={handleEnter}
                             id='userInput'
                             name='userInput'
-                            placeholder={loading ? 'Waiting for response...' : 'Type your question...'}
+                            placeholder={loading ? '思考中...' : '输入您的问题...'}
                             value={userInput}
                             onChange={onChange}
                             endAdornment={

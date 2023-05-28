@@ -21,7 +21,7 @@ class PineconeUpsert_VectorStores implements INode {
         this.name = 'pineconeUpsert'
         this.type = 'Pinecone'
         this.icon = 'pinecone.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Pinecone'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

@@ -75,7 +75,7 @@ const Marketplace = () => {
     return (
         <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
             <Stack flexDirection='row'>
-                <h1>Marketplace</h1>
+                <h1>畅游创意工坊</h1>
             </Stack>
             <Grid container spacing={gridSpacing}>
                 {!isLoading &&
@@ -91,7 +91,7 @@ const Marketplace = () => {
                     <Box sx={{ p: 2, height: 'auto' }}>
                         <img style={{ objectFit: 'cover', height: '30vh', width: 'auto' }} src={WorkflowEmptySVG} alt='WorkflowEmptySVG' />
                     </Box>
-                    <div>No Marketplace Yet</div>
+                    <div>畅游创意工坊空空如也</div>
                 </Stack>
             )}
         </MainCard>

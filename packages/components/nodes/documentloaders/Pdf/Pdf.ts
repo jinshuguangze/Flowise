@@ -17,7 +17,7 @@ class Pdf_DocumentLoaders implements INode {
         this.name = 'pdfFile'
         this.type = 'Document'
         this.icon = 'pdf.svg'
-        this.category = 'Document Loaders'
+        this.category = '数据加载器'
         this.description = `Load data from PDF files`
         this.baseClasses = [this.type]
         this.inputs = [

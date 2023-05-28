@@ -18,7 +18,7 @@ class ConversationSummaryMemory_Memory implements INode {
         this.name = 'conversationSummaryMemory'
         this.type = 'ConversationSummaryMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
+        this.category = '记忆模式'
         this.description = 'Summarizes the conversation and stores the current summary in memory'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationSummaryMemory)]
         this.inputs = [

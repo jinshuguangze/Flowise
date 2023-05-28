@@ -17,7 +17,7 @@ class OpenAIEmbedding_Embeddings implements INode {
         this.name = 'openAIEmbeddings'
         this.type = 'OpenAIEmbeddings'
         this.icon = 'openai.png'
-        this.category = 'Embeddings'
+        this.category = '向量化方式'
         this.description = 'OpenAI API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [

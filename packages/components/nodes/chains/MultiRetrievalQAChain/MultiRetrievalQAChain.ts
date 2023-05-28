@@ -18,7 +18,7 @@ class MultiRetrievalQAChain_Chains implements INode {
         this.name = 'multiRetrievalQAChain'
         this.type = 'MultiRetrievalQAChain'
         this.icon = 'chain.svg'
-        this.category = 'Chains'
+        this.category = '思维链'
         this.description = 'QA Chain that automatically picks an appropriate vector store from multiple retrievers'
         this.baseClasses = [this.type, ...getBaseClasses(MultiRetrievalQAChain)]
         this.inputs = [

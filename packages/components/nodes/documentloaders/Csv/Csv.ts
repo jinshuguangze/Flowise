@@ -17,7 +17,7 @@ class Csv_DocumentLoaders implements INode {
         this.name = 'csvFile'
         this.type = 'Document'
         this.icon = 'Csv.png'
-        this.category = 'Document Loaders'
+        this.category = '数据加载器'
         this.description = `Load data from CSV files`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -204,7 +204,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileDownload stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Load Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>加载Mapp列表</Typography>} />
                                                 </ListItemButton>
                                                 <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
@@ -213,7 +213,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileExport stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Export Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>导出Mapp列表</Typography>} />
                                                 </ListItemButton>
                                                 {localStorage.getItem('username') && localStorage.getItem('password') && (
                                                     <ListItemButton

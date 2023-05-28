@@ -17,7 +17,7 @@ class CharacterTextSplitter_TextSplitters implements INode {
         this.name = 'characterTextSplitter'
         this.type = 'CharacterTextSplitter'
         this.icon = 'textsplitter.svg'
-        this.category = 'Text Splitters'
+        this.category = '文本分割器'
         this.description = `splits only on one type of character (defaults to "\\n\\n").`
         this.baseClasses = [this.type, ...getBaseClasses(CharacterTextSplitter)]
         this.inputs = [

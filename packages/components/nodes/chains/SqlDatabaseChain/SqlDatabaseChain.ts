@@ -20,7 +20,7 @@ class SqlDatabaseChain_Chains implements INode {
         this.name = 'sqlDatabaseChain'
         this.type = 'SqlDatabaseChain'
         this.icon = 'sqlchain.svg'
-        this.category = 'Chains'
+        this.category = '思维链'
         this.description = 'Answer questions over a SQL database'
         this.baseClasses = [this.type, ...getBaseClasses(SqlDatabaseChain)]
         this.inputs = [

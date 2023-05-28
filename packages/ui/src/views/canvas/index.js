@@ -153,10 +153,10 @@ const Canvas = () => {
 
     const handleDeleteFlow = async () => {
         const confirmPayload = {
-            title: `Delete`,
+            title: `删除Mapp`,
             description: `Delete chatflow ${chatflow.name}?`,
-            confirmButtonName: 'Delete',
-            cancelButtonName: 'Cancel'
+            confirmButtonName: '删除',
+            cancelButtonName: '取消'
         }
         const isConfirmed = await confirm(confirmPayload)
 
@@ -297,7 +297,7 @@ const Canvas = () => {
     const saveChatflowSuccess = () => {
         dispatch({ type: REMOVE_DIRTY })
         enqueueSnackbar({
-            message: 'Chatflow saved',
+            message: 'Mapp已保存',
             options: {
                 key: new Date().getTime() + Math.random(),
                 variant: 'success',
@@ -343,7 +343,7 @@ const Canvas = () => {
         } else if (getSpecificChatflowApi.error) {
             const error = getSpecificChatflowApi.error
             const errorData = error.response.data || `${error.response.status}: ${error.response.statusText}`
-            errorFailed(`Failed to retrieve chatflow: ${errorData}`)
+            errorFailed(`检索Mapp失败: ${errorData}`)
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -359,7 +359,7 @@ const Canvas = () => {
         } else if (createNewChatflowApi.error) {
             const error = createNewChatflowApi.error
             const errorData = error.response.data || `${error.response.status}: ${error.response.statusText}`
-            errorFailed(`Failed to save chatflow: ${errorData}`)
+            errorFailed(`保存Mapp失败: ${errorData}`)
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -417,7 +417,7 @@ const Canvas = () => {
             dispatch({
                 type: SET_CHATFLOW,
                 chatflow: {
-                    name: 'Untitled chatflow'
+                    name: '未命名Mapp'
                 }
             })
         }
@@ -462,7 +462,7 @@ const Canvas = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [templateFlowData])
 
-    usePrompt('You have unsaved changes! Do you want to navigate away?', canvasDataStore.isDirty)
+    usePrompt('您有未保存的修改，确定离开吗？', canvasDataStore.isDirty)
 
     return (
         <>

@@ -476,7 +476,7 @@ query({
         if (getAllAPIKeysApi.data) {
             const options = [
                 {
-                    label: 'No Authorization',
+                    label: '不使用API密匙',
                     name: ''
                 }
             ]
@@ -487,7 +487,7 @@ query({
                 })
             }
             options.push({
-                label: '- Add New Key -',
+                label: '- 添加新的API密匙 -',
                 name: 'addnewkey'
             })
             setKeyOptions(options)
@@ -567,7 +567,7 @@ query({
                             showLineNumbers={false}
                             wrapLines
                         />
-                        {value !== 0 && <CheckboxInput label='Show Input Config' value={checkboxVal} onChange={onCheckBoxChanged} />}
+                        {value !== 0 && <CheckboxInput label='显示输入设置' value={checkboxVal} onChange={onCheckBoxChanged} />}
                         {value !== 0 && checkboxVal && getConfigApi.data && getConfigApi.data.length > 0 && (
                             <>
                                 <TableViewOnly rows={getConfigApi.data} columns={Object.keys(getConfigApi.data[0])} />

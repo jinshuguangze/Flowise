@@ -26,19 +26,13 @@ const ChatExpandDialog = ({ show, dialogProps, onClear, onCancel }) => {
                     {dialogProps.title}
                     <div style={{ flex: 1 }}></div>
                     {customization.isDarkMode && (
-                        <StyledButton
-                            variant='outlined'
-                            color='error'
-                            title='Clear Conversation'
-                            onClick={onClear}
-                            startIcon={<IconEraser />}
-                        >
-                            Clear Chat
+                        <StyledButton variant='outlined' color='error' title='清除聊天记录' onClick={onClear} startIcon={<IconEraser />}>
+                            清除聊天记录
                         </StyledButton>
                     )}
                     {!customization.isDarkMode && (
                         <Button variant='outlined' color='error' title='Clear Conversation' onClick={onClear} startIcon={<IconEraser />}>
-                            Clear Chat
+                            清除聊天记录
                         </Button>
                     )}
                 </div>

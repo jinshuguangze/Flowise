@@ -19,7 +19,7 @@ class WebBrowser_Tools implements INode {
         this.name = 'webBrowser'
         this.type = 'WebBrowser'
         this.icon = 'webBrowser.svg'
-        this.category = 'Tools'
+        this.category = '工具'
         this.description = 'Gives agent the ability to visit a website and extract information'
         this.inputs = [
             {
