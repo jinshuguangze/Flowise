@@ -18,8 +18,8 @@ class AzureChatOpenAI_ChatModels implements INode {
         this.name = 'azureChatOpenAI'
         this.type = 'Azure版OpenAI对话语言模型'
         this.icon = 'Azure.svg'
-        this.category = '对话型语言模型-ChatModel'
-        this.description = 'Azure Chat OpenAI：Azure版本的OpenAI语言模型'
+        this.category = '对话语言模型-ChatModel'
+        this.description = 'Azure Chat OpenAI：Azure版本的OpenAI语言模型，GPT系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
@@ -49,26 +49,26 @@ class AzureChatOpenAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度值',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Azure OpenAI Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Azure OpenAI Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Azure OpenAI Api版本',
                 name: 'azureOpenAIApiVersion',
                 type: 'options',
                 options: [
@@ -80,28 +80,28 @@ class AzureChatOpenAI_ChatModels implements INode {
                 default: '2023-03-15-preview'
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token上限',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚值',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚值',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

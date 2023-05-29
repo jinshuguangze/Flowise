@@ -16,11 +16,11 @@ class FaissUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Faiss Upsert Document'
+        this.label = 'Faiss更新存储'
         this.name = 'faissUpsert'
-        this.type = 'Faiss'
+        this.type = 'Faiss向量'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Upsert documents to Faiss'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

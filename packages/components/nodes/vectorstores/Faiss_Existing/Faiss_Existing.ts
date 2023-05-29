@@ -15,11 +15,11 @@ class Faiss_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Faiss Load Existing Index'
+        this.label = 'Faiss读取存储'
         this.name = 'faissExistingIndex'
-        this.type = 'Faiss'
+        this.type = 'Faiss向量'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Load existing index from Faiss (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

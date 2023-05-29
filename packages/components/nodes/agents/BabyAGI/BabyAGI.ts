@@ -24,7 +24,7 @@ class BabyAGI_Agents implements INode {
         this.baseClasses = ['BabyAGI']
         this.inputs = [
             {
-                label: '对话型语言模型',
+                label: '对话语言模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },

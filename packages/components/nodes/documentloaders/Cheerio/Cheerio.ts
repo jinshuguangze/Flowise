@@ -19,12 +19,12 @@ class Cheerio_DocumentLoaders implements INode {
         this.name = 'cheerioWebScraper'
         this.type = '文档数据'
         this.icon = 'cheerio.svg'
-        this.category = '数据读取器'
-        this.description = `Load data from webpages`
+        this.category = '数据读取器-DocumentLoader'
+        this.description = `Cheerio Web Scraper：利用Cheerio从网页读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'URL',
+                label: 'URL地址',
                 name: 'url',
                 type: 'string'
             },
@@ -50,7 +50,7 @@ class Cheerio_DocumentLoaders implements INode {
                 additionalParams: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

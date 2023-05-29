@@ -18,7 +18,7 @@ class Notion_DocumentLoaders implements INode {
         this.type = '文档数据'
         this.icon = 'notion.png'
         this.category = '数据读取器-DocumentLoader'
-        this.description = `Load data from Notion folder`
+        this.description = `Notion Folder：从Notion文件夹中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {

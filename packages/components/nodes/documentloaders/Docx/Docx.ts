@@ -18,7 +18,7 @@ class Docx_DocumentLoaders implements INode {
         this.type = '文档数据'
         this.icon = 'Docx.png'
         this.category = '数据读取器-DocumentLoader'
-        this.description = `Load data from DOCX files`
+        this.description = `DOCX File：从docx格式的Word文档中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {

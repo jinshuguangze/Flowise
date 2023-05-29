@@ -17,17 +17,17 @@ class ChatOpenAI_ChatModels implements INode {
         this.name = 'chatOpenAI'
         this.type = 'OpenAI对话语言模型'
         this.icon = 'openai.png'
-        this.category = '对话型语言模型-ChatModel'
-        this.description = 'Wrapper around OpenAI large language models that use the Chat endpoint'
+        this.category = '对话语言模型-ChatModel'
+        this.description = 'Chat OpenAI：OpenAI语言模型，GPT系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
-                label: 'OpenAI Api Key',
+                label: 'OpenAI Api密匙',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -56,42 +56,42 @@ class ChatOpenAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度值',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token上限',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: 'Top P值',
                 name: 'topP',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

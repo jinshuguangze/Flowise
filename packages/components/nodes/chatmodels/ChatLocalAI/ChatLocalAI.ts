@@ -18,45 +18,45 @@ class ChatLocalAI_ChatModels implements INode {
         this.name = 'chatLocalAI'
         this.type = '本地对话语言模型'
         this.icon = 'localai.png'
-        this.category = '对话型语言模型-ChatModel'
-        this.description = 'Use local LLMs like llama.cpp, gpt4all using LocalAI'
+        this.category = '对话语言模型-ChatModel'
+        this.description = 'Chat Local AI：使用本地语言模型，如Llama, Gpt4all等'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(OpenAIChat)]
         this.inputs = [
             {
-                label: 'Base Path',
+                label: '模型根路径',
                 name: 'basePath',
                 type: 'string',
                 placeholder: 'http://localhost:8080/v1'
             },
             {
-                label: 'Model Name',
+                label: '语言模型选择',
                 name: 'modelName',
                 type: 'string',
                 placeholder: 'gpt4all-lora-quantized.bin'
             },
             {
-                label: 'Temperature',
+                label: '温度值',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token上限',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: 'Top P值',
                 name: 'topP',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

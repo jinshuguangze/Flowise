@@ -31,7 +31,7 @@ class AutoGPT_Agents implements INode {
                 list: true
             },
             {
-                label: '对话型语言模型',
+                label: '对话语言模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },

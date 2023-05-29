@@ -17,17 +17,17 @@ class ChatAnthropic_ChatModels implements INode {
         this.name = 'chatAnthropic'
         this.type = 'Anthropic对话语言模型'
         this.icon = 'chatAnthropic.png'
-        this.category = '对话型语言模型-ChatModel'
-        this.description = 'Chat Anthropic：Wrapper around ChatAnthropic large language models that use the Chat endpoint'
+        this.category = '对话语言模型-ChatModel'
+        this.description = 'Chat Anthropic：Anthropic语言模型，Claude系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatAnthropic)]
         this.inputs = [
             {
-                label: 'ChatAnthropic Api Key',
+                label: 'ChatAnthropic Api密匙',
                 name: 'anthropicApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -80,28 +80,28 @@ class ChatAnthropic_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度值',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token上限',
                 name: 'maxTokensToSample',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top P',
+                label: 'Top P值',
                 name: 'topP',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top K',
+                label: 'Top K值',
                 name: 'topK',
                 type: 'number',
                 optional: true,
