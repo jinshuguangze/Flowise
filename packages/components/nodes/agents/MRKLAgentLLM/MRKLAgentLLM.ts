@@ -18,9 +18,9 @@ class MRKLAgentLLM_Agents implements INode {
         this.label = '查询型智能体（生成型语言模型核心）'
         this.name = 'mrklAgentLLM'
         this.type = '代理执行器'
-        this.category = '智能体'
+        this.category = '智能体-Agent'
         this.icon = 'agent.svg'
-        this.description = '单次查询场景使用（适用于外接生成型语言模型），可以根据指令，去选择合适工具以增强回复的智能体'
+        this.description = 'MRKL Agent LLM：单次查询场景使用（适用于外接生成型语言模型），可以根据指令，去选择合适工具以增强回复的智能体'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {

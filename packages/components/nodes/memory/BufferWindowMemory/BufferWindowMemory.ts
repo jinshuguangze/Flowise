@@ -13,11 +13,11 @@ class BufferWindowMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Buffer Window Memory'
+        this.label = '窗口缓存记忆模式'
         this.name = 'bufferWindowMemory'
-        this.type = 'BufferWindowMemory'
+        this.type = '窗口缓存记忆模式'
         this.icon = 'memory.svg'
-        this.category = '记忆模式'
+        this.category = '记忆模式-Memory'
         this.description = 'Uses a window of size k to surface the last k back-and-forths to use as memory'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [

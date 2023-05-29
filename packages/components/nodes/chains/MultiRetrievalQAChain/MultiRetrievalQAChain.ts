@@ -14,21 +14,22 @@ class MultiRetrievalQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Multi Retrieval QA Chain'
+        this.label = '多检索器QA链'
         this.name = 'multiRetrievalQAChain'
-        this.type = 'MultiRetrievalQAChain'
+        this.type = '多检索器QA链'
         this.icon = 'chain.svg'
-        this.category = '思维链'
-        this.description = 'QA Chain that automatically picks an appropriate vector store from multiple retrievers'
+        this.category = '链-Chain'
+        this.description =
+            'MultiRetrieval QA Chain：自动从多个向量检索器中选择合适检索器的QA链，无上下文记忆，QA链是指使用向量数据库+向量检索器来存储数据'
         this.baseClasses = [this.type, ...getBaseClasses(MultiRetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量检索器',
                 name: 'vectorStoreRetriever',
                 type: 'VectorStoreRetriever',
                 list: true

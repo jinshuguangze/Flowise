@@ -13,11 +13,11 @@ class Serper_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Serper'
+        this.label = 'Serper工具'
         this.name = 'serper'
-        this.type = 'Serper'
+        this.type = 'Serper工具'
         this.icon = 'serper.png'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Wrapper around Serper.dev - Google Search API'
         this.inputs = [
             {

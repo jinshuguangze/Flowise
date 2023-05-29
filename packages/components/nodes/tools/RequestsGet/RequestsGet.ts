@@ -13,11 +13,11 @@ class RequestsGet_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Requests Get'
+        this.label = 'GET请求工具'
         this.name = 'requestsGet'
-        this.type = 'RequestsGet'
+        this.type = 'GET请求工具'
         this.icon = 'requestsget.svg'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Execute HTTP GET requests'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsGetTool)]
         this.inputs = [

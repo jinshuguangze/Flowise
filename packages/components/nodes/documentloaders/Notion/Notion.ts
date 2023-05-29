@@ -13,11 +13,11 @@ class Notion_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Notion Folder'
+        this.label = 'Notion文件夹读取器'
         this.name = 'notionFolder'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'notion.png'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from Notion folder`
         this.baseClasses = [this.type]
         this.inputs = [

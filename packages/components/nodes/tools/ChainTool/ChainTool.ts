@@ -14,11 +14,11 @@ class ChainTool_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Chain Tool'
+        this.label = '链工具'
         this.name = 'chainTool'
-        this.type = 'ChainTool'
+        this.type = '链工具'
         this.icon = 'chaintool.svg'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Use a chain as allowed tool for agent'
         this.baseClasses = [this.type, ...getBaseClasses(ChainTool)]
         this.inputs = [

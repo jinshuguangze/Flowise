@@ -14,21 +14,21 @@ class AzureChatOpenAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure ChatOpenAI'
+        this.label = 'Azure版OpenAI对话语言模型'
         this.name = 'azureChatOpenAI'
-        this.type = 'AzureChatOpenAI'
+        this.type = 'Azure版OpenAI对话语言模型'
         this.icon = 'Azure.svg'
-        this.category = '对话型语言模型'
-        this.description = 'Wrapper around Azure OpenAI large language models that use the Chat endpoint'
+        this.category = '对话型语言模型-ChatModel'
+        this.description = 'Azure Chat OpenAI：Azure版本的OpenAI语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Azure OpenAI Api密匙',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [

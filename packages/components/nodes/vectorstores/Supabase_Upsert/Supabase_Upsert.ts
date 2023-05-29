@@ -17,11 +17,11 @@ class SupabaseUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Supabase Upsert Document'
+        this.label = 'Supabase更新存储'
         this.name = 'supabaseUpsert'
-        this.type = 'Supabase'
+        this.type = 'Supabase向量'
         this.icon = 'supabase.svg'
-        this.category = '向量存储器'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Upsert documents to Supabase'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

@@ -13,11 +13,11 @@ class ChatOpenAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatOpenAI'
+        this.label = 'OpenAI对话语言模型'
         this.name = 'chatOpenAI'
-        this.type = 'ChatOpenAI'
+        this.type = 'OpenAI对话语言模型'
         this.icon = 'openai.png'
-        this.category = '对话型语言模型'
+        this.category = '对话型语言模型-ChatModel'
         this.description = 'Wrapper around OpenAI large language models that use the Chat endpoint'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [

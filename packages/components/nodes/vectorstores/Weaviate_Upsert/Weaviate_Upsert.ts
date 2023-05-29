@@ -17,11 +17,11 @@ class WeaviateUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Weaviate Upsert Document'
+        this.label = 'Weaviate更新存储'
         this.name = 'weaviateUpsert'
-        this.type = 'Weaviate'
+        this.type = 'Weaviate向量'
         this.icon = 'weaviate.png'
-        this.category = '向量存储器'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Upsert documents to Weaviate'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

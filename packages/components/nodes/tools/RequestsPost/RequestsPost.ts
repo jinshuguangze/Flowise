@@ -13,11 +13,11 @@ class RequestsPost_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Requests Post'
+        this.label = 'POST请求工具'
         this.name = 'requestsPost'
-        this.type = 'RequestsPost'
+        this.type = 'POST请求工具'
         this.icon = 'requestspost.svg'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Execute HTTP POST requests'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsPostTool)]
         this.inputs = [

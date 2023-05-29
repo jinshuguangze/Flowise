@@ -12,11 +12,11 @@ class VectorStoreRetriever_Retrievers implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Vector Store Retriever'
+        this.label = '向量检索器'
         this.name = 'vectorStoreRetriever'
-        this.type = 'VectorStoreRetriever'
+        this.type = '向量检索器'
         this.icon = 'vectorretriever.svg'
-        this.category = '检索器'
+        this.category = '检索器-Retriever'
         this.description = 'Store vector store as retriever to be later queried by MultiRetrievalQAChain'
         this.baseClasses = [this.type]
         this.inputs = [

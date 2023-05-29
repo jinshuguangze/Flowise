@@ -15,26 +15,26 @@ class LLMChain_Chains implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'LLM Chain'
+        this.label = '查询链'
         this.name = 'llmChain'
-        this.type = 'LLMChain'
+        this.type = '查询链'
         this.icon = 'chain.svg'
-        this.category = '思维链'
-        this.description = 'Chain to run queries against LLMs'
+        this.category = '链-Chain'
+        this.description = 'LLM Chain：适用于单次查询问题的链，无上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(LLMChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Prompt',
+                label: '提示词',
                 name: 'prompt',
                 type: 'BasePromptTemplate'
             },
             {
-                label: 'Chain Name',
+                label: '链名称',
                 name: 'chainName',
                 type: 'string',
                 placeholder: 'Name Your Chain',
@@ -43,12 +43,12 @@ class LLMChain_Chains implements INode {
         ]
         this.outputs = [
             {
-                label: 'LLM Chain',
+                label: '查询链',
                 name: 'llmChain',
                 baseClasses: [this.type, ...getBaseClasses(LLMChain)]
             },
             {
-                label: 'Output Prediction',
+                label: '输出预测',
                 name: 'outputPrediction',
                 baseClasses: ['string']
             }

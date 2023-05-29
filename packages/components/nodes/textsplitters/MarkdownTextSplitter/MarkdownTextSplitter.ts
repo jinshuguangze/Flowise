@@ -13,11 +13,11 @@ class MarkdownTextSplitter_TextSplitters implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Markdown Text Splitter'
+        this.label = 'Markdown分割器'
         this.name = 'markdownTextSplitter'
-        this.type = 'MarkdownTextSplitter'
+        this.type = 'Markdown分割器'
         this.icon = 'markdownTextSplitter.svg'
-        this.category = '文本分割器'
+        this.category = '文本分割器-TextSplitter'
         this.description = `Split your content into documents based on the Markdown headers`
         this.baseClasses = [this.type, ...getBaseClasses(MarkdownTextSplitter)]
         this.inputs = [

@@ -13,11 +13,11 @@ class OpenAI_LLMs implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAI'
+        this.label = 'OpenAI语言模型'
         this.name = 'openAI'
-        this.type = 'OpenAI'
+        this.type = 'OpenAI语言模型'
         this.icon = 'openai.png'
-        this.category = '生成型语言模型'
+        this.category = '生成型语言模型-LLM'
         this.description = 'Wrapper around OpenAI large language models'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [

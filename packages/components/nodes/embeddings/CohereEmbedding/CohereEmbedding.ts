@@ -13,11 +13,11 @@ class CohereEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Cohere Embeddings'
+        this.label = 'Cohere向量化模型'
         this.name = 'cohereEmbeddings'
-        this.type = 'CohereEmbeddings'
+        this.type = 'Cohere向量化模型'
         this.icon = 'cohere.png'
-        this.category = '向量化方式'
+        this.category = '向量化模型-Embedding'
         this.description = 'Cohere API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(CohereEmbeddings)]
         this.inputs = [

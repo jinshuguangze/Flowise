@@ -13,11 +13,11 @@ class OpenAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAI Embeddings'
+        this.label = 'OpenAI向量化模型'
         this.name = 'openAIEmbeddings'
-        this.type = 'OpenAIEmbeddings'
+        this.type = 'OpenAI向量化模型'
         this.icon = 'openai.png'
-        this.category = '向量化方式'
+        this.category = '向量化模型-Embedding'
         this.description = 'OpenAI API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [

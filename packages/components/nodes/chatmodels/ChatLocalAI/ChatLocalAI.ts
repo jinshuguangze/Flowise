@@ -14,11 +14,11 @@ class ChatLocalAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatLocalAI'
+        this.label = '本地对话语言模型'
         this.name = 'chatLocalAI'
-        this.type = 'ChatLocalAI'
+        this.type = '本地对话语言模型'
         this.icon = 'localai.png'
-        this.category = '对话型语言模型'
+        this.category = '对话型语言模型-ChatModel'
         this.description = 'Use local LLMs like llama.cpp, gpt4all using LocalAI'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(OpenAIChat)]
         this.inputs = [

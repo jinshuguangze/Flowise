@@ -15,11 +15,11 @@ class FewShotPromptTemplate_Prompts implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Few Shot Prompt Template'
+        this.label = '案例提示词模板'
         this.name = 'fewShotPromptTemplate'
-        this.type = 'FewShotPromptTemplate'
+        this.type = '案例提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词模板'
+        this.category = '提示词模板-Prompt'
         this.description = 'Prompt template you can build with examples'
         this.baseClasses = [this.type, ...getBaseClasses(FewShotPromptTemplate)]
         this.inputs = [

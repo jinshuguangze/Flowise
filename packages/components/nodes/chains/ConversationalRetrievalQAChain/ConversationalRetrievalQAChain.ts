@@ -29,26 +29,26 @@ class ConversationalRetrievalQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Conversational Retrieval QA Chain'
+        this.label = '对话QA链'
         this.name = 'conversationalRetrievalQAChain'
-        this.type = 'ConversationalRetrievalQAChain'
+        this.type = '对话QA链'
         this.icon = 'chain.svg'
-        this.category = '思维链'
-        this.description = 'Document QA - built on RetrievalQAChain to provide a chat history component'
+        this.category = '链-Chain'
+        this.description = 'Conversational Retrieval QA Chain：具有上下文记忆的QA链，QA链是指使用向量数据库+向量检索器来存储数据'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationalRetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },
             {
-                label: 'System Message',
+                label: '前置系统信息',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,

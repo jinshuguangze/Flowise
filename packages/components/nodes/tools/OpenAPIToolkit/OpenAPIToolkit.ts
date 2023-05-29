@@ -15,11 +15,11 @@ class OpenAPIToolkit_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAPI Toolkit'
+        this.label = 'OpenAPI工具箱'
         this.name = 'openAPIToolkit'
-        this.type = 'OpenAPIToolkit'
+        this.type = 'OpenAPI工具箱'
         this.icon = 'openapi.png'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Load OpenAPI specification'
         this.inputs = [
             {

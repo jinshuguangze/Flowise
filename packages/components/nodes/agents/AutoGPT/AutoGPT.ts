@@ -18,9 +18,10 @@ class AutoGPT_Agents implements INode {
         this.label = 'AutoGPT智能体'
         this.name = 'autoGPT'
         this.type = 'AutoGPT智能体'
-        this.category = '智能体'
+        this.category = '智能体-Agent'
         this.icon = 'autogpt.png'
-        this.description = '一个具有综合能力的智能体，它通过自我引导形成思维链，使用一切它能利用的网络信息，工具和手段，完成一个复杂的目标'
+        this.description =
+            'AutoGPT：一个具有综合能力的智能体，它通过自我引导形成思维链，使用一切它能利用的网络信息，工具和手段，完成一个复杂的目标'
         this.baseClasses = ['AutoGPT']
         this.inputs = [
             {
@@ -35,7 +36,7 @@ class AutoGPT_Agents implements INode {
                 type: 'BaseChatModel'
             },
             {
-                label: '向量存储检索器',
+                label: '向量检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },

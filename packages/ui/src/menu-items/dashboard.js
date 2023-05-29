@@ -36,6 +36,14 @@ const dashboard = {
             breadcrumbs: true
         },
         {
+            id: 'talk',
+            title: 'AI交流论坛',
+            type: 'item',
+            url: '/talk',
+            icon: icons.IconHierarchy,
+            breadcrumbs: true
+        },
+        {
             id: 'dacongming',
             title: '【Mapp】完全体大聪明',
             type: 'item',

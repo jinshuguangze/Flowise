@@ -15,11 +15,11 @@ class Chroma_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Chroma Load Existing Index'
+        this.label = 'Chroma读取存储'
         this.name = 'chromaExistingIndex'
-        this.type = 'Chroma'
+        this.type = 'Chroma向量'
         this.icon = 'chroma.svg'
-        this.category = '向量存储器'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Load existing index from Chroma (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

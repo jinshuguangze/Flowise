@@ -13,11 +13,11 @@ class CharacterTextSplitter_TextSplitters implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Character Text Splitter'
+        this.label = '字符分割器'
         this.name = 'characterTextSplitter'
-        this.type = 'CharacterTextSplitter'
+        this.type = '字符分割器'
         this.icon = 'textsplitter.svg'
-        this.category = '文本分割器'
+        this.category = '文本分割器-TextSplitter'
         this.description = `splits only on one type of character (defaults to "\\n\\n").`
         this.baseClasses = [this.type, ...getBaseClasses(CharacterTextSplitter)]
         this.inputs = [

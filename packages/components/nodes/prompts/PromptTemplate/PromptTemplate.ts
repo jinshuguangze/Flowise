@@ -13,11 +13,11 @@ class PromptTemplate_Prompts implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Prompt Template'
+        this.label = '查询提示词模板'
         this.name = 'promptTemplate'
-        this.type = 'PromptTemplate'
+        this.type = '查询提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词模板'
+        this.category = '提示词模板-Prompt'
         this.description = 'Schema to represent a basic prompt for an LLM'
         this.baseClasses = [...getBaseClasses(PromptTemplate)]
         this.inputs = [

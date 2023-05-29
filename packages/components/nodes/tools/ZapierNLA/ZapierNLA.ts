@@ -13,11 +13,11 @@ class ZapierNLA_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Zapier NLA'
+        this.label = 'Zapier工具'
         this.name = 'zapierNLA'
-        this.type = 'ZapierNLA'
+        this.type = 'Zapier工具'
         this.icon = 'zapier.png'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = "Access to apps and actions on Zapier's platform through a natural language API interface"
         this.inputs = [
             {

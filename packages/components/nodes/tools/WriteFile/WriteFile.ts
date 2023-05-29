@@ -14,11 +14,11 @@ class WriteFile_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Write File'
+        this.label = '保存文件工具'
         this.name = 'writeFile'
-        this.type = 'WriteFile'
+        this.type = '保存文件工具'
         this.icon = 'writefile.svg'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Write file to disk'
         this.baseClasses = [this.type, 'Tool', ...getBaseClasses(WriteFileTool)]
         this.inputs = [

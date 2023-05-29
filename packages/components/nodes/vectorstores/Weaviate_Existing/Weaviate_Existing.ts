@@ -16,11 +16,11 @@ class Weaviate_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Weaviate Load Existing Index'
+        this.label = 'Weaviate读取存储'
         this.name = 'weaviateExistingIndex'
-        this.type = 'Weaviate'
+        this.type = 'Weaviate向量'
         this.icon = 'weaviate.png'
-        this.category = '向量存储器'
+        this.category = '向量存储器-VectorStore'
         this.description = 'Load existing index from Weaviate (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

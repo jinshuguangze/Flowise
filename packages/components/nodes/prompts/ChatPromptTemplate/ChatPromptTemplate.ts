@@ -13,11 +13,11 @@ class ChatPromptTemplate_Prompts implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Chat Prompt Template'
+        this.label = '对话提示词模板'
         this.name = 'chatPromptTemplate'
-        this.type = 'ChatPromptTemplate'
+        this.type = '对话提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词模板'
+        this.category = '提示词模板-Prompt'
         this.description = 'Schema to represent a chat prompt'
         this.baseClasses = [this.type, ...getBaseClasses(ChatPromptTemplate)]
         this.inputs = [

@@ -13,11 +13,11 @@ class MakeWebhook_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Make.com Webhook'
+        this.label = 'Make网页工具'
         this.name = 'makeWebhook'
-        this.type = 'MakeWebhook'
+        this.type = 'Make网页工具'
         this.icon = 'make.png'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Execute webhook calls on Make.com'
         this.inputs = [
             {

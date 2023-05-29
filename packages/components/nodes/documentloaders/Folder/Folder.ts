@@ -18,11 +18,11 @@ class Folder_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Folder with Files'
+        this.label = '文件夹读取器'
         this.name = 'folderFiles'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'folder.svg'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from folder with multiple files`
         this.baseClasses = [this.type]
         this.inputs = [

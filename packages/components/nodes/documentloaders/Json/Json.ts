@@ -13,11 +13,11 @@ class Json_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Json File'
+        this.label = 'Json文件读取器'
         this.name = 'jsonFile'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'json.svg'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from JSON files`
         this.baseClasses = [this.type]
         this.inputs = [

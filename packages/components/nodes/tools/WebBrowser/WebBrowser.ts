@@ -15,11 +15,11 @@ class WebBrowser_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Web Browser'
+        this.label = '网页浏览工具'
         this.name = 'webBrowser'
-        this.type = 'WebBrowser'
+        this.type = '网页浏览工具'
         this.icon = 'webBrowser.svg'
-        this.category = '工具'
+        this.category = '工具-Tool'
         this.description = 'Gives agent the ability to visit a website and extract information'
         this.inputs = [
             {

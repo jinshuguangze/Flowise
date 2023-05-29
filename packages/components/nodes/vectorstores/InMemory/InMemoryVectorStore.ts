@@ -16,11 +16,11 @@ class InMemoryVectorStore_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'In-Memory Vector Store'
+        this.label = '内存读取存储'
         this.name = 'memoryVectorStore'
-        this.type = 'Memory'
+        this.type = '内存向量'
         this.icon = 'memory.svg'
-        this.category = '向量存储器'
+        this.category = '向量存储器-VectorStore'
         this.description = 'In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

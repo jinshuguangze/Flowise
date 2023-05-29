@@ -13,11 +13,11 @@ class Github_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Github'
+        this.label = 'Github库读取器'
         this.name = 'github'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'github.png'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from a GitHub repository`
         this.baseClasses = [this.type]
         this.inputs = [
@@ -25,7 +25,7 @@ class Github_DocumentLoaders implements INode {
                 label: 'Repo Link',
                 name: 'repoLink',
                 type: 'string',
-                placeholder: 'https://github.com/FlowiseAI/Flowise'
+                placeholder: 'https://github.com/hwchase17/langchain'
             },
             {
                 label: 'Branch',

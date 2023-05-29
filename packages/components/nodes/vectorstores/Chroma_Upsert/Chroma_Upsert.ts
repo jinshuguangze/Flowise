@@ -16,9 +16,9 @@ class ChromaUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Chroma Upsert Document'
+        this.label = 'Chroma更新存储'
         this.name = 'chromaUpsert'
-        this.type = 'Chroma'
+        this.type = 'Chroma向量'
         this.icon = 'chroma.svg'
         this.category = '向量存储器'
         this.description = 'Upsert documents to Chroma'

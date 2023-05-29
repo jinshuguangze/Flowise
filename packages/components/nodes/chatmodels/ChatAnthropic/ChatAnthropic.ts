@@ -13,12 +13,12 @@ class ChatAnthropic_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatAnthropic'
+        this.label = 'Anthropic对话语言模型'
         this.name = 'chatAnthropic'
-        this.type = 'ChatAnthropic'
+        this.type = 'Anthropic对话语言模型'
         this.icon = 'chatAnthropic.png'
-        this.category = '对话型语言模型'
-        this.description = 'Wrapper around ChatAnthropic large language models that use the Chat endpoint'
+        this.category = '对话型语言模型-ChatModel'
+        this.description = 'Chat Anthropic：Wrapper around ChatAnthropic large language models that use the Chat endpoint'
         this.baseClasses = [this.type, ...getBaseClasses(ChatAnthropic)]
         this.inputs = [
             {

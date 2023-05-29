@@ -13,11 +13,11 @@ class Csv_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Csv File'
+        this.label = 'Csv文件读取器'
         this.name = 'csvFile'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'Csv.png'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from CSV files`
         this.baseClasses = [this.type]
         this.inputs = [

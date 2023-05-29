@@ -13,12 +13,12 @@ class AIPlugin implements INode {
     inputs?: INodeParams[]
 
     constructor() {
-        this.label = 'AI Plugin'
+        this.label = 'AI插件工具'
         this.name = 'aiPlugin'
-        this.type = 'AIPlugin'
+        this.type = 'AI插件工具'
         this.icon = 'aiplugin.svg'
-        this.category = '工具'
-        this.description = '使用ChatGPT插件执行操作'
+        this.category = '工具-Tool'
+        this.description = '使用ChatGPT等AI插件执行操作'
         this.baseClasses = [this.type, ...getBaseClasses(AIPluginTool)]
         this.inputs = [
             {

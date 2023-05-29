@@ -13,11 +13,11 @@ class Cohere_LLMs implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Cohere'
+        this.label = 'Cohere语言模型'
         this.name = 'cohere'
-        this.type = 'Cohere'
+        this.type = 'Cohere语言模型'
         this.icon = 'cohere.png'
-        this.category = '生成型语言模型'
+        this.category = '生成型语言模型-LLM'
         this.description = 'Wrapper around Cohere large language models'
         this.baseClasses = [this.type, ...getBaseClasses(Cohere)]
         this.inputs = [

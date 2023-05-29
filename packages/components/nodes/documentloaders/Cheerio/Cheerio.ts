@@ -15,11 +15,11 @@ class Cheerio_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Cheerio Web Scraper'
+        this.label = '网页读取器（使用Cheerio）'
         this.name = 'cheerioWebScraper'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'cheerio.svg'
-        this.category = '数据加载器'
+        this.category = '数据读取器'
         this.description = `Load data from webpages`
         this.baseClasses = [this.type]
         this.inputs = [

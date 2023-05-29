@@ -17,10 +17,10 @@ class BabyAGI_Agents implements INode {
         this.label = 'BabyAGI智能体'
         this.name = 'babyAGI'
         this.type = 'BabyAGI智能体'
-        this.category = '智能体'
+        this.category = '智能体-Agent'
         this.icon = 'babyagi.jpg'
         this.description =
-            '另一个具有综合能力的智能体，它无法使用外部工具，但它能提前规划好一连串思维链上的子目标，并根据前一个子目标的生成来决定下一个子目标的优先级，这使得它更能专注于原始目标'
+            'BabyAGI：另一个具有综合能力的智能体，它无法使用外部工具，但它能提前规划好一连串思维链上的子目标，并根据前一个子目标的生成来决定下一个子目标的优先级，这使得它更能专注于原始目标'
         this.baseClasses = ['BabyAGI']
         this.inputs = [
             {

@@ -13,11 +13,11 @@ class Text_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Text File'
+        this.label = 'Txt文件读取器'
         this.name = 'textFile'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'textFile.svg'
-        this.category = '数据加载器'
+        this.category = '数据读取器-DocumentLoader'
         this.description = `Load data from text files`
         this.baseClasses = [this.type]
         this.inputs = [
