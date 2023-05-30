@@ -16,7 +16,7 @@ class PromptRetriever_Retrievers implements INode {
         this.type = '提示词检索器'
         this.icon = 'promptretriever.svg'
         this.category = '检索器-Retriever'
-        this.description = 'Store prompt template with name & description to be later queried by MultiPromptChain'
+        this.description = 'Prompt Retriever：存储多个带有名称和描述的提示词模版，供多提示词模板链查询'
         this.baseClasses = [this.type]
         this.inputs = [
             {

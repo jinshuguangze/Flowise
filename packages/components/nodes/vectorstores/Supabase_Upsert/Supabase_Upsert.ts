@@ -22,7 +22,7 @@ class SupabaseUpsert_VectorStores implements INode {
         this.type = 'Supabase向量'
         this.icon = 'supabase.svg'
         this.category = '向量存储器-VectorStore'
-        this.description = 'Upsert documents to Supabase'
+        this.description = 'Supabase Upsert：使用Supabase数据库将文档转化为向量并上传存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

@@ -18,7 +18,7 @@ class PromptTemplate_Prompts implements INode {
         this.type = '查询提示词模板'
         this.icon = 'prompt.svg'
         this.category = '提示词模板-Prompt'
-        this.description = 'Schema to represent a basic prompt for an LLM'
+        this.description = 'Prompt Template：适用于查询型单次生成的提示词模版'
         this.baseClasses = [...getBaseClasses(PromptTemplate)]
         this.inputs = [
             {

@@ -108,7 +108,7 @@ const Chatflows = () => {
                     <Box sx={{ flexGrow: 1 }} />
                     <Grid item>
                         <StyledButton variant='contained' sx={{ color: 'white' }} onClick={addNew} startIcon={<IconPlus />}>
-                            新增Mapp
+                            创建新Mapp
                         </StyledButton>
                     </Grid>
                 </Grid>

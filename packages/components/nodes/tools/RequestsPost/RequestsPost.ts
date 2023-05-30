@@ -18,7 +18,7 @@ class RequestsPost_Tools implements INode {
         this.type = 'POST请求工具'
         this.icon = 'requestspost.svg'
         this.category = '工具-Tool'
-        this.description = 'Execute HTTP POST requests'
+        this.description = 'Requests Post：授权使用HTTP POST响应网页的工具，增加智能体一部分网络交互的能力'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsPostTool)]
         this.inputs = [
             {

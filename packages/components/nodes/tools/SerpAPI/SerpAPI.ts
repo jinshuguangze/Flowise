@@ -13,15 +13,15 @@ class SerpAPI_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Serp API工具'
+        this.label = 'SerpAPI工具'
         this.name = 'serpAPI'
-        this.type = 'Serp API工具'
+        this.type = 'SerpAPI工具'
         this.icon = 'serp.png'
         this.category = '工具-Tool'
-        this.description = 'Wrapper around SerpAPI - a real-time API to access Google search results'
+        this.description = 'SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {
-                label: 'Serp Api Key',
+                label: 'SerpAPI密匙',
                 name: 'apiKey',
                 type: 'password'
             }

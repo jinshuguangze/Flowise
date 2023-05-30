@@ -18,7 +18,7 @@ class ChatPromptTemplate_Prompts implements INode {
         this.type = '对话提示词模板'
         this.icon = 'prompt.svg'
         this.category = '提示词模板-Prompt'
-        this.description = 'Schema to represent a chat prompt'
+        this.description = 'Chat Prompt Template：适用于对话语言模型的提示词模板，用于自定义历史对话，以及格式化输入输出'
         this.baseClasses = [this.type, ...getBaseClasses(ChatPromptTemplate)]
         this.inputs = [
             {

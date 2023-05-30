@@ -18,7 +18,7 @@ class HuggingFaceInferenceEmbedding_Embeddings implements INode {
         this.type = 'HuggingFace向量化模型'
         this.icon = 'huggingface.png'
         this.category = '向量化模型-Embedding'
-        this.description = 'HuggingFace Inference API to generate embeddings for a given text'
+        this.description = 'HuggingFace Inference Embeddings：使用HuggingFace社区里的向量化模型，给定文本输出向量'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInferenceEmbeddings)]
         this.inputs = [
             {

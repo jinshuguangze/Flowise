@@ -19,7 +19,7 @@ class AzureChatOpenAI_ChatModels implements INode {
         this.type = 'Azure版OpenAI对话语言模型'
         this.icon = 'Azure.svg'
         this.category = '对话语言模型-ChatModel'
-        this.description = 'Azure Chat OpenAI：Azure版本的OpenAI语言模型，GPT系列'
+        this.description = 'Azure Chat OpenAI：Azure版本的OpenAI对话语言模型，GPT系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {

@@ -15,12 +15,12 @@ class WebBrowser_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = '网页浏览工具'
+        this.label = '网页浏览器工具'
         this.name = 'webBrowser'
-        this.type = '网页浏览工具'
+        this.type = '网页浏览器工具'
         this.icon = 'webBrowser.svg'
         this.category = '工具-Tool'
-        this.description = 'Gives agent the ability to visit a website and extract information'
+        this.description = 'Web Browser：授权使用网页浏览器搜索网页的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {
                 label: 'Language Model',

@@ -18,7 +18,7 @@ class ChatAnthropic_ChatModels implements INode {
         this.type = 'Anthropic对话语言模型'
         this.icon = 'chatAnthropic.png'
         this.category = '对话语言模型-ChatModel'
-        this.description = 'Chat Anthropic：Anthropic语言模型，Claude系列'
+        this.description = 'Chat Anthropic：Anthropic公司的对话语言模型，Claude系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatAnthropic)]
         this.inputs = [
             {

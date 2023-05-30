@@ -18,7 +18,7 @@ class MarkdownTextSplitter_TextSplitters implements INode {
         this.type = 'Markdown分割器'
         this.icon = 'markdownTextSplitter.svg'
         this.category = '文本分割器-TextSplitter'
-        this.description = `Split your content into documents based on the Markdown headers`
+        this.description = `Markdown Text Splitter：使用Markdown标题格式，对文档进行分割，此分割器适用于Markdown文档的分割`
         this.baseClasses = [this.type, ...getBaseClasses(MarkdownTextSplitter)]
         this.inputs = [
             {

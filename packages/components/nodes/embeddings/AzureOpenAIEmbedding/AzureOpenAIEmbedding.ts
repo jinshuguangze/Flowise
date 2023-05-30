@@ -19,7 +19,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
         this.type = 'Azure版OpenAI向量化模型'
         this.icon = 'Azure.svg'
         this.category = '向量化模型-Embedding'
-        this.description = 'Azure OpenAI Embeddings：使用Azure版OpenAI的向量化模型，给定一个文本输出一个向量'
+        this.description = 'Azure OpenAI Embeddings：使用Azure版OpenAI的向量化模型，给定文本输出向量'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [
             {

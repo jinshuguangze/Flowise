@@ -18,7 +18,7 @@ class RequestsGet_Tools implements INode {
         this.type = 'GET请求工具'
         this.icon = 'requestsget.svg'
         this.category = '工具-Tool'
-        this.description = 'Execute HTTP GET requests'
+        this.description = 'Requests Get：授权使用HTTP GET响应网页的工具，增加智能体一部分网络交互的能力'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsGetTool)]
         this.inputs = [
             {

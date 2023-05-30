@@ -18,7 +18,7 @@ class Cohere_LLMs implements INode {
         this.type = 'Cohere语言模型'
         this.icon = 'cohere.png'
         this.category = '普通语言模型-LLM'
-        this.description = 'Wrapper around Cohere large language models'
+        this.description = 'Cohere：Cohere公司的普通语言模型，Cohere系列'
         this.baseClasses = [this.type, ...getBaseClasses(Cohere)]
         this.inputs = [
             {

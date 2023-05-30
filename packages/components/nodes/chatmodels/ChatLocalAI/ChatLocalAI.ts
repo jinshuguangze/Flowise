@@ -19,7 +19,7 @@ class ChatLocalAI_ChatModels implements INode {
         this.type = '本地对话语言模型'
         this.icon = 'localai.png'
         this.category = '对话语言模型-ChatModel'
-        this.description = 'Chat Local AI：使用本地语言模型，如Llama, Gpt4all等'
+        this.description = 'Chat Local AI：使用本地对话语言模型，如llama, gpt4all等'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(OpenAIChat)]
         this.inputs = [
             {

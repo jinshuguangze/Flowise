@@ -18,7 +18,7 @@ class HuggingFaceInference_LLMs implements INode {
         this.type = 'HuggingFace语言模型'
         this.icon = 'huggingface.png'
         this.category = '普通语言模型-LLM'
-        this.description = 'Wrapper around HuggingFace large language models'
+        this.description = 'HuggingFace Inference LLMs：HuggingFace社区里的普通语言模型，如gpt2, alpaca等'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInference)]
         this.inputs = [
             {

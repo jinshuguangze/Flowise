@@ -18,7 +18,7 @@ class MakeWebhook_Tools implements INode {
         this.type = 'Make网页工具'
         this.icon = 'make.png'
         this.category = '工具-Tool'
-        this.description = 'Execute webhook calls on Make.com'
+        this.description = 'Make Webhook：授权使用make.com中流程的工具，增加智能体使用自动化流程的能力'
         this.inputs = [
             {
                 label: 'Webhook Url',

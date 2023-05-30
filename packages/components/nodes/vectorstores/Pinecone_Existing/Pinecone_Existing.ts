@@ -21,7 +21,7 @@ class Pinecone_Existing_VectorStores implements INode {
         this.type = 'Pinecone向量'
         this.icon = 'pinecone.png'
         this.category = '向量存储器-VectorStore'
-        this.description = 'Load existing index from Pinecone (i.e: Document has been upserted)'
+        this.description = 'Pinecone Existing Index：从Pinecone数据库里读取已保存的向量存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

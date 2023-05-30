@@ -21,7 +21,7 @@ class ChromaUpsert_VectorStores implements INode {
         this.type = 'Chroma向量'
         this.icon = 'chroma.svg'
         this.category = '向量存储器-VectorStore'
-        this.description = 'Upsert documents to Chroma'
+        this.description = 'Chroma Upsert：使用Chroma数据库将文档转化为向量并上传存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

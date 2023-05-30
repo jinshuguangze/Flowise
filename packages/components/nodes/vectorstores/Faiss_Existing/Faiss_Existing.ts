@@ -20,7 +20,7 @@ class Faiss_Existing_VectorStores implements INode {
         this.type = 'Faiss向量'
         this.icon = 'faiss.svg'
         this.category = '向量存储器-VectorStore'
-        this.description = 'Load existing index from Faiss (i.e: Document has been upserted)'
+        this.description = 'Faiss Existing Index：从Faiss数据库里读取已保存的向量存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {

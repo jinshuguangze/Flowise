@@ -18,7 +18,7 @@ class BufferWindowMemory_Memory implements INode {
         this.type = '窗口缓存记忆模式'
         this.icon = 'memory.svg'
         this.category = '记忆模式-Memory'
-        this.description = 'Uses a window of size k to surface the last k back-and-forths to use as memory'
+        this.description = 'Buffer Window Memory：只允许最新的K个对话进入缓存，提出新的问题时将这K个对话缓存添加进提示词，产生的新一轮问答将替代掉最老的问答记忆缓存'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [
             {
@@ -34,11 +34,11 @@ class BufferWindowMemory_Memory implements INode {
                 default: 'input'
             },
             {
-                label: 'Size',
+                label: '记忆窗口大小',
                 name: 'k',
                 type: 'number',
                 default: '4',
-                description: 'Window of size k to surface the last k back-and-forths to use as memory.'
+                description: '即K值，超过K轮问答轮次后，最老的记忆将会消失，只保留K轮对话记忆'
             }
         ]
     }
