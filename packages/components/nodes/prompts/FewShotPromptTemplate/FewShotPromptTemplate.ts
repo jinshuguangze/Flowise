@@ -24,42 +24,42 @@ class FewShotPromptTemplate_Prompts implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(FewShotPromptTemplate)]
         this.inputs = [
             {
-                label: 'Examples',
+                label: '案例',
                 name: 'examples',
                 type: 'string',
                 rows: 4,
                 placeholder: `[
-  { "word": "happy", "antonym": "sad" },
-  { "word": "tall", "antonym": "short" },
+  { "word": "开心", "antonym": "悲伤" },
+  { "word": "长", "antonym": "短" },
 ]`
             },
             {
-                label: 'Example Prompt',
+                label: '查询提示词模版（用于输入案例的格式）',
                 name: 'examplePrompt',
                 type: 'PromptTemplate'
             },
             {
-                label: 'Prefix',
+                label: '案例前置信息',
                 name: 'prefix',
                 type: 'string',
                 rows: 4,
-                placeholder: `Give the antonym of every input`
+                placeholder: `给出每个输入短语的反义词`
             },
             {
-                label: 'Suffix',
+                label: '案例后置信息',
                 name: 'suffix',
                 type: 'string',
                 rows: 4,
-                placeholder: `Word: {input}\nAntonym:`
+                placeholder: `短语: {input}\n反义词:`
             },
             {
-                label: 'Example Seperator',
+                label: '案例分隔符号',
                 name: 'exampleSeparator',
                 type: 'string',
                 placeholder: `\n\n`
             },
             {
-                label: 'Template Format',
+                label: '模版变量格式',
                 name: 'templateFormat',
                 type: 'options',
                 options: [

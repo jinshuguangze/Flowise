@@ -22,12 +22,12 @@ class CohereEmbedding_Embeddings implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(CohereEmbeddings)]
         this.inputs = [
             {
-                label: 'Cohere API Key',
+                label: 'Cohere API密匙',
                 name: 'cohereApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '向量化模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [

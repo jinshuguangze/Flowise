@@ -21,7 +21,7 @@ class ZapierNLA_Tools implements INode {
         this.description = "Zapier NLA：授权以自然语言创建并使用Zapier里自动化流程的工具，增加智能体创建和使用自动化流程的能力"
         this.inputs = [
             {
-                label: 'Zapier NLA Api Key',
+                label: 'Zapier NLA Api密匙',
                 name: 'apiKey',
                 type: 'password'
             }

@@ -25,25 +25,25 @@ class InMemoryVectorStore_VectorStores implements INode {
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档数据',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             }
         ]
         this.outputs = [
             {
-                label: 'Memory Retriever',
+                label: '内存向量索引器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Memory Vector Store',
+                label: '内存向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(MemoryVectorStore)]
             }

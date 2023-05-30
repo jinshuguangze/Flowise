@@ -25,12 +25,12 @@ class Weaviate_Existing_VectorStores implements INode {
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Weaviate Scheme',
+                label: 'Weaviate传输协议',
                 name: 'weaviateScheme',
                 type: 'options',
                 default: 'https',
@@ -46,25 +46,25 @@ class Weaviate_Existing_VectorStores implements INode {
                 ]
             },
             {
-                label: 'Weaviate Host',
+                label: 'Weaviate主机地址',
                 name: 'weaviateHost',
                 type: 'string',
                 placeholder: 'localhost:8080'
             },
             {
-                label: 'Weaviate Index',
+                label: 'Weaviate索引',
                 name: 'weaviateIndex',
                 type: 'string',
                 placeholder: 'Test'
             },
             {
-                label: 'Weaviate API Key',
+                label: 'Weaviate API密匙',
                 name: 'weaviateApiKey',
                 type: 'password',
                 optional: true
             },
             {
-                label: 'Weaviate Text Key',
+                label: 'Weaviate文本',
                 name: 'weaviateTextKey',
                 type: 'string',
                 placeholder: 'text',
@@ -72,7 +72,7 @@ class Weaviate_Existing_VectorStores implements INode {
                 additionalParams: true
             },
             {
-                label: 'Weaviate Metadata Keys',
+                label: 'Weaviate元数据',
                 name: 'weaviateMetadataKeys',
                 type: 'string',
                 rows: 4,
@@ -83,12 +83,12 @@ class Weaviate_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Weaviate Retriever',
+                label: 'Weaviate向量索引器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Weaviate Vector Store',
+                label: 'Weaviate向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(WeaviateStore)]
             }

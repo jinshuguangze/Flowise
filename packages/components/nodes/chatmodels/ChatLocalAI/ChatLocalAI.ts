@@ -29,7 +29,7 @@ class ChatLocalAI_ChatModels implements INode {
                 placeholder: 'http://localhost:8080/v1'
             },
             {
-                label: '语言模型选择',
+                label: '对话语言模型选择',
                 name: 'modelName',
                 type: 'string',
                 placeholder: 'gpt4all-lora-quantized.bin'
@@ -56,7 +56,7 @@ class ChatLocalAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: '超时时间',
+                label: '超时时长',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

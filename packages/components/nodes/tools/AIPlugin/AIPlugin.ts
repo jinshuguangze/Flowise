@@ -22,7 +22,7 @@ class AIPlugin implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(AIPluginTool)]
         this.inputs = [
             {
-                label: 'Plugin Url',
+                label: '插件Url地址',
                 name: 'pluginUrl',
                 type: 'string',
                 placeholder: 'https://www.klarna.com/.well-known/ai-plugin.json'

@@ -18,23 +18,23 @@ class Docx_DocumentLoaders implements INode {
         this.type = '文档数据'
         this.icon = 'Docx.png'
         this.category = '数据读取器-DocumentLoader'
-        this.description = `DOCX File：从docx格式的Word文档中读取数据`
+        this.description = `Docx File：从docx格式的Word文档中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Docx File',
+                label: 'Docx文件',
                 name: 'docxFile',
                 type: 'file',
                 fileType: '.docx'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

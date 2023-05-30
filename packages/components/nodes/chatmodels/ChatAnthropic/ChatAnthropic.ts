@@ -27,7 +27,7 @@ class ChatAnthropic_ChatModels implements INode {
                 type: 'password'
             },
             {
-                label: '语言模型选择',
+                label: '对话语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [

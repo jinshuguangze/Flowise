@@ -23,18 +23,18 @@ class ConversationSummaryMemory_Memory implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(ConversationSummaryMemory)]
         this.inputs = [
             {
-                label: 'Chat Model',
+                label: '对话语言模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Memory Key',
+                label: '记忆数据的变量名称',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'
             },
             {
-                label: 'Input Key',
+                label: '人类输入数据的变量名称',
                 name: 'inputKey',
                 type: 'string',
                 default: 'input'

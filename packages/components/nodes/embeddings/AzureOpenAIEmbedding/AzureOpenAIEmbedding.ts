@@ -23,24 +23,24 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Azure OpenAI Api密匙',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Azure OpenAI Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Azure OpenAI Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Azure OpenAI Api版本',
                 name: 'azureOpenAIApiVersion',
                 type: 'options',
                 options: [
@@ -64,7 +64,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时长',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

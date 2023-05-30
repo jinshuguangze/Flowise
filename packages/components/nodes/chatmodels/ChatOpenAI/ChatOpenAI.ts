@@ -27,7 +27,7 @@ class ChatOpenAI_ChatModels implements INode {
                 type: 'password'
             },
             {
-                label: '语言模型选择',
+                label: '对话语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -91,7 +91,7 @@ class ChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: '超时时间',
+                label: '超时时长',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

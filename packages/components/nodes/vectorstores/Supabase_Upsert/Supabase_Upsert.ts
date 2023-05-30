@@ -26,45 +26,45 @@ class SupabaseUpsert_VectorStores implements INode {
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档数据',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Supabase API Key',
+                label: 'Supabase API密匙',
                 name: 'supabaseApiKey',
                 type: 'password'
             },
             {
-                label: 'Supabase Project URL',
+                label: 'Supabase项目URL链接',
                 name: 'supabaseProjUrl',
                 type: 'string'
             },
             {
-                label: 'Table Name',
+                label: 'Table名称',
                 name: 'tableName',
                 type: 'string'
             },
             {
-                label: 'Query Name',
+                label: 'Query名称',
                 name: 'queryName',
                 type: 'string'
             }
         ]
         this.outputs = [
             {
-                label: 'Supabase Retriever',
+                label: 'Supabase向量索引器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Supabase Vector Store',
+                label: 'Supabase向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(SupabaseVectorStore)]
             }

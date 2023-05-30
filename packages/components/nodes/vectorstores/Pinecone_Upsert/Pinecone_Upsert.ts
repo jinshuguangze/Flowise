@@ -26,47 +26,49 @@ class PineconeUpsert_VectorStores implements INode {
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档数据',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Pinecone Api Key',
+                label: 'Pinecone Api密匙',
                 name: 'pineconeApiKey',
                 type: 'password'
             },
             {
-                label: 'Pinecone Environment',
+                label: 'Pinecone环境',
                 name: 'pineconeEnv',
+                placeholder: 'my-pinecone-environment',
                 type: 'string'
             },
             {
-                label: 'Pinecone Index',
+                label: 'Pinecone索引',
                 name: 'pineconeIndex',
+                placeholder: 'my-pinecone-index',
                 type: 'string'
             },
             {
-                label: 'Pinecone Namespace',
+                label: 'Pinecone命名空间',
                 name: 'pineconeNamespace',
                 type: 'string',
-                placeholder: 'my-first-namespace',
+                placeholder: 'my-pinecone-namespace',
                 optional: true
             }
         ]
         this.outputs = [
             {
-                label: 'Pinecone Retriever',
+                label: 'Pinecone向量索引器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Pinecone Vector Store',
+                label: 'Pinecone向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(PineconeStore)]
             }

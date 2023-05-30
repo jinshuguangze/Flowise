@@ -22,27 +22,27 @@ class ChatPromptTemplate_Prompts implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(ChatPromptTemplate)]
         this.inputs = [
             {
-                label: 'System Message',
+                label: '前置系统信息',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,
-                placeholder: `You are a helpful assistant that translates {input_language} to {output_language}.`
+                placeholder: `你是一个拥有十年经验的专业翻译者，可以将{input_language} 翻译成 {output_language}`
             },
             {
-                label: 'Human Message',
+                label: '人类信息',
                 name: 'humanMessagePrompt',
                 type: 'string',
                 rows: 4,
                 placeholder: `{text}`
             },
             {
-                label: 'Format Prompt Values',
+                label: '设定提示词变量值',
                 name: 'promptValues',
                 type: 'string',
                 rows: 4,
                 placeholder: `{
-  "input_language": "English",
-  "output_language": "French"
+  "input_language": "英语",
+  "output_language": "法语"
 }`,
                 optional: true,
                 acceptVariable: true,

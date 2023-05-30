@@ -24,17 +24,17 @@ class Chroma_Existing_VectorStores implements INode {
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Collection Name',
+                label: 'Chroma数据库名称',
                 name: 'collectionName',
                 type: 'string'
             },
             {
-                label: 'Chroma URL',
+                label: 'Chroma URL链接',
                 name: 'chromaURL',
                 type: 'string',
                 optional: true
@@ -42,12 +42,12 @@ class Chroma_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Chroma Retriever',
+                label: 'Chroma向量索引器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Chroma Vector Store',
+                label: 'Chroma向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(Chroma)]
             }

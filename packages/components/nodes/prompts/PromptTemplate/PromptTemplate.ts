@@ -22,20 +22,19 @@ class PromptTemplate_Prompts implements INode {
         this.baseClasses = [...getBaseClasses(PromptTemplate)]
         this.inputs = [
             {
-                label: 'Template',
+                label: '提示词模版',
                 name: 'template',
                 type: 'string',
                 rows: 4,
-                placeholder: `What is a good name for a company that makes {product}?`
+                placeholder: `《 {product}》手游的主要玩法是什么?`
             },
             {
-                label: 'Format Prompt Values',
+                label: '设定提示词变量值',
                 name: 'promptValues',
                 type: 'string',
                 rows: 4,
                 placeholder: `{
-  "input_language": "English",
-  "output_language": "French"
+  "product": "阴阳师"
 }`,
                 optional: true,
                 acceptVariable: true,

@@ -23,7 +23,7 @@ class ReadFile_Tools implements INode {
         this.baseClasses = [this.type, 'Tool', ...getBaseClasses(ReadFileTool)]
         this.inputs = [
             {
-                label: 'Base Path',
+                label: '文件夹根目录',
                 name: 'basePath',
                 placeholder: `C:\\Users\\User\\Desktop`,
                 type: 'string',

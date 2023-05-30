@@ -22,35 +22,35 @@ class Pdf_DocumentLoaders implements INode {
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Pdf File',
+                label: 'Pdf文件',
                 name: 'pdfFile',
                 type: 'file',
                 fileType: '.pdf'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Usage',
+                label: '使用方式',
                 name: 'usage',
                 type: 'options',
                 options: [
                     {
-                        label: 'One document per page',
+                        label: '按页生成文档数据',
                         name: 'perPage'
                     },
                     {
-                        label: 'One document per file',
+                        label: '按文件生成文档数据',
                         name: 'perFile'
                     }
                 ],
                 default: 'perPage'
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

@@ -23,27 +23,27 @@ class ChainTool_Tools implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(ChainTool)]
         this.inputs = [
             {
-                label: 'Chain Name',
+                label: '链名称',
                 name: 'name',
                 type: 'string',
                 placeholder: 'state-of-union-qa'
             },
             {
-                label: 'Chain Description',
+                label: '链作用描述',
                 name: 'description',
                 type: 'string',
                 rows: 3,
                 placeholder:
-                    'State of the Union QA - useful for when you need to ask questions about the most recent state of the union address.'
+                    '游戏术语QA链：当您需要询问某一游戏术语的含义时，它能帮助到您'
             },
             {
-                label: 'Return Direct',
+                label: '是否直接返回数据',
                 name: 'returnDirect',
                 type: 'boolean',
                 optional: true
             },
             {
-                label: 'Base Chain',
+                label: '链',
                 name: 'baseChain',
                 type: 'BaseChain'
             }

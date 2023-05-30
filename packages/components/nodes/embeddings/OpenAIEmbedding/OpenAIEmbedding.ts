@@ -22,12 +22,12 @@ class OpenAIEmbedding_Embeddings implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [
             {
-                label: 'OpenAI Api Key',
+                label: 'OpenAI Api密匙',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Strip New Lines',
+                label: '每行去除首尾空格',
                 name: 'stripNewLines',
                 type: 'boolean',
                 optional: true,
@@ -38,10 +38,11 @@ class OpenAIEmbedding_Embeddings implements INode {
                 name: 'batchSize',
                 type: 'number',
                 optional: true,
+                description: '单次调用时最大文档数据请求数量，默认为最大值2048',
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时长',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

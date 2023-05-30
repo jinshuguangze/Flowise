@@ -19,11 +19,11 @@ class TokenTextSplitter_TextSplitters implements INode {
         this.type = 'Token分割器'
         this.icon = 'tiktoken.svg'
         this.category = '文本分割器-TextSplitter'
-        this.description = `Token Text Splitter：现将原始文档内容转化为Token格式，然后将Token分割成固定大小的块后，再将Token转回文档，适用于需要严格控制文档块大小的场景`
+        this.description = `Token Text Splitter：现将原始文档内容编码为Token格式，然后将Token分割成固定大小的块后，再将Token解码回文档，适用于需要严格控制文档块大小的场景`
         this.baseClasses = [this.type, ...getBaseClasses(TokenTextSplitter)]
         this.inputs = [
             {
-                label: 'Encoding Name',
+                label: '编码器模型',
                 name: 'encodingName',
                 type: 'options',
                 options: [
@@ -51,14 +51,14 @@ class TokenTextSplitter_TextSplitters implements INode {
                 default: 'gpt2'
             },
             {
-                label: 'Chunk Size',
+                label: '文档块大小',
                 name: 'chunkSize',
                 type: 'number',
                 default: 1000,
                 optional: true
             },
             {
-                label: 'Chunk Overlap',
+                label: '文档块重叠',
                 name: 'chunkOverlap',
                 type: 'number',
                 optional: true

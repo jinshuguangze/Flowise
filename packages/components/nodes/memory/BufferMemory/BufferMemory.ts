@@ -22,13 +22,13 @@ class BufferMemory_Memory implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [
             {
-                label: 'Memory Key',
+                label: '记忆数据的变量名称',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'
             },
             {
-                label: 'Input Key',
+                label: '人类输入数据的变量名称',
                 name: 'inputKey',
                 type: 'string',
                 default: 'input'

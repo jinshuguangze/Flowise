@@ -29,20 +29,20 @@ class Cheerio_DocumentLoaders implements INode {
                 type: 'string'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Web Scrap for Relative Links',
+                label: '是否爬取相关联的链接',
                 name: 'webScrap',
                 type: 'boolean',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Web Scrap Links Limit',
+                label: '爬取链接最大限制数量',
                 name: 'limit',
                 type: 'number',
                 default: 10,

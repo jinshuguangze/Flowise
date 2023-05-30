@@ -22,27 +22,27 @@ class Json_DocumentLoaders implements INode {
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Json File',
+                label: 'Json文件',
                 name: 'jsonFile',
                 type: 'file',
                 fileType: '.json'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Pointers Extraction (separated by commas)',
+                label: '使用指针提取内容 ',
                 name: 'pointersName',
                 type: 'string',
-                description: 'Extracting multiple pointers',
-                placeholder: 'Enter pointers name',
+                description: '使用多个Json指针提取内容',
+                placeholder: '输入指针语法(用逗号隔开多个指针)',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

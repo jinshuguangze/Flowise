@@ -22,13 +22,13 @@ class HuggingFaceInference_LLMs implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInference)]
         this.inputs = [
             {
-                label: 'Model',
+                label: '普通语言模型名称',
                 name: 'model',
                 type: 'string',
                 placeholder: 'gpt2'
             },
             {
-                label: 'HuggingFace Api Key',
+                label: 'HuggingFace Api密匙',
                 name: 'apiKey',
                 type: 'password'
             }

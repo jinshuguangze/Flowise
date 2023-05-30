@@ -18,31 +18,31 @@ class Csv_DocumentLoaders implements INode {
         this.type = '文档数据'
         this.icon = 'Csv.png'
         this.category = '数据读取器-DocumentLoader'
-        this.description = `CSV File：从csv格式的Excel文件中读取数据`
+        this.description = `Csv File：从csv格式的Excel文件中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Csv File',
+                label: 'Csv文件',
                 name: 'csvFile',
                 type: 'file',
                 fileType: '.csv'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Single Column Extraction',
+                label: '单列提取',
                 name: 'columnName',
                 type: 'string',
-                description: 'Extracting a single column',
-                placeholder: 'Enter column name',
+                description: '仅提取表格里的某一列数据',
+                placeholder: '输入列名称',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

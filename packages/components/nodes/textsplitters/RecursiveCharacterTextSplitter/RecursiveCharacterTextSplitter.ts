@@ -22,14 +22,14 @@ class RecursiveCharacterTextSplitter_TextSplitters implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(RecursiveCharacterTextSplitter)]
         this.inputs = [
             {
-                label: 'Chunk Size',
+                label: '文档块大小',
                 name: 'chunkSize',
                 type: 'number',
                 default: 1000,
                 optional: true
             },
             {
-                label: 'Chunk Overlap',
+                label: '文档块重叠',
                 name: 'chunkOverlap',
                 type: 'number',
                 optional: true

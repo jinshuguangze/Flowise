@@ -22,12 +22,12 @@ class HuggingFaceInferenceEmbedding_Embeddings implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInferenceEmbeddings)]
         this.inputs = [
             {
-                label: 'HuggingFace Api Key',
+                label: 'HuggingFace Api密匙',
                 name: 'apiKey',
                 type: 'password'
             },
             {
-                label: 'Model',
+                label: '向量化模型名称',
                 name: 'modelName',
                 type: 'string',
                 optional: true

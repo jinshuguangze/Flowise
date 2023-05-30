@@ -21,7 +21,7 @@ class Serper_Tools implements INode {
         this.description = 'Serper：授权使用Serper去得到谷歌搜索结果的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {
-                label: 'Serper Api Key',
+                label: 'Serper Api密匙',
                 name: 'apiKey',
                 type: 'password'
             }

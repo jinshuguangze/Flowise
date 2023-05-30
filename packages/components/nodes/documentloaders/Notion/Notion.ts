@@ -22,20 +22,20 @@ class Notion_DocumentLoaders implements INode {
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Notion Folder',
+                label: 'Notion文件夹路径',
                 name: 'notionFolder',
                 type: 'string',
-                description: 'Get folder path',
-                placeholder: 'Paste folder path'
+                description: '获取Notion文件夹路径',
+                placeholder: '输入Notion文件夹的路径'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

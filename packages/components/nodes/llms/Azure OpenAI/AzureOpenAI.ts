@@ -22,12 +22,12 @@ class AzureOpenAI_LLMs implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Azure OpenAI Api密匙',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '普通语言模型选择',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -84,26 +84,26 @@ class AzureOpenAI_LLMs implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度值',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Azure OpenAI Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Azure OpenAI Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Azure OpenAI Api版本',
                 name: 'azureOpenAIApiVersion',
                 type: 'options',
                 options: [
@@ -119,42 +119,42 @@ class AzureOpenAI_LLMs implements INode {
                 default: '2023-03-15-preview'
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token上限',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: 'Top P值',
                 name: 'topP',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Best Of',
+                label: '输出候选数量',
                 name: 'bestOf',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚值',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚值',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时长',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

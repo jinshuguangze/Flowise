@@ -22,13 +22,13 @@ class Github_DocumentLoaders implements INode {
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Repo Link',
+                label: 'Github库链接',
                 name: 'repoLink',
                 type: 'string',
                 placeholder: 'https://github.com/hwchase17/langchain'
             },
             {
-                label: 'Branch',
+                label: '库分支',
                 name: 'branch',
                 type: 'string',
                 default: 'main'
@@ -41,13 +41,13 @@ class Github_DocumentLoaders implements INode {
                 optional: true
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

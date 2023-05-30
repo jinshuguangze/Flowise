@@ -23,17 +23,17 @@ class OpenAPIToolkit_Tools implements INode {
         this.description = 'OpenAPI Toolkit：授权读取某个符合OpenAPI规范的API文档的工具，增加智能体交互此特定API文档的能力'
         this.inputs = [
             {
-                label: 'OpenAI API Key',
+                label: 'OpenAI API密匙',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'YAML File',
+                label: 'Yaml文件',
                 name: 'yamlFile',
                 type: 'file',
                 fileType: '.yaml'

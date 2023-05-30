@@ -22,19 +22,19 @@ class Text_DocumentLoaders implements INode {
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Txt File',
+                label: 'Txt文件',
                 name: 'txtFile',
                 type: 'file',
                 fileType: '.txt'
             },
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

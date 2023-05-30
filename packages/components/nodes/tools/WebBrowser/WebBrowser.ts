@@ -23,12 +23,12 @@ class WebBrowser_Tools implements INode {
         this.description = 'Web Browser：授权使用网页浏览器搜索网页的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Embeddings',
+                label: '向量化模型',
                 name: 'embeddings',
                 type: 'Embeddings'
             }

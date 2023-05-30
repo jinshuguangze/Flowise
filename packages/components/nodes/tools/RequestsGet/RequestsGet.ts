@@ -22,26 +22,26 @@ class RequestsGet_Tools implements INode {
         this.baseClasses = [this.type, ...getBaseClasses(RequestsGetTool)]
         this.inputs = [
             {
-                label: 'URL',
+                label: 'URL链接',
                 name: 'url',
                 type: 'string',
                 description:
-                    'Agent will make call to this exact URL. If not specified, agent will try to figure out itself from AIPlugin if provided',
+                    '智能体将尝试GET此网址链接，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Description',
+                label: '工具作用描述',
                 name: 'description',
                 type: 'string',
                 rows: 4,
                 default: desc,
-                description: 'Acts like a prompt to tell agent when it should use this tool',
+                description: '使用自然语言向智能体描述，该什么时候使用此GET请求工具，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Headers',
+                label: 'Headers信息',
                 name: 'headers',
                 type: 'json',
                 additionalParams: true,

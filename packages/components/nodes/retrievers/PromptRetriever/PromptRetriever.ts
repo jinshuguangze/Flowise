@@ -16,29 +16,29 @@ class PromptRetriever_Retrievers implements INode {
         this.type = '提示词检索器'
         this.icon = 'promptretriever.svg'
         this.category = '检索器-Retriever'
-        this.description = 'Prompt Retriever：存储多个带有名称和描述的提示词模版，供多提示词模板链查询'
+        this.description = 'Prompt Retriever：每个提示词检索器可设定一种提示词使用场景，多个提示词检索器输入，可供多提示词模板链进行查询'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Prompt Name',
+                label: '提示词名称',
                 name: 'name',
                 type: 'string',
                 placeholder: 'physics-qa'
             },
             {
-                label: 'Prompt Description',
+                label: '提示词作用描述',
                 name: 'description',
                 type: 'string',
                 rows: 3,
-                description: 'Description of what the prompt does and when it should be used',
-                placeholder: 'Good for answering questions about physics'
+                description: '使用自然语言说明提示词的作用，以及应该在何时使用',
+                placeholder: '此提示词能够很好地生成都市怪谈类手游的游戏名称'
             },
             {
-                label: 'Prompt System Message',
+                label: '提示词前置系统信息',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,
-                placeholder: `You are a very smart physics professor. You are great at answering questions about physics in a concise and easy to understand manner. When you don't know the answer to a question you admit that you don't know.`
+                placeholder: `假如你是一名游戏制作人，你现在正在制作一款主题为都市怪谈背景的手游，现在要为这款游戏取个名字，要求简短突出游戏特色，可以适当去扩展概念以达到更加贴合中国人习惯的手游名字，直接输出你认为最合适的五个游戏名即可，不用解释自己为什么选择它们`
             }
         ]
     }
