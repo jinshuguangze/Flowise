@@ -13,22 +13,22 @@ class Confluence_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Confluence'
+        this.label = 'Confluence文件读取器'
         this.name = 'confluence'
-        this.type = 'Document'
+        this.type = '文档数据'
         this.icon = 'confluence.png'
-        this.category = 'Document Loaders'
-        this.description = `Load data from a Confluence Document`
+        this.category = '数据读取器-DocumentLoader（读取外部数据，后接向量存储器）'
+        this.description = `Confluence：从Confluence在线文档中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Username',
+                label: '用户名',
                 name: 'username',
                 type: 'string',
                 placeholder: '<CONFLUENCE_USERNAME>'
@@ -40,26 +40,26 @@ class Confluence_DocumentLoaders implements INode {
                 placeholder: '<CONFLUENCE_ACCESS_TOKEN>'
             },
             {
-                label: 'Base URL',
+                label: '文档根地址',
                 name: 'baseUrl',
                 type: 'string',
                 placeholder: 'https://example.atlassian.net/wiki'
             },
             {
-                label: 'Space Key',
+                label: 'Space密匙',
                 name: 'spaceKey',
                 type: 'string',
                 placeholder: '~EXAMPLE362906de5d343d49dcdbae5dEXAMPLE'
             },
             {
-                label: 'Limit',
+                label: '访问速率限制',
                 name: 'limit',
                 type: 'number',
                 default: 0,
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

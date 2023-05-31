@@ -17,7 +17,7 @@ class Csv_DocumentLoaders implements INode {
         this.name = 'csvFile'
         this.type = '文档数据'
         this.icon = 'Csv.png'
-        this.category = '数据读取器-DocumentLoader'
+        this.category = '数据读取器-DocumentLoader（读取外部数据，后接向量存储器）'
         this.description = `Csv File：从csv格式的Excel文件中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [

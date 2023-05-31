@@ -22,7 +22,7 @@ class Folder_DocumentLoaders implements INode {
         this.name = 'folderFiles'
         this.type = '文档数据'
         this.icon = 'folder.svg'
-        this.category = '数据读取器-DocumentLoader'
+        this.category = '数据读取器-DocumentLoader（读取外部数据，后接向量存储器）'
         this.description = `Folder Files：从文件夹中读取所有文件的数据`
         this.baseClasses = [this.type]
         this.inputs = [
