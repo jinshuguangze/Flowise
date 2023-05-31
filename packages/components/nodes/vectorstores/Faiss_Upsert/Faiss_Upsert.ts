@@ -20,7 +20,8 @@ class FaissUpsert_VectorStores implements INode {
         this.name = 'faissUpsert'
         this.type = 'Faiss向量'
         this.icon = 'faiss.svg'
-        this.category = '向量存储器-VectorStore'
+        this.category =
+            '向量存储器-VectorStore\n\n（作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，或输出自建检索器直接接链或智能体）'
         this.description = 'Faiss Upsert：使用Faiss数据库将文档转化为向量并上传存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
@@ -45,7 +46,7 @@ class FaissUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Faiss向量索引器',
+                label: 'Faiss向量检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },

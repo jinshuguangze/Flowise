@@ -17,7 +17,7 @@ class Json_DocumentLoaders implements INode {
         this.name = 'jsonFile'
         this.type = '文档数据'
         this.icon = 'json.svg'
-        this.category = '数据读取器-DocumentLoader（读取外部数据，后接向量存储器）'
+        this.category = '数据读取器-DocumentLoader\n\n（作用：读取外部输入的数据，前接文本分割器，后接向量存储器）'
         this.description = `Json File：从json格式的文件中读取数据`
         this.baseClasses = [this.type]
         this.inputs = [

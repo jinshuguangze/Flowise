@@ -19,7 +19,7 @@ class OpenAPIToolkit_Tools implements INode {
         this.name = 'openAPIToolkit'
         this.type = 'OpenAPI工具箱'
         this.icon = 'openapi.png'
-        this.category = '工具-Tool'
+        this.category = '工具-Tool\n\n（作用：给智能体提供不同种类的工具以增强其能力，后接智能体）'
         this.description = 'OpenAPI Toolkit：授权读取某个符合OpenAPI规范的API文档的工具，增加智能体交互此特定API文档的能力'
         this.inputs = [
             {

@@ -17,7 +17,7 @@ class ChatOpenAI_ChatModels implements INode {
         this.name = 'chatOpenAI'
         this.type = 'OpenAI对话语言模型'
         this.icon = 'openai.png'
-        this.category = '对话语言模型-ChatModel'
+        this.category = '对话语言模型-ChatModel\n\n（作用：拥有对话能力的语言模型，后接链或智能体）'
         this.description = 'Chat OpenAI：OpenAI公司的对话语言模型，GPT系列'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [

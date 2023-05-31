@@ -21,7 +21,8 @@ class WeaviateUpsert_VectorStores implements INode {
         this.name = 'weaviateUpsert'
         this.type = 'Weaviate向量'
         this.icon = 'weaviate.png'
-        this.category = '向量存储器-VectorStore'
+        this.category =
+            '向量存储器-VectorStore\n\n（作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，或输出自建检索器直接接链或智能体）'
         this.description = 'Weaviate Upsert：使用Weaviate数据库将文档转化为向量并上传存储'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
@@ -90,7 +91,7 @@ class WeaviateUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Weaviate向量索引器',
+                label: 'Weaviate向量检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },

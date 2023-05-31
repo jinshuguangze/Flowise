@@ -17,7 +17,7 @@ class CohereEmbedding_Embeddings implements INode {
         this.name = 'cohereEmbeddings'
         this.type = 'Cohere向量化模型'
         this.icon = 'cohere.png'
-        this.category = '向量化模型-Embedding'
+        this.category = '向量化模型-Embedding\n\n（作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器）'
         this.description = 'Cohere Embeddings：使用Cohere的向量化模型，给定文本输出向量'
         this.baseClasses = [this.type, ...getBaseClasses(CohereEmbeddings)]
         this.inputs = [

@@ -19,7 +19,7 @@ class FewShotPromptTemplate_Prompts implements INode {
         this.name = 'fewShotPromptTemplate'
         this.type = '案例提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词模板-Prompt'
+        this.category = '提示词模板-Prompt\n\n（作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器）'
         this.description = 'Few Shot Prompt Template：适用于查询型单次生成的提示词模版，并添加自定义案例以保证更高质量的输出'
         this.baseClasses = [this.type, ...getBaseClasses(FewShotPromptTemplate)]
         this.inputs = [

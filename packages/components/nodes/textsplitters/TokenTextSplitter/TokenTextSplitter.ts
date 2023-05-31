@@ -18,7 +18,7 @@ class TokenTextSplitter_TextSplitters implements INode {
         this.name = 'tokenTextSplitter'
         this.type = 'Token分割器'
         this.icon = 'tiktoken.svg'
-        this.category = '文本分割器-TextSplitter'
+        this.category = '文本分割器-TextSplitter\n\n（作用：提供不同分割策略将文档数据分割成文档块，后接数据读取器）'
         this.description = `Token Text Splitter：现将原始文档内容编码为Token格式，然后将Token分割成固定大小的块后，再将Token解码回文档，适用于需要严格控制文档块大小的场景`
         this.baseClasses = [this.type, ...getBaseClasses(TokenTextSplitter)]
         this.inputs = [

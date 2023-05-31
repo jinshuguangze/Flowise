@@ -30,7 +30,7 @@ class GETApiChain_Chains implements INode {
         this.name = 'getApiChain'
         this.type = 'GET API链'
         this.icon = 'apichain.svg'
-        this.category = '链-Chain'
+        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
         this.description = 'GET Api Chain：根据API文档去GET网页的链，无上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [

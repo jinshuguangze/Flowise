@@ -19,7 +19,7 @@ class WebBrowser_Tools implements INode {
         this.name = 'webBrowser'
         this.type = '网页浏览器工具'
         this.icon = 'webBrowser.svg'
-        this.category = '工具-Tool'
+        this.category = '工具-Tool\n\n（作用：给智能体提供不同种类的工具以增强其能力，后接智能体）'
         this.description = 'Web Browser：授权使用网页浏览器搜索网页的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {

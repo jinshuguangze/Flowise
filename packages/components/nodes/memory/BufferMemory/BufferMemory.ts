@@ -17,7 +17,7 @@ class BufferMemory_Memory implements INode {
         this.name = 'bufferMemory'
         this.type = '全缓存记忆模式'
         this.icon = 'memory.svg'
-        this.category = '记忆模式-Memory'
+        this.category = '记忆模式-Memory\n\n（作用：提供不同策略的记忆方式，后接需要记忆的链或智能体）'
         this.description = 'Buffer Memory：直接将所有上下文记忆全部进行缓存，提出新的问题时将所有缓存记忆全部添加进提示词'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [

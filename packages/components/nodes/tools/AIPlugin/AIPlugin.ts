@@ -17,7 +17,7 @@ class AIPlugin implements INode {
         this.name = 'aiPlugin'
         this.type = 'AI插件工具'
         this.icon = 'aiplugin.svg'
-        this.category = '工具-Tool'
+        this.category = '工具-Tool\n\n（作用：给智能体提供不同种类的工具以增强其能力，后接智能体）'
         this.description = 'AIPlugin：授权使用ChatGPT等AI插件的工具，根据插件的不同增强智能体的各方面能力'
         this.baseClasses = [this.type, ...getBaseClasses(AIPluginTool)]
         this.inputs = [
