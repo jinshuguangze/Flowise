@@ -18,7 +18,8 @@ class MultiPromptChain_Chains implements INode {
         this.name = 'multiPromptChain'
         this.type = '多提示词模板链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'MultiPrompt Chain：自动从多个提示词模板中选择合适提示词的链，无上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(MultiPromptChain)]
         this.inputs = [

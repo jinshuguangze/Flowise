@@ -23,7 +23,8 @@ class ConversationChain_Chains implements INode {
         this.name = 'conversationChain'
         this.type = '对话链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'Conversation Chain：适用于对话场景的链，带有上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationChain)]
         this.inputs = [

@@ -16,7 +16,8 @@ class Calculator_Tools implements INode {
         this.name = 'calculator'
         this.type = '计算器工具'
         this.icon = 'calculator.svg'
-        this.category = '工具-Tool\n\n（作用：给智能体提供不同种类的工具以增强其能力，后接智能体）'
+        this.category =
+            '工具-Tool\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：给智能体提供不同种类的工具以增强其能力，后接智能体'
         this.description = 'Calculator：授权使用一个简单计算器的工具，增强智能体数学计算方面的表现'
         this.baseClasses = [this.type, ...getBaseClasses(Calculator)]
     }

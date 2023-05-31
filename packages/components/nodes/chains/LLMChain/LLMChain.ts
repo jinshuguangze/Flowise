@@ -19,7 +19,8 @@ class LLMChain_Chains implements INode {
         this.name = 'llmChain'
         this.type = '查询链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'LLM Chain：适用于单次查询问题的链，无上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(LLMChain)]
         this.inputs = [

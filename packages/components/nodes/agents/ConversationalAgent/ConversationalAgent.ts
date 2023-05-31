@@ -20,7 +20,8 @@ class ConversationalAgent_Agents implements INode {
         this.label = '对话型智能体'
         this.name = 'conversationalAgent'
         this.type = '代理执行器'
-        this.category = '智能体-Agent\n\n（作用：复杂目标的处理中心，前接语言模型和允许工具列表等）'
+        this.category =
+            '智能体-Agent\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：复杂目标的处理中心，前接语言模型和允许工具列表等'
         this.icon = 'agent.svg'
         this.description = 'Conversational Agent：聊天场景使用，可以根据聊天内容，选择合适工具增强答案的智能体'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]

@@ -17,7 +17,8 @@ class SerpAPI_Tools implements INode {
         this.name = 'serpAPI'
         this.type = 'SerpAPI工具'
         this.icon = 'serp.png'
-        this.category = '工具-Tool\n\n（作用：给智能体提供不同种类的工具以增强其能力，后接智能体）'
+        this.category =
+            '工具-Tool\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：给智能体提供不同种类的工具以增强其能力，后接智能体'
         this.description = 'SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力'
         this.inputs = [
             {

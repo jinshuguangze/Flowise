@@ -18,7 +18,8 @@ class MultiRetrievalQAChain_Chains implements INode {
         this.name = 'multiRetrievalQAChain'
         this.type = '多检索器QA链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description =
             'MultiRetrieval QA Chain：自动从多个向量检索器中选择合适检索器的QA链，无上下文记忆，QA链是指使用向量数据库+向量检索器来存储数据'
         this.baseClasses = [this.type, ...getBaseClasses(MultiRetrievalQAChain)]

@@ -33,7 +33,8 @@ class ConversationalRetrievalQAChain_Chains implements INode {
         this.name = 'conversationalRetrievalQAChain'
         this.type = '对话QA链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'Conversational Retrieval QA Chain：具有上下文记忆的QA链，QA链是指使用向量数据库+向量检索器来存储数据'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationalRetrievalQAChain)]
         this.inputs = [

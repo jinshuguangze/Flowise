@@ -18,7 +18,8 @@ class AutoGPT_Agents implements INode {
         this.label = 'AutoGPT智能体'
         this.name = 'autoGPT'
         this.type = 'AutoGPT智能体'
-        this.category = '智能体-Agent\n\n（作用：复杂目标的处理中心，前接语言模型和允许工具列表等）'
+        this.category =
+            '智能体-Agent\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：复杂目标的处理中心，前接语言模型和允许工具列表等'
         this.icon = 'autogpt.png'
         this.description =
             'AutoGPT：一个具有综合能力的智能体，它通过自我引导形成思维链，使用一切它能利用的网络信息，工具和手段，完成一个复杂的目标'

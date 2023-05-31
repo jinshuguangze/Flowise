@@ -19,7 +19,8 @@ class RetrievalQAChain_Chains implements INode {
         this.name = 'retrievalQAChain'
         this.type = 'QA链'
         this.icon = 'chain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'Retrieval QA Chain：无上下文记忆，使用向量检索器来查询问题'
         this.baseClasses = [this.type, ...getBaseClasses(RetrievalQAChain)]
         this.inputs = [

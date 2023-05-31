@@ -19,7 +19,8 @@ class POSTApiChain_Chains implements INode {
         this.name = 'postApiChain'
         this.type = 'POST API链'
         this.icon = 'apichain.svg'
-        this.category = '链-Chain\n\n（作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上）'
+        this.category =
+            '链-Chain\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上'
         this.description = 'POST Api Chain：根据API文档去POST网页的链，无上下文记忆'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [

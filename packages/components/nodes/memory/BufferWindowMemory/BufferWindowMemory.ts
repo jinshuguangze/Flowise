@@ -17,7 +17,8 @@ class BufferWindowMemory_Memory implements INode {
         this.name = 'bufferWindowMemory'
         this.type = '窗口缓存记忆模式'
         this.icon = 'memory.svg'
-        this.category = '记忆模式-Memory\n\n（作用：提供不同策略的记忆方式，后接需要记忆的链或智能体）'
+        this.category =
+            '记忆模式-Memory\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000（作用：提供不同策略的记忆方式，后接需要记忆的链或智能体）'
         this.description =
             'Buffer Window Memory：只允许最新的K个对话进入缓存，提出新的问题时将这K个对话缓存添加进提示词，产生的新一轮问答将替代掉最老的问答记忆缓存'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]

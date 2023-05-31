@@ -18,7 +18,8 @@ class ConversationSummaryMemory_Memory implements INode {
         this.name = 'conversationSummaryMemory'
         this.type = '对话总结记忆模式'
         this.icon = 'memory.svg'
-        this.category = '记忆模式-Memory\n\n（作用：提供不同策略的记忆方式，后接需要记忆的链或智能体）'
+        this.category =
+            '记忆模式-Memory\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000（作用：提供不同策略的记忆方式，后接需要记忆的链或智能体）'
         this.description = 'Conversation Summary Memory：将不断总结上下文对话，提炼出概要后缓存'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationSummaryMemory)]
         this.inputs = [

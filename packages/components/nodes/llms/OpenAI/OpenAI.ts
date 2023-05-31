@@ -17,7 +17,8 @@ class OpenAI_LLMs implements INode {
         this.name = 'openAI'
         this.type = 'OpenAI语言模型'
         this.icon = 'openai.png'
-        this.category = '普通语言模型-LLM\n\n（作用：无对话能力的语言模型，后接链或智能体）'
+        this.category =
+            '普通语言模型-LLM\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：无对话聊天能力的生成式语言模型，后接链或智能体'
         this.description = 'OpenAI：OpenAI公司的普通语言模型，GPT系列'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [

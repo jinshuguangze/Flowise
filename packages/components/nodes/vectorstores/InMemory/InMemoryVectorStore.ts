@@ -21,7 +21,7 @@ class InMemoryVectorStore_VectorStores implements INode {
         this.type = '内存向量'
         this.icon = 'memory.svg'
         this.category =
-            '向量存储器-VectorStore\n\n（作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，或输出自建检索器直接接链或智能体）'
+            '向量存储器-VectorStore\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体'
         this.description = 'Memory Vector Store：使用内存将文档转化为向量并临时存储，不支持名称访问，再次使用函数时或程序关闭后原向量会丢失'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
