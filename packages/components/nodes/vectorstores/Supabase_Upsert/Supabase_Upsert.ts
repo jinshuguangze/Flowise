@@ -29,7 +29,7 @@ class SupabaseUpsert_VectorStores implements INode {
             {
                 label: '文档数据',
                 name: 'document',
-                type: 'Document',
+                type: '文档数据',
                 list: true
             },
             {
