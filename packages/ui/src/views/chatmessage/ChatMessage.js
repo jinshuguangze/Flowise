@@ -244,9 +244,9 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                                     {/* Display the correct icon depending on the message type */}
                                     {message.type === 'apiMessage' ? (
                                         <img
-                                            src='http://www.meiguguide.com/wp-content/uploads/2019/02/022619_1258_1.jpg'
+                                            src='	https://github.com/jinshuguangze/Flowise/blob/main…rc/assets/images/changyou_logo_small.jpg?raw=true'
                                             alt='AI'
-                                            width='40'
+                                            width='30'
                                             height='30'
                                             className='boticon'
                                         />
