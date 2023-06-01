@@ -1,0 +1,442 @@
+{
+    "description": "使用多提示词模版链来应对复杂提问场景",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 633,
+            "id": "promptRetriever_3",
+            "position": {
+                "x": 1109.2102892809917,
+                "y": -14.065287810082793
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptRetriever_3",
+                "label": "提示词检索器",
+                "name": "promptRetriever",
+                "type": "提示词检索器",
+                "baseClasses": ["提示词检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Prompt Retriever：每个提示词检索器可设定一种提示词使用场景，多个提示词检索器输入，可供多提示词模板链进行查询",
+                "inputParams": [
+                    {
+                        "label": "提示词名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "physics-qa",
+                        "id": "promptRetriever_3-input-name-string"
+                    },
+                    {
+                        "label": "提示词作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明提示词的作用，以及应该在何时使用",
+                        "placeholder": "此提示词能够很好地生成都市怪谈类手游的游戏名称",
+                        "id": "promptRetriever_3-input-description-string"
+                    },
+                    {
+                        "label": "提示词前置系统信息",
+                        "name": "systemMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "假如你是一名游戏制作人，你现在正在制作一款主题为都市怪谈背景的手游，现在要为这款游戏取个名字，要求简短突出游戏特色，可以适当去扩展概念以达到更加贴合中国人习惯的手游名字，直接输出你认为最合适的五个游戏名即可，不用解释自己为什么选择它们",
+                        "id": "promptRetriever_3-input-systemMessage-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "name": "资深律师",
+                    "description": "能够很好地回答法律问题",
+                    "systemMessage": "你是一名经验丰富的律师，非常擅长问答法律相关的问题，并会引入中国大陆的法条和案例作为佐证。当你遇到不会的问题的时候，回答不知道即可。"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptRetriever_3-output-promptRetriever-提示词检索器",
+                        "name": "promptRetriever",
+                        "label": "提示词检索器",
+                        "type": "提示词检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1109.2102892809917,
+                "y": -14.065287810082793
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_1",
+            "position": {
+                "x": 1467.8162478008599,
+                "y": -290.4106756165902
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_1",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_1-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_1-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_1-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1467.8162478008599,
+                "y": -290.4106756165902
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 633,
+            "id": "promptRetriever_4",
+            "position": {
+                "x": 739.7886981982188,
+                "y": -328.36026809612633
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptRetriever_4",
+                "label": "提示词检索器",
+                "name": "promptRetriever",
+                "type": "提示词检索器",
+                "baseClasses": ["提示词检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Prompt Retriever：每个提示词检索器可设定一种提示词使用场景，多个提示词检索器输入，可供多提示词模板链进行查询",
+                "inputParams": [
+                    {
+                        "label": "提示词名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "physics-qa",
+                        "id": "promptRetriever_4-input-name-string"
+                    },
+                    {
+                        "label": "提示词作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明提示词的作用，以及应该在何时使用",
+                        "placeholder": "此提示词能够很好地生成都市怪谈类手游的游戏名称",
+                        "id": "promptRetriever_4-input-description-string"
+                    },
+                    {
+                        "label": "提示词前置系统信息",
+                        "name": "systemMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "假如你是一名游戏制作人，你现在正在制作一款主题为都市怪谈背景的手游，现在要为这款游戏取个名字，要求简短突出游戏特色，可以适当去扩展概念以达到更加贴合中国人习惯的手游名字，直接输出你认为最合适的五个游戏名即可，不用解释自己为什么选择它们",
+                        "id": "promptRetriever_4-input-systemMessage-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "name": "游戏设计专家",
+                    "description": "能够很好地回答游戏设计问题",
+                    "systemMessage": "你是一名经验丰富的游戏设计综合专家，非常擅长问答手游设计相关的问题，包括项目排期，资金链管理，项目文档管理，策划案编写，数值模型设计，长期运营技巧，爆款潜质游戏搜寻，战略方向把控，游戏用研反馈，游戏引擎技术，光照渲染方案模型，游戏文案设计，游戏美术把控等，当你遇到不会的问题的时候，回答不知道即可。"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptRetriever_4-output-promptRetriever-提示词检索器",
+                        "name": "promptRetriever",
+                        "label": "提示词检索器",
+                        "type": "提示词检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 739.7886981982188,
+                "y": -328.36026809612633
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 633,
+            "id": "promptRetriever_5",
+            "position": {
+                "x": 1103.7220611162138,
+                "y": -685.5917210988425
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptRetriever_5",
+                "label": "提示词检索器",
+                "name": "promptRetriever",
+                "type": "提示词检索器",
+                "baseClasses": ["提示词检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Prompt Retriever：每个提示词检索器可设定一种提示词使用场景，多个提示词检索器输入，可供多提示词模板链进行查询",
+                "inputParams": [
+                    {
+                        "label": "提示词名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "physics-qa",
+                        "id": "promptRetriever_5-input-name-string"
+                    },
+                    {
+                        "label": "提示词作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明提示词的作用，以及应该在何时使用",
+                        "placeholder": "此提示词能够很好地生成都市怪谈类手游的游戏名称",
+                        "id": "promptRetriever_5-input-description-string"
+                    },
+                    {
+                        "label": "提示词前置系统信息",
+                        "name": "systemMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "假如你是一名游戏制作人，你现在正在制作一款主题为都市怪谈背景的手游，现在要为这款游戏取个名字，要求简短突出游戏特色，可以适当去扩展概念以达到更加贴合中国人习惯的手游名字，直接输出你认为最合适的五个游戏名即可，不用解释自己为什么选择它们",
+                        "id": "promptRetriever_5-input-systemMessage-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "name": "会计专家",
+                    "description": "能够很好地回答财务报表相关的问题",
+                    "systemMessage": "你是一名经验丰富的会计专家，非常擅长问答项目财务模型，会计出入账管理，财务报表分析等，当你遇到不会的问题的时候，回答不知道即可。"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptRetriever_5-output-promptRetriever-提示词检索器",
+                        "name": "promptRetriever",
+                        "label": "提示词检索器",
+                        "type": "提示词检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1103.7220611162138,
+                "y": -685.5917210988425
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "multiPromptChain_2",
+            "position": {
+                "x": 1866.231216760837,
+                "y": 312.35908749230657
+            },
+            "type": "customNode",
+            "data": {
+                "id": "multiPromptChain_2",
+                "label": "多提示词模板链",
+                "name": "multiPromptChain",
+                "type": "多提示词模板链",
+                "baseClasses": ["多提示词模板链", "MultiRouteChain", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "MultiPrompt Chain：自动从多个提示词模板中选择合适提示词的链，无上下文记忆",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "multiPromptChain_2-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "提示词检索器",
+                        "name": "promptRetriever",
+                        "type": "提示词检索器",
+                        "list": true,
+                        "id": "multiPromptChain_2-input-promptRetriever-提示词检索器"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_1.data.instance}}",
+                    "promptRetriever": [
+                        "{{promptRetriever_5.data.instance}}",
+                        "{{promptRetriever_4.data.instance}}",
+                        "{{promptRetriever_3.data.instance}}"
+                    ]
+                },
+                "outputAnchors": [
+                    {
+                        "id": "multiPromptChain_2-output-multiPromptChain-多提示词模板链|MultiRouteChain|BaseChain|BaseLangChain",
+                        "name": "multiPromptChain",
+                        "label": "多提示词模板链",
+                        "type": "多提示词模板链 | MultiRouteChain | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1866.231216760837,
+                "y": 312.35908749230657
+            },
+            "selected": false,
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "chatOpenAI_1",
+            "sourceHandle": "chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "multiPromptChain_2",
+            "targetHandle": "multiPromptChain_2-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_1-chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-multiPromptChain_2-multiPromptChain_2-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "promptRetriever_5",
+            "sourceHandle": "promptRetriever_5-output-promptRetriever-提示词检索器",
+            "target": "multiPromptChain_2",
+            "targetHandle": "multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "type": "buttonedge",
+            "id": "promptRetriever_5-promptRetriever_5-output-promptRetriever-提示词检索器-multiPromptChain_2-multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "promptRetriever_4",
+            "sourceHandle": "promptRetriever_4-output-promptRetriever-提示词检索器",
+            "target": "multiPromptChain_2",
+            "targetHandle": "multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "type": "buttonedge",
+            "id": "promptRetriever_4-promptRetriever_4-output-promptRetriever-提示词检索器-multiPromptChain_2-multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "promptRetriever_3",
+            "sourceHandle": "promptRetriever_3-output-promptRetriever-提示词检索器",
+            "target": "multiPromptChain_2",
+            "targetHandle": "multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "type": "buttonedge",
+            "id": "promptRetriever_3-promptRetriever_3-output-promptRetriever-提示词检索器-multiPromptChain_2-multiPromptChain_2-input-promptRetriever-提示词检索器",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

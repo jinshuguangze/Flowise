@@ -1,32 +1,32 @@
 {
-    "description": "Answer questions over a SQL database",
+    "description": "SQL数据库链的使用",
     "nodes": [
         {
             "width": 300,
-            "height": 524,
-            "id": "openAI_1",
+            "height": 526,
+            "id": "openAI_2",
             "position": {
-                "x": 835.4668837832456,
-                "y": 182.4724119898708
+                "x": 836.0742619391992,
+                "y": 739.3742396120092
             },
             "type": "customNode",
             "data": {
-                "id": "openAI_1",
-                "label": "OpenAI",
+                "id": "openAI_2",
+                "label": "OpenAI语言模型",
                 "name": "openAI",
-                "type": "OpenAI",
-                "baseClasses": ["OpenAI", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
-                "category": "LLMs",
-                "description": "Wrapper around OpenAI large language models",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
                 "inputParams": [
                     {
-                        "label": "OpenAI Api Key",
+                        "label": "OpenAI Api密匙",
                         "name": "openAIApiKey",
                         "type": "password",
-                        "id": "openAI_1-input-openAIApiKey-password"
+                        "id": "openAI_2-input-openAIApiKey-password"
                     },
                     {
-                        "label": "Model Name",
+                        "label": "普通语言模型选择",
                         "name": "modelName",
                         "type": "options",
                         "options": [
@@ -49,71 +49,72 @@
                         ],
                         "default": "text-davinci-003",
                         "optional": true,
-                        "id": "openAI_1-input-modelName-options"
+                        "id": "openAI_2-input-modelName-options"
                     },
                     {
-                        "label": "Temperature",
+                        "label": "温度值",
                         "name": "temperature",
                         "type": "number",
                         "default": 0.7,
                         "optional": true,
-                        "id": "openAI_1-input-temperature-number"
+                        "id": "openAI_2-input-temperature-number"
                     },
                     {
-                        "label": "Max Tokens",
+                        "label": "最大Token上限",
                         "name": "maxTokens",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-maxTokens-number"
+                        "id": "openAI_2-input-maxTokens-number"
                     },
                     {
-                        "label": "Top Probability",
+                        "label": "Top P值",
                         "name": "topP",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-topP-number"
+                        "id": "openAI_2-input-topP-number"
                     },
                     {
-                        "label": "Best Of",
+                        "label": "输出候选数量",
                         "name": "bestOf",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-bestOf-number"
+                        "id": "openAI_2-input-bestOf-number"
                     },
                     {
-                        "label": "Frequency Penalty",
+                        "label": "频率惩罚值",
                         "name": "frequencyPenalty",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-frequencyPenalty-number"
+                        "id": "openAI_2-input-frequencyPenalty-number"
                     },
                     {
-                        "label": "Presence Penalty",
+                        "label": "存在惩罚值",
                         "name": "presencePenalty",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-presencePenalty-number"
+                        "id": "openAI_2-input-presencePenalty-number"
                     },
                     {
                         "label": "Batch Size",
                         "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-batchSize-number"
+                        "id": "openAI_2-input-batchSize-number"
                     },
                     {
-                        "label": "Timeout",
+                        "label": "超时时长",
                         "name": "timeout",
                         "type": "number",
                         "optional": true,
                         "additionalParams": true,
-                        "id": "openAI_1-input-timeout-number"
+                        "id": "openAI_2-input-timeout-number"
                     }
                 ],
                 "inputAnchors": [],
@@ -130,10 +131,10 @@
                 },
                 "outputAnchors": [
                     {
-                        "id": "openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "id": "openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
                         "name": "openAI",
-                        "label": "OpenAI",
-                        "type": "OpenAI | BaseLLM | BaseLanguageModel | BaseLangChain"
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
                     }
                 ],
                 "outputs": {},
@@ -141,31 +142,31 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 835.4668837832456,
-                "y": 182.4724119898708
+                "x": 836.0742619391992,
+                "y": 739.3742396120092
             },
             "dragging": false
         },
         {
             "width": 300,
-            "height": 424,
-            "id": "sqlDatabaseChain_0",
+            "height": 425,
+            "id": "sqlDatabaseChain_1",
             "position": {
-                "x": 1255.0372022176111,
-                "y": 217.507437391498
+                "x": 1252.7392849483701,
+                "y": 775.0058328803589
             },
             "type": "customNode",
             "data": {
-                "id": "sqlDatabaseChain_0",
-                "label": "Sql Database Chain",
+                "id": "sqlDatabaseChain_1",
+                "label": "SQL数据库链",
                 "name": "sqlDatabaseChain",
-                "type": "SqlDatabaseChain",
-                "baseClasses": ["SqlDatabaseChain", "BaseChain", "BaseLangChain"],
-                "category": "Chains",
-                "description": "Answer questions over a SQL database",
+                "type": "SQL数据库链",
+                "baseClasses": ["SQL数据库链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "Sql Database Chain：从SQL数据中单次查询问题的链，无上下文记忆",
                 "inputParams": [
                     {
-                        "label": "Database",
+                        "label": "数据库",
                         "name": "database",
                         "type": "options",
                         "options": [
@@ -175,35 +176,35 @@
                             }
                         ],
                         "default": "sqlite",
-                        "id": "sqlDatabaseChain_0-input-database-options"
+                        "id": "sqlDatabaseChain_1-input-database-options"
                     },
                     {
-                        "label": "Database File Path",
+                        "label": "数据库文件地址",
                         "name": "dbFilePath",
                         "type": "string",
                         "placeholder": "C:/Users/chinook.db",
-                        "id": "sqlDatabaseChain_0-input-dbFilePath-string"
+                        "id": "sqlDatabaseChain_1-input-dbFilePath-string"
                     }
                 ],
                 "inputAnchors": [
                     {
-                        "label": "Language Model",
+                        "label": "语言模型",
                         "name": "model",
                         "type": "BaseLanguageModel",
-                        "id": "sqlDatabaseChain_0-input-model-BaseLanguageModel"
+                        "id": "sqlDatabaseChain_1-input-model-BaseLanguageModel"
                     }
                 ],
                 "inputs": {
-                    "model": "{{openAI_1.data.instance}}",
+                    "model": "{{openAI_2.data.instance}}",
                     "database": "sqlite",
                     "dbFilePath": ""
                 },
                 "outputAnchors": [
                     {
-                        "id": "sqlDatabaseChain_0-output-sqlDatabaseChain-SqlDatabaseChain|BaseChain|BaseLangChain",
+                        "id": "sqlDatabaseChain_1-output-sqlDatabaseChain-SQL数据库链|BaseChain|BaseLangChain",
                         "name": "sqlDatabaseChain",
-                        "label": "SqlDatabaseChain",
-                        "type": "SqlDatabaseChain | BaseChain | BaseLangChain"
+                        "label": "SQL数据库链",
+                        "type": "SQL数据库链 | BaseChain | BaseLangChain"
                     }
                 ],
                 "outputs": {},
@@ -211,20 +212,20 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 1255.0372022176111,
-                "y": 217.507437391498
+                "x": 1252.7392849483701,
+                "y": 775.0058328803589
             },
             "dragging": false
         }
     ],
     "edges": [
         {
-            "source": "openAI_1",
-            "sourceHandle": "openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain",
-            "target": "sqlDatabaseChain_0",
-            "targetHandle": "sqlDatabaseChain_0-input-model-BaseLanguageModel",
+            "source": "openAI_2",
+            "sourceHandle": "openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "sqlDatabaseChain_1",
+            "targetHandle": "sqlDatabaseChain_1-input-model-BaseLanguageModel",
             "type": "buttonedge",
-            "id": "openAI_1-openAI_1-output-openAI-OpenAI|BaseLLM|BaseLanguageModel|BaseLangChain-sqlDatabaseChain_0-sqlDatabaseChain_0-input-model-BaseLanguageModel",
+            "id": "openAI_2-openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-sqlDatabaseChain_1-sqlDatabaseChain_1-input-model-BaseLanguageModel",
             "data": {
                 "label": ""
             }

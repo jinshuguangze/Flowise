@@ -1,0 +1,637 @@
+{
+    "description": "链式使用查询链来实现自动化生成",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 407,
+            "id": "llmChain_4",
+            "position": {
+                "x": 374.5512749918887,
+                "y": 1323.9588775686204
+            },
+            "type": "customNode",
+            "data": {
+                "id": "llmChain_4",
+                "label": "查询链",
+                "name": "llmChain",
+                "type": "查询链",
+                "baseClasses": ["查询链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "LLM Chain：适用于单次查询问题的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "chainName",
+                        "type": "string",
+                        "placeholder": "Name Your Chain",
+                        "optional": true,
+                        "id": "llmChain_4-input-chainName-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "llmChain_4-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "提示词模版",
+                        "name": "prompt",
+                        "type": "BasePromptTemplate",
+                        "id": "llmChain_4-input-prompt-BasePromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_5.data.instance}}",
+                    "prompt": "{{promptTemplate_4.data.instance}}",
+                    "chainName": "详细菜谱链"
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "llmChain_4-output-llmChain-查询链|BaseChain|BaseLangChain",
+                                "name": "llmChain",
+                                "label": "查询链",
+                                "type": "查询链 | BaseChain | BaseLangChain"
+                            },
+                            {
+                                "id": "llmChain_4-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "输出预测",
+                                "type": "string"
+                            }
+                        ],
+                        "default": "llmChain"
+                    }
+                ],
+                "outputs": {
+                    "output": "llmChain"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 374.5512749918887,
+                "y": 1323.9588775686204
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 407,
+            "id": "llmChain_5",
+            "position": {
+                "x": -362.63519856873404,
+                "y": 1330.274693573169
+            },
+            "type": "customNode",
+            "data": {
+                "id": "llmChain_5",
+                "label": "查询链",
+                "name": "llmChain",
+                "type": "查询链",
+                "baseClasses": ["查询链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "LLM Chain：适用于单次查询问题的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "chainName",
+                        "type": "string",
+                        "placeholder": "Name Your Chain",
+                        "optional": true,
+                        "id": "llmChain_5-input-chainName-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "llmChain_5-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "提示词模版",
+                        "name": "prompt",
+                        "type": "BasePromptTemplate",
+                        "id": "llmChain_5-input-prompt-BasePromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_4.data.instance}}",
+                    "prompt": "{{promptTemplate_5.data.instance}}",
+                    "chainName": "推荐菜肴链"
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "llmChain_4-output-llmChain-查询链|BaseChain|BaseLangChain",
+                                "name": "llmChain",
+                                "label": "查询链",
+                                "type": "查询链 | BaseChain | BaseLangChain"
+                            },
+                            {
+                                "id": "llmChain_4-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "输出预测",
+                                "type": "string"
+                            }
+                        ],
+                        "default": "llmChain"
+                    }
+                ],
+                "outputs": {
+                    "output": "outputPrediction"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -362.63519856873404,
+                "y": 1330.274693573169
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 534,
+            "id": "promptTemplate_4",
+            "position": {
+                "x": 2.1954472523830475,
+                "y": 1496.6517464826854
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptTemplate_4",
+                "label": "查询提示词模板",
+                "name": "promptTemplate",
+                "type": "查询提示词模板",
+                "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
+                "category": "提示词模板-Prompt　　　　　　　　　　　　　作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器",
+                "description": "Prompt Template：适用于查询型单次生成的提示词模版",
+                "inputParams": [
+                    {
+                        "label": "提示词模版",
+                        "name": "template",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "《 {product}》手游的主要玩法是什么?",
+                        "id": "promptTemplate_4-input-template-string"
+                    },
+                    {
+                        "label": "设定提示词变量值",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"product\": \"阴阳师\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "promptTemplate_4-input-promptValues-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "template": "你的任务是告诉我{result}这道菜的按步骤做法，每个步骤前需要标号，和对应需要准备的详细食材，在输出结果前，应该取这样的标题：\n“{local}的特色菜肴推荐——{result}”",
+                    "promptValues": "{\n  \"local\":\"{{question}}\",\n  \"result\":\"{{llmChain_5.data.instance}}\"\n}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptTemplate_4-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+                        "name": "promptTemplate",
+                        "label": "查询提示词模板",
+                        "type": "PromptTemplate | BaseStringPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 2.1954472523830475,
+                "y": 1496.6517464826854
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_4",
+            "position": {
+                "x": -754.7558478606538,
+                "y": 942.5929313455296
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_4",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "default": "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",
+                        "type": "password",
+                        "id": "openAI_4-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_4-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_4-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": "0",
+                    "maxTokens": "",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -754.7558478606538,
+                "y": 942.5929313455296
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_5",
+            "position": {
+                "x": -1.0593636136036082,
+                "y": 935.7180854684827
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_5",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAI_5-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_5-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_5-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_5-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": "0",
+                    "maxTokens": "3000",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_5-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -1.0593636136036082,
+                "y": 935.7180854684827
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 534,
+            "id": "promptTemplate_5",
+            "position": {
+                "x": -752.5409622260179,
+                "y": 1504.9442536703302
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptTemplate_5",
+                "label": "查询提示词模板",
+                "name": "promptTemplate",
+                "type": "查询提示词模板",
+                "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
+                "category": "提示词模板-Prompt　　　　　　　　　　　　　作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器",
+                "description": "Prompt Template：适用于查询型单次生成的提示词模版",
+                "inputParams": [
+                    {
+                        "label": "提示词模版",
+                        "name": "template",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "《 {product}》手游的主要玩法是什么?",
+                        "id": "promptTemplate_5-input-template-string"
+                    },
+                    {
+                        "label": "设定提示词变量值",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"product\": \"阴阳师\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "promptTemplate_5-input-promptValues-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "template": "你的任务是给我推荐{local}的特色菜，只用输出单个菜名即可，不用输出多余的话",
+                    "promptValues": "{\n  \"local\":\"{{question}}\"\n}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptTemplate_5-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+                        "name": "promptTemplate",
+                        "label": "查询提示词模板",
+                        "type": "PromptTemplate | BaseStringPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -752.5409622260179,
+                "y": 1504.9442536703302
+            },
+            "selected": false,
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "promptTemplate_4",
+            "sourceHandle": "promptTemplate_4-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_4",
+            "targetHandle": "llmChain_4-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "promptTemplate_4-promptTemplate_4-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate-llmChain_4-llmChain_4-input-prompt-BasePromptTemplate",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_5",
+            "sourceHandle": "openAI_5-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "llmChain_4",
+            "targetHandle": "llmChain_4-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_5-openAI_5-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-llmChain_4-llmChain_4-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_4",
+            "sourceHandle": "openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "llmChain_5",
+            "targetHandle": "llmChain_5-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_4-openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-llmChain_5-llmChain_5-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "promptTemplate_5",
+            "sourceHandle": "promptTemplate_5-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_5",
+            "targetHandle": "llmChain_5-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "promptTemplate_5-promptTemplate_5-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate-llmChain_5-llmChain_5-input-prompt-BasePromptTemplate",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "llmChain_5",
+            "sourceHandle": "llmChain_4-output-outputPrediction-string",
+            "target": "promptTemplate_4",
+            "targetHandle": "promptTemplate_4-input-promptValues-string",
+            "type": "buttonedge",
+            "id": "llmChain_5-llmChain_4-output-outputPrediction-string-promptTemplate_4-promptTemplate_4-input-promptValues-string",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

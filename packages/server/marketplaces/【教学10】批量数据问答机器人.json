@@ -1,0 +1,559 @@
+{
+    "description": "使用Pinecone和文件夹读取器以存取大量散乱数据",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 378,
+            "id": "recursiveCharacterTextSplitter_0",
+            "position": {
+                "x": -310.86074968213546,
+                "y": 436.2802150793172
+            },
+            "type": "customNode",
+            "data": {
+                "id": "recursiveCharacterTextSplitter_0",
+                "label": "递归字符分割器",
+                "name": "recursiveCharacterTextSplitter",
+                "type": "递归字符分割器",
+                "baseClasses": ["递归字符分割器", "TextSplitter"],
+                "category": "文本分割器-TextSplitter　　　　　　　　　　　作用：提供不同分割策略将文档数据分割成文档块，后接数据读取器",
+                "description": "按顺序地使用字符列表里的字符分割文档，直到每个分割后的文档块符合大小，默认情况下，字符列表为[\"\\n\\n\", \"\\n\", \" \"]，此分割器适用于一般性的文档内容分割",
+                "inputParams": [
+                    {
+                        "label": "文档块大小",
+                        "name": "chunkSize",
+                        "type": "number",
+                        "default": 1000,
+                        "optional": true,
+                        "id": "recursiveCharacterTextSplitter_0-input-chunkSize-number"
+                    },
+                    {
+                        "label": "文档块重叠",
+                        "name": "chunkOverlap",
+                        "type": "number",
+                        "optional": true,
+                        "id": "recursiveCharacterTextSplitter_0-input-chunkOverlap-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "chunkSize": 1000,
+                    "chunkOverlap": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-递归字符分割器|TextSplitter",
+                        "name": "recursiveCharacterTextSplitter",
+                        "label": "递归字符分割器",
+                        "type": "递归字符分割器 | TextSplitter"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -310.86074968213546,
+                "y": 436.2802150793172
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 382,
+            "id": "folderFiles_0",
+            "position": {
+                "x": 101.64697477801613,
+                "y": 429.73306537978596
+            },
+            "type": "customNode",
+            "data": {
+                "id": "folderFiles_0",
+                "label": "文件夹读取器",
+                "name": "folderFiles",
+                "type": "文档数据",
+                "baseClasses": ["文档数据"],
+                "category": "数据读取器-DocumentLoader　　　　　　　　　　作用：读取外部输入的数据，前接文本分割器，后接向量存储器",
+                "description": "Folder Files：从文件夹中读取所有文件的数据",
+                "inputParams": [
+                    {
+                        "label": "文件夹路径",
+                        "name": "folderPath",
+                        "type": "string",
+                        "placeholder": "",
+                        "id": "folderFiles_0-input-folderPath-string"
+                    },
+                    {
+                        "label": "元数据",
+                        "name": "metadata",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "folderFiles_0-input-metadata-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "文本分割器",
+                        "name": "textSplitter",
+                        "type": "TextSplitter",
+                        "optional": true,
+                        "id": "folderFiles_0-input-textSplitter-TextSplitter"
+                    }
+                ],
+                "inputs": {
+                    "folderPath": "",
+                    "textSplitter": "{{recursiveCharacterTextSplitter_0.data.instance}}",
+                    "metadata": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "folderFiles_0-output-folderFiles-文档数据",
+                        "name": "folderFiles",
+                        "label": "文档数据",
+                        "type": "文档数据"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 101.64697477801613,
+                "y": 429.73306537978596
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_0",
+            "position": {
+                "x": 103.77270731009932,
+                "y": 863.2280034017599
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_0",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 103.77270731009932,
+                "y": 863.2280034017599
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 334,
+            "id": "conversationalRetrievalQAChain_0",
+            "position": {
+                "x": 904.5926312507656,
+                "y": 574.1289096708788
+            },
+            "type": "customNode",
+            "data": {
+                "id": "conversationalRetrievalQAChain_0",
+                "label": "对话QA链",
+                "name": "conversationalRetrievalQAChain",
+                "type": "对话QA链",
+                "baseClasses": ["对话QA链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "Conversational Retrieval QA Chain：具有上下文记忆的QA链，QA链是指使用向量数据库+向量检索器来存储数据",
+                "inputParams": [
+                    {
+                        "label": "前置系统信息",
+                        "name": "systemMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "optional": true,
+                        "placeholder": "I want you to act as a document that I am having a conversation with. Your name is \"AI Assistant\". You will provide me with answers from the given info. If the answer is not included, say exactly \"Hmm, I am not sure.\" and stop after that. Refuse to answer any question not about the info. Never break character.Output with Chinese.",
+                        "id": "conversationalRetrievalQAChain_0-input-systemMessagePrompt-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "conversationalRetrievalQAChain_0-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "type": "BaseRetriever",
+                        "id": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_0.data.instance}}",
+                    "vectorStoreRetriever": "{{pineconeUpsert_0.data.instance}}",
+                    "systemMessagePrompt": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "conversationalRetrievalQAChain_0-output-conversationalRetrievalQAChain-对话QA链|BaseChain|BaseLangChain",
+                        "name": "conversationalRetrievalQAChain",
+                        "label": "对话QA链",
+                        "type": "对话QA链 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 904.5926312507656,
+                "y": 574.1289096708788
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 703,
+            "id": "pineconeUpsert_0",
+            "position": {
+                "x": 503.2047790660315,
+                "y": 762.1592768790528
+            },
+            "type": "customNode",
+            "data": {
+                "id": "pineconeUpsert_0",
+                "label": "Pinecone更新存储",
+                "name": "pineconeUpsert",
+                "type": "Pinecone向量",
+                "baseClasses": ["Pinecone向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Pinecone Upsert：使用Pinecone数据库将文档转化为向量并上传存储",
+                "inputParams": [
+                    {
+                        "label": "Pinecone Api密匙",
+                        "name": "pineconeApiKey",
+                        "type": "password",
+                        "id": "pineconeUpsert_0-input-pineconeApiKey-password"
+                    },
+                    {
+                        "label": "Pinecone环境",
+                        "name": "pineconeEnv",
+                        "placeholder": "my-pinecone-environment",
+                        "type": "string",
+                        "id": "pineconeUpsert_0-input-pineconeEnv-string"
+                    },
+                    {
+                        "label": "Pinecone索引",
+                        "name": "pineconeIndex",
+                        "placeholder": "my-pinecone-index",
+                        "type": "string",
+                        "id": "pineconeUpsert_0-input-pineconeIndex-string"
+                    },
+                    {
+                        "label": "Pinecone命名空间",
+                        "name": "pineconeNamespace",
+                        "type": "string",
+                        "placeholder": "my-pinecone-namespace",
+                        "optional": true,
+                        "id": "pineconeUpsert_0-input-pineconeNamespace-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "文档数据",
+                        "name": "document",
+                        "type": "文档数据",
+                        "list": true,
+                        "id": "pineconeUpsert_0-input-document-文档数据"
+                    },
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "pineconeUpsert_0-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "document": ["{{folderFiles_0.data.instance}}"],
+                    "embeddings": "{{openAIEmbeddings_0.data.instance}}",
+                    "pineconeEnv": "",
+                    "pineconeIndex": "",
+                    "pineconeNamespace": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "pineconeUpsert_0-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Pinecone向量检索器",
+                                "type": "Pinecone向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "pineconeUpsert_0-output-vectorStore-Pinecone向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Pinecone向量存储器",
+                                "type": "Pinecone向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "retriever"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 503.2047790660315,
+                "y": 762.1592768790528
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_0",
+            "position": {
+                "x": 499.7799998440628,
+                "y": 187.8605371792229
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_0",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 499.7799998440628,
+                "y": 187.8605371792229
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "recursiveCharacterTextSplitter_0",
+            "sourceHandle": "recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-递归字符分割器|TextSplitter",
+            "target": "folderFiles_0",
+            "targetHandle": "folderFiles_0-input-textSplitter-TextSplitter",
+            "type": "buttonedge",
+            "id": "recursiveCharacterTextSplitter_0-recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-递归字符分割器|TextSplitter-folderFiles_0-folderFiles_0-input-textSplitter-TextSplitter",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "folderFiles_0",
+            "sourceHandle": "folderFiles_0-output-folderFiles-文档数据",
+            "target": "pineconeUpsert_0",
+            "targetHandle": "pineconeUpsert_0-input-document-文档数据",
+            "type": "buttonedge",
+            "id": "folderFiles_0-folderFiles_0-output-folderFiles-文档数据-pineconeUpsert_0-pineconeUpsert_0-input-document-文档数据",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_0",
+            "sourceHandle": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "pineconeUpsert_0",
+            "targetHandle": "pineconeUpsert_0-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_0-openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-pineconeUpsert_0-pineconeUpsert_0-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "pineconeUpsert_0",
+            "sourceHandle": "pineconeUpsert_0-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+            "target": "conversationalRetrievalQAChain_0",
+            "targetHandle": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever",
+            "type": "buttonedge",
+            "id": "pineconeUpsert_0-pineconeUpsert_0-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_0",
+            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "conversationalRetrievalQAChain_0",
+            "targetHandle": "conversationalRetrievalQAChain_0-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

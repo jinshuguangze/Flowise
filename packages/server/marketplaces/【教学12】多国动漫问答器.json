@@ -1,0 +1,862 @@
+{
+    "description": "使用多检索器QA链来获取多来源的知识库数据",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_1",
+            "position": {
+                "x": -212.41830309193503,
+                "y": 256.5021536664808
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_1",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_1-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_1-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_1-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_1-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -212.41830309193503,
+                "y": 256.5021536664808
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 705,
+            "id": "pineconeExistingIndex_1",
+            "position": {
+                "x": 241.80680589204786,
+                "y": -556.6835549578175
+            },
+            "type": "customNode",
+            "data": {
+                "id": "pineconeExistingIndex_1",
+                "label": "Pinecone读取存储",
+                "name": "pineconeExistingIndex",
+                "type": "Pinecone向量",
+                "baseClasses": ["Pinecone向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Pinecone Existing Index：从Pinecone数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Pinecone Api密匙",
+                        "name": "pineconeApiKey",
+                        "type": "password",
+                        "id": "pineconeExistingIndex_1-input-pineconeApiKey-password"
+                    },
+                    {
+                        "label": "Pinecone环境",
+                        "name": "pineconeEnv",
+                        "placeholder": "my-pinecone-environment",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_1-input-pineconeEnv-string"
+                    },
+                    {
+                        "label": "Pinecone索引",
+                        "name": "pineconeIndex",
+                        "placeholder": "my-pinecone-index",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_1-input-pineconeIndex-string"
+                    },
+                    {
+                        "label": "Pinecone命名空间",
+                        "name": "pineconeNamespace",
+                        "type": "string",
+                        "placeholder": "my-pinecone-namespace",
+                        "optional": true,
+                        "id": "pineconeExistingIndex_1-input-pineconeNamespace-string"
+                    },
+                    {
+                        "label": "Pinecone元数据过滤器",
+                        "name": "pineconeMetadataFilter",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "pineconeExistingIndex_1-input-pineconeMetadataFilter-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "pineconeExistingIndex_1-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_1.data.instance}}",
+                    "pineconeEnv": "",
+                    "pineconeIndex": "",
+                    "pineconeNamespace": "",
+                    "pineconeMetadataFilter": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "pineconeExistingIndex_1-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Pinecone向量检索器",
+                                "type": "Pinecone向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "pineconeExistingIndex_1-output-vectorStore-Pinecone向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Pinecone向量存储器",
+                                "type": "Pinecone向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 241.80680589204786,
+                "y": -556.6835549578175
+            }
+        },
+        {
+            "width": 300,
+            "height": 455,
+            "id": "chromaExistingIndex_1",
+            "position": {
+                "x": 244.2620767514208,
+                "y": 173.02294444780284
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chromaExistingIndex_1",
+                "label": "Chroma读取存储",
+                "name": "chromaExistingIndex",
+                "type": "Chroma向量",
+                "baseClasses": ["Chroma向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Chroma Existing Index：从Chroma数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Chroma数据库名称",
+                        "name": "collectionName",
+                        "type": "string",
+                        "id": "chromaExistingIndex_1-input-collectionName-string"
+                    },
+                    {
+                        "label": "Chroma URL链接",
+                        "name": "chromaURL",
+                        "type": "string",
+                        "optional": true,
+                        "id": "chromaExistingIndex_1-input-chromaURL-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "chromaExistingIndex_1-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_1.data.instance}}",
+                    "collectionName": "",
+                    "chromaURL": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "chromaExistingIndex_1-output-retriever-Chroma向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Chroma向量检索器",
+                                "type": "Chroma向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "chromaExistingIndex_1-output-vectorStore-Chroma向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Chroma向量存储器",
+                                "type": "Chroma向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 244.2620767514208,
+                "y": 173.02294444780284
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 705,
+            "id": "supabaseExistingIndex_1",
+            "position": {
+                "x": 246.7173476107937,
+                "y": 654.2560328848875
+            },
+            "type": "customNode",
+            "data": {
+                "id": "supabaseExistingIndex_1",
+                "label": "Supabase读取存储",
+                "name": "supabaseExistingIndex",
+                "type": "Supabase向量",
+                "baseClasses": ["Supabase向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Supabase Existing Index：从Supabase数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Supabase API密匙",
+                        "name": "supabaseApiKey",
+                        "type": "password",
+                        "id": "supabaseExistingIndex_1-input-supabaseApiKey-password"
+                    },
+                    {
+                        "label": "Supabase项目URL链接",
+                        "name": "supabaseProjUrl",
+                        "type": "string",
+                        "id": "supabaseExistingIndex_1-input-supabaseProjUrl-string"
+                    },
+                    {
+                        "label": "Table名称",
+                        "name": "tableName",
+                        "type": "string",
+                        "id": "supabaseExistingIndex_1-input-tableName-string"
+                    },
+                    {
+                        "label": "Query名称",
+                        "name": "queryName",
+                        "type": "string",
+                        "id": "supabaseExistingIndex_1-input-queryName-string"
+                    },
+                    {
+                        "label": "Supabase元数据过滤器",
+                        "name": "supabaseMetadataFilter",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "supabaseExistingIndex_1-input-supabaseMetadataFilter-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "supabaseExistingIndex_1-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_1.data.instance}}",
+                    "supabaseProjUrl": "",
+                    "tableName": "",
+                    "queryName": "",
+                    "supabaseMetadataFilter": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "supabaseExistingIndex_1-output-retriever-Supabase向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Supabase向量检索器",
+                                "type": "Supabase向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "supabaseExistingIndex_1-output-vectorStore-Supabase向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Supabase向量存储器",
+                                "type": "Supabase向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 246.7173476107937,
+                "y": 654.2560328848875
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 506,
+            "id": "vectorStoreRetriever_3",
+            "position": {
+                "x": 714.3870440747297,
+                "y": -560.6147326664291
+            },
+            "type": "customNode",
+            "data": {
+                "id": "vectorStoreRetriever_3",
+                "label": "向量检索器",
+                "name": "vectorStoreRetriever",
+                "type": "向量检索器",
+                "baseClasses": ["向量检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Vector Store Retriever：对向量存储生成向量检索器，可供多检索器QA链查询",
+                "inputParams": [
+                    {
+                        "label": "向量检索器名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "日本动漫",
+                        "id": "vectorStoreRetriever_3-input-name-string"
+                    },
+                    {
+                        "label": "向量检索器作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明应该在何时使用该向量检索器",
+                        "placeholder": "此检索器用于检索日本动漫",
+                        "id": "vectorStoreRetriever_3-input-description-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量存储器",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "vectorStoreRetriever_3-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "vectorStore": "{{pineconeExistingIndex_1.data.instance}}",
+                    "name": "日本动漫",
+                    "description": "用于回答日本动漫相关知识数据"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "vectorStoreRetriever_3-output-vectorStoreRetriever-向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "label": "向量检索器",
+                        "type": "向量检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 714.3870440747297,
+                "y": -560.6147326664291
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_0",
+            "position": {
+                "x": 1106.062148391302,
+                "y": -399.5462199579531
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_0",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-3.5-turbo",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1106.062148391302,
+                "y": -399.5462199579531
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 506,
+            "id": "vectorStoreRetriever_4",
+            "position": {
+                "x": 713.3878582908671,
+                "y": 173.18288819616583
+            },
+            "type": "customNode",
+            "data": {
+                "id": "vectorStoreRetriever_4",
+                "label": "向量检索器",
+                "name": "vectorStoreRetriever",
+                "type": "向量检索器",
+                "baseClasses": ["向量检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Vector Store Retriever：对向量存储生成向量检索器，可供多检索器QA链查询",
+                "inputParams": [
+                    {
+                        "label": "向量检索器名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "日本动漫",
+                        "id": "vectorStoreRetriever_4-input-name-string"
+                    },
+                    {
+                        "label": "向量检索器作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明应该在何时使用该向量检索器",
+                        "placeholder": "此检索器用于检索日本动漫",
+                        "id": "vectorStoreRetriever_4-input-description-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量存储器",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "vectorStoreRetriever_4-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "vectorStore": "{{chromaExistingIndex_1.data.instance}}",
+                    "name": "美国动漫",
+                    "description": "用于回答美国动漫相关知识数据"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "vectorStoreRetriever_4-output-vectorStoreRetriever-向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "label": "向量检索器",
+                        "type": "向量检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 713.3878582908671,
+                "y": 173.18288819616583
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 506,
+            "id": "vectorStoreRetriever_5",
+            "position": {
+                "x": 718.0263924297396,
+                "y": 847.8258884657436
+            },
+            "type": "customNode",
+            "data": {
+                "id": "vectorStoreRetriever_5",
+                "label": "向量检索器",
+                "name": "vectorStoreRetriever",
+                "type": "向量检索器",
+                "baseClasses": ["向量检索器"],
+                "category": "检索器-Retriever　　　　　　　　　　　　　　　作用：提供多个资源情况下的检索，前可接向量存储器，后接需要检索器的链或智能体",
+                "description": "Vector Store Retriever：对向量存储生成向量检索器，可供多检索器QA链查询",
+                "inputParams": [
+                    {
+                        "label": "向量检索器名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "日本动漫",
+                        "id": "vectorStoreRetriever_5-input-name-string"
+                    },
+                    {
+                        "label": "向量检索器作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "description": "使用自然语言说明应该在何时使用该向量检索器",
+                        "placeholder": "此检索器用于检索日本动漫",
+                        "id": "vectorStoreRetriever_5-input-description-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量存储器",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "vectorStoreRetriever_5-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "vectorStore": "{{supabaseExistingIndex_1.data.instance}}",
+                    "name": "国产动漫",
+                    "description": "用于回答国产动漫相关知识数据"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "vectorStoreRetriever_5-output-vectorStoreRetriever-向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "label": "向量检索器",
+                        "type": "向量检索器"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 718.0263924297396,
+                "y": 847.8258884657436
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "multiRetrievalQAChain_0",
+            "position": {
+                "x": 1491.6609369163978,
+                "y": 388.3594502367044
+            },
+            "type": "customNode",
+            "data": {
+                "id": "multiRetrievalQAChain_0",
+                "label": "多检索器QA链",
+                "name": "multiRetrievalQAChain",
+                "type": "多检索器QA链",
+                "baseClasses": ["多检索器QA链", "MultiRouteChain", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "MultiRetrieval QA Chain：自动从多个向量检索器中选择合适检索器的QA链，无上下文记忆，QA链是指使用向量数据库+向量检索器来存储数据",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "multiRetrievalQAChain_0-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "type": "向量检索器",
+                        "list": true,
+                        "id": "multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_0.data.instance}}",
+                    "vectorStoreRetriever": [
+                        "{{vectorStoreRetriever_3.data.instance}}",
+                        "{{vectorStoreRetriever_4.data.instance}}",
+                        "{{vectorStoreRetriever_5.data.instance}}"
+                    ]
+                },
+                "outputAnchors": [
+                    {
+                        "id": "multiRetrievalQAChain_0-output-multiRetrievalQAChain-多检索器QA链|MultiRouteChain|BaseChain|BaseLangChain",
+                        "name": "multiRetrievalQAChain",
+                        "label": "多检索器QA链",
+                        "type": "多检索器QA链 | MultiRouteChain | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1491.6609369163978,
+                "y": 388.3594502367044
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "openAIEmbeddings_1",
+            "sourceHandle": "openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "pineconeExistingIndex_1",
+            "targetHandle": "pineconeExistingIndex_1-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_1-openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-pineconeExistingIndex_1-pineconeExistingIndex_1-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_1",
+            "sourceHandle": "openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "chromaExistingIndex_1",
+            "targetHandle": "chromaExistingIndex_1-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_1-openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-chromaExistingIndex_1-chromaExistingIndex_1-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_1",
+            "sourceHandle": "openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "supabaseExistingIndex_1",
+            "targetHandle": "supabaseExistingIndex_1-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_1-openAIEmbeddings_1-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-supabaseExistingIndex_1-supabaseExistingIndex_1-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "pineconeExistingIndex_1",
+            "sourceHandle": "pineconeExistingIndex_1-output-vectorStore-Pinecone向量|VectorStore",
+            "target": "vectorStoreRetriever_3",
+            "targetHandle": "vectorStoreRetriever_3-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "pineconeExistingIndex_1-pineconeExistingIndex_1-output-vectorStore-Pinecone向量|VectorStore-vectorStoreRetriever_3-vectorStoreRetriever_3-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chromaExistingIndex_1",
+            "sourceHandle": "chromaExistingIndex_1-output-vectorStore-Chroma向量|VectorStore",
+            "target": "vectorStoreRetriever_4",
+            "targetHandle": "vectorStoreRetriever_4-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "chromaExistingIndex_1-chromaExistingIndex_1-output-vectorStore-Chroma向量|VectorStore-vectorStoreRetriever_4-vectorStoreRetriever_4-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "supabaseExistingIndex_1",
+            "sourceHandle": "supabaseExistingIndex_1-output-vectorStore-Supabase向量|VectorStore",
+            "target": "vectorStoreRetriever_5",
+            "targetHandle": "vectorStoreRetriever_5-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "supabaseExistingIndex_1-supabaseExistingIndex_1-output-vectorStore-Supabase向量|VectorStore-vectorStoreRetriever_5-vectorStoreRetriever_5-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_0",
+            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "multiRetrievalQAChain_0",
+            "targetHandle": "multiRetrievalQAChain_0-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-multiRetrievalQAChain_0-multiRetrievalQAChain_0-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "vectorStoreRetriever_3",
+            "sourceHandle": "vectorStoreRetriever_3-output-vectorStoreRetriever-向量检索器",
+            "target": "multiRetrievalQAChain_0",
+            "targetHandle": "multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "type": "buttonedge",
+            "id": "vectorStoreRetriever_3-vectorStoreRetriever_3-output-vectorStoreRetriever-向量检索器-multiRetrievalQAChain_0-multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "vectorStoreRetriever_4",
+            "sourceHandle": "vectorStoreRetriever_4-output-vectorStoreRetriever-向量检索器",
+            "target": "multiRetrievalQAChain_0",
+            "targetHandle": "multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "type": "buttonedge",
+            "id": "vectorStoreRetriever_4-vectorStoreRetriever_4-output-vectorStoreRetriever-向量检索器-multiRetrievalQAChain_0-multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "vectorStoreRetriever_5",
+            "sourceHandle": "vectorStoreRetriever_5-output-vectorStoreRetriever-向量检索器",
+            "target": "multiRetrievalQAChain_0",
+            "targetHandle": "multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "type": "buttonedge",
+            "id": "vectorStoreRetriever_5-vectorStoreRetriever_5-output-vectorStoreRetriever-向量检索器-multiRetrievalQAChain_0-multiRetrievalQAChain_0-input-vectorStoreRetriever-向量检索器",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

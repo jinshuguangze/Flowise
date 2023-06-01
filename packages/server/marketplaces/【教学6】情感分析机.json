@@ -1,0 +1,429 @@
+{
+    "description": "案例提示词模版让模型学会新知识",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 534,
+            "id": "promptTemplate_2",
+            "position": {
+                "x": 812.6364005728537,
+                "y": -82.16753656883571
+            },
+            "type": "customNode",
+            "data": {
+                "id": "promptTemplate_2",
+                "label": "查询提示词模板",
+                "name": "promptTemplate",
+                "type": "查询提示词模板",
+                "baseClasses": ["PromptTemplate", "BaseStringPromptTemplate", "BasePromptTemplate"],
+                "category": "提示词模板-Prompt　　　　　　　　　　　　　作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器",
+                "description": "Prompt Template：适用于查询型单次生成的提示词模版",
+                "inputParams": [
+                    {
+                        "label": "提示词模版",
+                        "name": "template",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "《 {product}》手游的主要玩法是什么?",
+                        "id": "promptTemplate_2-input-template-string"
+                    },
+                    {
+                        "label": "设定提示词变量值",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"product\": \"阴阳师\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "promptTemplate_2-input-promptValues-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "template": "输入：{in}\\n输出：{out}\\n",
+                    "promptValues": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "promptTemplate_2-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+                        "name": "promptTemplate",
+                        "label": "查询提示词模板",
+                        "type": "PromptTemplate | BaseStringPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 812.6364005728537,
+                "y": -82.16753656883571
+            }
+        },
+        {
+            "width": 300,
+            "height": 956,
+            "id": "fewShotPromptTemplate_2",
+            "position": {
+                "x": 1247.1632794094462,
+                "y": 157.88086964059625
+            },
+            "type": "customNode",
+            "data": {
+                "id": "fewShotPromptTemplate_2",
+                "label": "案例提示词模板",
+                "name": "fewShotPromptTemplate",
+                "type": "案例提示词模板",
+                "baseClasses": ["案例提示词模板", "BaseStringPromptTemplate", "BasePromptTemplate"],
+                "category": "提示词模板-Prompt　　　　　　　　　　　　　作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器",
+                "description": "Few Shot Prompt Template：适用于查询型单次生成的提示词模版，并添加自定义案例以保证更高质量的输出",
+                "inputParams": [
+                    {
+                        "label": "案例",
+                        "name": "examples",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "[\n  { \"word\": \"开心\", \"antonym\": \"悲伤\" },\n  { \"word\": \"长\", \"antonym\": \"短\" },\n]",
+                        "id": "fewShotPromptTemplate_2-input-examples-string"
+                    },
+                    {
+                        "label": "案例前置信息",
+                        "name": "prefix",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "给出每个输入短语的反义词",
+                        "id": "fewShotPromptTemplate_2-input-prefix-string"
+                    },
+                    {
+                        "label": "案例后置信息",
+                        "name": "suffix",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "短语: {input}\n反义词:",
+                        "id": "fewShotPromptTemplate_2-input-suffix-string"
+                    },
+                    {
+                        "label": "案例分隔符号",
+                        "name": "exampleSeparator",
+                        "type": "string",
+                        "placeholder": "\n\n",
+                        "id": "fewShotPromptTemplate_2-input-exampleSeparator-string"
+                    },
+                    {
+                        "label": "模版变量格式",
+                        "name": "templateFormat",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "f-string",
+                                "name": "f-string"
+                            },
+                            {
+                                "label": "jinja-2",
+                                "name": "jinja-2"
+                            }
+                        ],
+                        "default": "f-string",
+                        "id": "fewShotPromptTemplate_2-input-templateFormat-options"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "查询提示词模版（用于输入案例的格式）",
+                        "name": "examplePrompt",
+                        "type": "PromptTemplate",
+                        "id": "fewShotPromptTemplate_2-input-examplePrompt-PromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "examples": "[\n  { \"in\": \"今天我钓到鱼了，是胖头鱼呢\", \"out\": \"😀\" },\n  { \"in\": \"早知道就不逃课了，明天考试完蛋了\", \"out\": \"😭\" },\n  { \"in\": \"这游戏还能玩？谁充钱谁傻\", \"out\": \"😭\" },\n  { \"in\": \"终于写完作业了，可以放松一下了\", \"out\": \"😀\" },\n  { \"in\": \"他们周末聚餐为啥没叫我......\", \"out\": \"😭\" },\n  { \"in\": \"今天又加班到很晚了\", \"out\": \"😭\" },\n  { \"in\": \"期待暑假的福建之旅，到时候一定得看看海\", \"out\": \"😀\" },\n  { \"in\": \"冲！这个新游可别让我失望\", \"out\": \"😀\" }\n]",
+                    "examplePrompt": "{{promptTemplate_2.data.instance}}",
+                    "prefix": "将我的输入句子按照如下案例输出",
+                    "suffix": "输入: {input}\\n输出:",
+                    "exampleSeparator": "\\n\\n",
+                    "templateFormat": "f-string"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "fewShotPromptTemplate_2-output-fewShotPromptTemplate-案例提示词模板|BaseStringPromptTemplate|BasePromptTemplate",
+                        "name": "fewShotPromptTemplate",
+                        "label": "案例提示词模板",
+                        "type": "案例提示词模板 | BaseStringPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 1247.1632794094462,
+                "y": 157.88086964059625
+            }
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_2",
+            "position": {
+                "x": 1243.9623693310866,
+                "y": -383.07293360213305
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_2",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "default": "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",
+                        "type": "password",
+                        "id": "openAI_2-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_2-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_2-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_2-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": 0.7,
+                    "maxTokens": "",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1243.9623693310866,
+                "y": -383.07293360213305
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 407,
+            "id": "llmChain_2",
+            "position": {
+                "x": 1720.8979710066292,
+                "y": -46.977375374401845
+            },
+            "type": "customNode",
+            "data": {
+                "id": "llmChain_2",
+                "label": "查询链",
+                "name": "llmChain",
+                "type": "查询链",
+                "baseClasses": ["查询链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "LLM Chain：适用于单次查询问题的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "chainName",
+                        "type": "string",
+                        "placeholder": "Name Your Chain",
+                        "optional": true,
+                        "id": "llmChain_2-input-chainName-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "llmChain_2-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "提示词模版",
+                        "name": "prompt",
+                        "type": "BasePromptTemplate",
+                        "id": "llmChain_2-input-prompt-BasePromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_2.data.instance}}",
+                    "prompt": "{{fewShotPromptTemplate_2.data.instance}}",
+                    "chainName": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "llmChain_2-output-llmChain-查询链|BaseChain|BaseLangChain",
+                                "name": "llmChain",
+                                "label": "查询链",
+                                "type": "查询链 | BaseChain | BaseLangChain"
+                            },
+                            {
+                                "id": "llmChain_2-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "输出预测",
+                                "type": "string"
+                            }
+                        ],
+                        "default": "llmChain"
+                    }
+                ],
+                "outputs": {
+                    "output": "llmChain"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1720.8979710066292,
+                "y": -46.977375374401845
+            },
+            "selected": false,
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "promptTemplate_2",
+            "sourceHandle": "promptTemplate_2-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate",
+            "target": "fewShotPromptTemplate_2",
+            "targetHandle": "fewShotPromptTemplate_2-input-examplePrompt-PromptTemplate",
+            "type": "buttonedge",
+            "id": "promptTemplate_2-promptTemplate_2-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate-fewShotPromptTemplate_2-fewShotPromptTemplate_2-input-examplePrompt-PromptTemplate",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "fewShotPromptTemplate_2",
+            "sourceHandle": "fewShotPromptTemplate_2-output-fewShotPromptTemplate-案例提示词模板|BaseStringPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_2",
+            "targetHandle": "llmChain_2-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "fewShotPromptTemplate_2-fewShotPromptTemplate_2-output-fewShotPromptTemplate-案例提示词模板|BaseStringPromptTemplate|BasePromptTemplate-llmChain_2-llmChain_2-input-prompt-BasePromptTemplate",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_2",
+            "sourceHandle": "openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "llmChain_2",
+            "targetHandle": "llmChain_2-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_2-openAI_2-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-llmChain_2-llmChain_2-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

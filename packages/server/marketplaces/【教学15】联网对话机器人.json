@@ -1,0 +1,404 @@
+{
+    "description": "使用智能体让模型睁眼看世界",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 385,
+            "id": "conversationalAgent_1",
+            "position": {
+                "x": 1162.259784601854,
+                "y": 263.61061422763794
+            },
+            "type": "customNode",
+            "data": {
+                "id": "conversationalAgent_1",
+                "label": "对话型智能体",
+                "name": "conversationalAgent",
+                "type": "代理执行器",
+                "baseClasses": ["代理执行器", "BaseChain", "BaseLangChain"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "Conversational Agent：聊天场景使用，可以根据聊天内容，选择合适工具增强答案的智能体",
+                "inputParams": [
+                    {
+                        "label": "前置系统信息",
+                        "name": "systemMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "conversationalAgent_1-input-systemMessage-string"
+                    },
+                    {
+                        "label": "前置人类信息",
+                        "name": "humanMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "conversationalAgent_1-input-humanMessage-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "允许工具列表",
+                        "name": "tools",
+                        "type": "Tool",
+                        "list": true,
+                        "id": "conversationalAgent_1-input-tools-Tool"
+                    },
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "conversationalAgent_1-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "记忆模式",
+                        "name": "memory",
+                        "type": "BaseChatMemory",
+                        "id": "conversationalAgent_1-input-memory-BaseChatMemory"
+                    }
+                ],
+                "inputs": {
+                    "tools": ["{{calculator_0.data.instance}}", "{{serpAPI_0.data.instance}}"],
+                    "model": "{{chatOpenAI_0.data.instance}}",
+                    "memory": "{{bufferMemory_0.data.instance}}",
+                    "systemMessage": "",
+                    "humanMessage": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "conversationalAgent_1-output-conversationalAgent-代理执行器|BaseChain|BaseLangChain",
+                        "name": "conversationalAgent",
+                        "label": "代理执行器",
+                        "type": "代理执行器 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1162.259784601854,
+                "y": 263.61061422763794
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 143,
+            "id": "calculator_0",
+            "position": {
+                "x": 745.5387495660012,
+                "y": 74.928590030849
+            },
+            "type": "customNode",
+            "data": {
+                "id": "calculator_0",
+                "label": "计算器工具",
+                "name": "calculator",
+                "type": "计算器工具",
+                "baseClasses": ["计算器工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Calculator：授权使用一个简单计算器的工具，增强智能体数学计算方面的表现",
+                "inputParams": [],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "calculator_0-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "calculator",
+                        "label": "计算器工具",
+                        "type": "计算器工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 745.5387495660012,
+                "y": 74.928590030849
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "serpAPI_0",
+            "position": {
+                "x": 416.79215525993936,
+                "y": 226.5687444466732
+            },
+            "type": "customNode",
+            "data": {
+                "id": "serpAPI_0",
+                "label": "SerpAPI工具",
+                "name": "serpAPI",
+                "type": "SerpAPI工具",
+                "baseClasses": ["SerpAPI工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力",
+                "inputParams": [
+                    {
+                        "label": "SerpAPI密匙",
+                        "name": "apiKey",
+                        "type": "password",
+                        "id": "serpAPI_0-input-apiKey-password"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "serpAPI",
+                        "label": "SerpAPI工具",
+                        "type": "SerpAPI工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 416.79215525993936,
+                "y": 226.5687444466732
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_0",
+            "position": {
+                "x": 103.09382055239479,
+                "y": 226.56874444667324
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_0",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 103.09382055239479,
+                "y": 226.56874444667324
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 378,
+            "id": "bufferMemory_0",
+            "position": {
+                "x": 755.9567754418975,
+                "y": 492.80718349735696
+            },
+            "type": "customNode",
+            "data": {
+                "id": "bufferMemory_0",
+                "label": "全缓存记忆模式",
+                "name": "bufferMemory",
+                "type": "全缓存记忆模式",
+                "baseClasses": ["全缓存记忆模式", "BaseChatMemory", "BaseMemory"],
+                "category": "记忆模式-Memory　　　　　　　　　　　　　　作用：提供不同策略的记忆方式，后接需要记忆的链或智能体",
+                "description": "Buffer Memory：直接将所有上下文记忆全部进行缓存，提出新的问题时将所有缓存记忆全部添加进提示词",
+                "inputParams": [
+                    {
+                        "label": "记忆数据的变量名称",
+                        "name": "memoryKey",
+                        "type": "string",
+                        "default": "chat_history",
+                        "id": "bufferMemory_0-input-memoryKey-string"
+                    },
+                    {
+                        "label": "人类输入数据的变量名称",
+                        "name": "inputKey",
+                        "type": "string",
+                        "default": "input",
+                        "id": "bufferMemory_0-input-inputKey-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "memoryKey": "chat_history",
+                    "inputKey": "input"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+                        "name": "bufferMemory",
+                        "label": "全缓存记忆模式",
+                        "type": "全缓存记忆模式 | BaseChatMemory | BaseMemory"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 755.9567754418975,
+                "y": 492.80718349735696
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "bufferMemory_0",
+            "sourceHandle": "bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-memory-BaseChatMemory",
+            "type": "buttonedge",
+            "id": "bufferMemory_0-bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory-conversationalAgent_1-conversationalAgent_1-input-memory-BaseChatMemory",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "calculator_0",
+            "sourceHandle": "calculator_0-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "calculator_0-calculator_0-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "serpAPI_0",
+            "sourceHandle": "serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "serpAPI_0-serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_0",
+            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

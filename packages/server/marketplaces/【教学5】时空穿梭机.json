@@ -1,0 +1,311 @@
+{
+    "description": "使用对话提示词模版的新特性",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 711,
+            "id": "chatPromptTemplate_2",
+            "position": {
+                "x": 443.22780961762123,
+                "y": 643.2308581945442
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatPromptTemplate_2",
+                "label": "对话提示词模板",
+                "name": "chatPromptTemplate",
+                "type": "对话提示词模板",
+                "baseClasses": ["对话提示词模板", "BaseChatPromptTemplate", "BasePromptTemplate"],
+                "category": "提示词模板-Prompt　　　　　　　　　　　　　作用：提供提示词模版规则编写，后接需要提示词模版的链或提示词检索器",
+                "description": "Chat Prompt Template：适用于对话语言模型的提示词模板，用于自定义历史对话，以及格式化输入输出",
+                "inputParams": [
+                    {
+                        "label": "前置系统信息",
+                        "name": "systemMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "你是一个拥有十年经验的专业翻译者，可以将{input_language} 翻译成 {output_language}",
+                        "id": "chatPromptTemplate_2-input-systemMessagePrompt-string"
+                    },
+                    {
+                        "label": "人类信息",
+                        "name": "humanMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{text}",
+                        "id": "chatPromptTemplate_2-input-humanMessagePrompt-string"
+                    },
+                    {
+                        "label": "设定提示词变量值",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"input_language\": \"英语\",\n  \"output_language\": \"法语\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "chatPromptTemplate_2-input-promptValues-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "systemMessagePrompt": "你将扮演一个时空穿梭机",
+                    "humanMessagePrompt": "你穿梭后，成功让{a}和{b}见面了，你听到了他们之间的对话，对话内容是围绕主题：{input}的，他们说的话非常符合人物特点，以及时代背景和人物主张，会将话题打比方到自己擅长的事物中去，也会说自己所处国家和时代的语言，并且对方都听得懂，他们的对话内容是：\n输出格式为：\n{a}：xxxxx\n{b}：xxxxx\n{a}：xxxxx\n{b}：xxxxx\n.....",
+                    "promptValues": "{\n  \"a\":\"李白\",\n  \"b\":\"爱因斯坦\"\n}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatPromptTemplate_2-output-chatPromptTemplate-对话提示词模板|BaseChatPromptTemplate|BasePromptTemplate",
+                        "name": "chatPromptTemplate",
+                        "label": "对话提示词模板",
+                        "type": "对话提示词模板 | BaseChatPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 443.22780961762123,
+                "y": 643.2308581945442
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_2",
+            "position": {
+                "x": 443.22780961762123,
+                "y": 91.37503678899111
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_2",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "default": "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",
+                        "type": "password",
+                        "id": "chatOpenAI_2-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_2-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_2-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "3000",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 443.22780961762123,
+                "y": 91.37503678899111
+            }
+        },
+        {
+            "width": 300,
+            "height": 407,
+            "id": "llmChain_2",
+            "position": {
+                "x": 832.8666460567006,
+                "y": 469.8813350440968
+            },
+            "type": "customNode",
+            "data": {
+                "id": "llmChain_2",
+                "label": "查询链",
+                "name": "llmChain",
+                "type": "查询链",
+                "baseClasses": ["查询链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "LLM Chain：适用于单次查询问题的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "chainName",
+                        "type": "string",
+                        "placeholder": "Name Your Chain",
+                        "optional": true,
+                        "id": "llmChain_2-input-chainName-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "llmChain_2-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "提示词模版",
+                        "name": "prompt",
+                        "type": "BasePromptTemplate",
+                        "id": "llmChain_2-input-prompt-BasePromptTemplate"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_2.data.instance}}",
+                    "prompt": "{{chatPromptTemplate_2.data.instance}}",
+                    "chainName": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "llmChain_2-output-llmChain-查询链|BaseChain|BaseLangChain",
+                                "name": "llmChain",
+                                "label": "查询链",
+                                "type": "查询链 | BaseChain | BaseLangChain"
+                            },
+                            {
+                                "id": "llmChain_2-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "输出预测",
+                                "type": "string"
+                            }
+                        ],
+                        "default": "llmChain"
+                    }
+                ],
+                "outputs": {
+                    "output": "llmChain"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 832.8666460567006,
+                "y": 469.8813350440968
+            },
+            "selected": false,
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "chatOpenAI_2",
+            "sourceHandle": "chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "llmChain_2",
+            "targetHandle": "llmChain_2-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_2-chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-llmChain_2-llmChain_2-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatPromptTemplate_2",
+            "sourceHandle": "chatPromptTemplate_2-output-chatPromptTemplate-对话提示词模板|BaseChatPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_2",
+            "targetHandle": "llmChain_2-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "chatPromptTemplate_2-chatPromptTemplate_2-output-chatPromptTemplate-对话提示词模板|BaseChatPromptTemplate|BasePromptTemplate-llmChain_2-llmChain_2-input-prompt-BasePromptTemplate",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

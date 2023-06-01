@@ -1,0 +1,623 @@
+{
+    "description": "使用插件和api连接万物脱离桎梏",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 253,
+            "id": "requestsPost_1",
+            "position": {
+                "x": 557.1740992375535,
+                "y": 364.6229260400317
+            },
+            "type": "customNode",
+            "data": {
+                "id": "requestsPost_1",
+                "label": "POST请求工具",
+                "name": "requestsPost",
+                "type": "POST请求工具",
+                "baseClasses": ["POST请求工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Requests Post：授权使用HTTP POST响应网页的工具，增加智能体一部分网络交互的能力",
+                "inputParams": [
+                    {
+                        "label": "URL链接",
+                        "name": "url",
+                        "type": "string",
+                        "description": "智能体将尝试POST此网址链接，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsPost_1-input-url-string"
+                    },
+                    {
+                        "label": "Body信息",
+                        "name": "body",
+                        "type": "json",
+                        "description": "POST请求的JSON Body，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsPost_1-input-body-json"
+                    },
+                    {
+                        "label": "工具作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 4,
+                        "default": "Use this when you want to POST to a website.\nInput should be a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, and the value of \"data\" should be a dictionary of \nkey-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string\nThe output will be the text response of the POST request.",
+                        "description": "使用自然语言向智能体描述，该什么时候使用此POST请求工具，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsPost_1-input-description-string"
+                    },
+                    {
+                        "label": "Headers信息",
+                        "name": "headers",
+                        "type": "json",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsPost_1-input-headers-json"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "url": "",
+                    "body": "",
+                    "description": "Use this when you want to POST to a website.\nInput should be a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, and the value of \"data\" should be a dictionary of \nkey-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string\nThe output will be the text response of the POST request.",
+                    "headers": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "requestsPost_1-output-requestsPost-POST请求工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "requestsPost",
+                        "label": "POST请求工具",
+                        "type": "POST请求工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 557.1740992375535,
+                "y": 364.6229260400317
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 253,
+            "id": "requestsGet_1",
+            "position": {
+                "x": 554.5913385199938,
+                "y": 76.64510603210832
+            },
+            "type": "customNode",
+            "data": {
+                "id": "requestsGet_1",
+                "label": "GET请求工具",
+                "name": "requestsGet",
+                "type": "GET请求工具",
+                "baseClasses": ["GET请求工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Requests Get：授权使用HTTP GET响应网页的工具，增加智能体一部分网络交互的能力",
+                "inputParams": [
+                    {
+                        "label": "URL链接",
+                        "name": "url",
+                        "type": "string",
+                        "description": "智能体将尝试GET此网址链接，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsGet_1-input-url-string"
+                    },
+                    {
+                        "label": "工具作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 4,
+                        "default": "A portal to the internet. Use this when you need to get specific content from a website. \nInput should be a  url (i.e. https://www.google.com). The output will be the text response of the GET request.",
+                        "description": "使用自然语言向智能体描述，该什么时候使用此GET请求工具，如果为空，智能体将使用AI插件（若有）来自己尝试获取此信息",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsGet_1-input-description-string"
+                    },
+                    {
+                        "label": "Headers信息",
+                        "name": "headers",
+                        "type": "json",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "requestsGet_1-input-headers-json"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "url": "",
+                    "description": "A portal to the internet. Use this when you need to get specific content from a website. \nInput should be a  url (i.e. https://www.google.com). The output will be the text response of the GET request.",
+                    "headers": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "requestsGet_1-output-requestsGet-GET请求工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "requestsGet",
+                        "label": "GET请求工具",
+                        "type": "GET请求工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 554.5913385199938,
+                "y": 76.64510603210832
+            },
+            "selected": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "aiPlugin_1",
+            "position": {
+                "x": 1059.5210588029445,
+                "y": 60.37371351148124
+            },
+            "type": "customNode",
+            "data": {
+                "id": "aiPlugin_1",
+                "label": "AI插件工具",
+                "name": "aiPlugin",
+                "type": "AI插件工具",
+                "baseClasses": ["AI插件工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "AIPlugin：授权使用ChatGPT等AI插件的工具，根据插件的不同增强智能体的各方面能力",
+                "inputParams": [
+                    {
+                        "label": "插件Url地址",
+                        "name": "pluginUrl",
+                        "type": "string",
+                        "placeholder": "https://www.klarna.com/.well-known/ai-plugin.json",
+                        "id": "aiPlugin_1-input-pluginUrl-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "pluginUrl": "https://www.klarna.com/.well-known/ai-plugin.json"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "aiPlugin_1-output-aiPlugin-AI插件工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "aiPlugin",
+                        "label": "AI插件工具",
+                        "type": "AI插件工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 1059.5210588029445,
+                "y": 60.37371351148124
+            }
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_1",
+            "position": {
+                "x": 1069.4049941304986,
+                "y": 649.7557814777176
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_1",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_1-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_1-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_1-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_1-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1069.4049941304986,
+                "y": 649.7557814777176
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "mrklAgentChat_1",
+            "position": {
+                "x": 1548.3810668092776,
+                "y": 418.98520299745775
+            },
+            "type": "customNode",
+            "data": {
+                "id": "mrklAgentChat_1",
+                "label": "查询型智能体（对话语言模型核心）",
+                "name": "mrklAgentChat",
+                "type": "代理执行器",
+                "baseClasses": ["代理执行器", "BaseChain", "BaseLangChain"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "MRKL Agent Chat：单次查询场景使用（适用于外接对话语言模型），可以根据指令，去选择合适工具以增强回复的智能体",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "允许工具列表",
+                        "name": "tools",
+                        "type": "Tool",
+                        "list": true,
+                        "id": "mrklAgentChat_1-input-tools-Tool"
+                    },
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "mrklAgentChat_1-input-model-BaseLanguageModel"
+                    }
+                ],
+                "inputs": {
+                    "tools": [
+                        "{{requestsGet_1.data.instance}}",
+                        "{{requestsPost_1.data.instance}}",
+                        "{{aiPlugin_1.data.instance}}",
+                        "{{zapierNLA_0.data.instance}}",
+                        "{{makeWebhook_0.data.instance}}",
+                        "{{serpAPI_0.data.instance}}"
+                    ],
+                    "model": "{{chatOpenAI_1.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "mrklAgentChat_1-output-mrklAgentChat-代理执行器|BaseChain|BaseLangChain",
+                        "name": "mrklAgentChat",
+                        "label": "代理执行器",
+                        "type": "代理执行器 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1548.3810668092776,
+                "y": 418.98520299745775
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "zapierNLA_0",
+            "position": {
+                "x": 557.5256452626865,
+                "y": 669.7860358159277
+            },
+            "type": "customNode",
+            "data": {
+                "id": "zapierNLA_0",
+                "label": "Zapier工具",
+                "name": "zapierNLA",
+                "type": "Zapier工具",
+                "baseClasses": ["Zapier工具", "Tool"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Zapier NLA：授权以自然语言创建并使用Zapier里自动化流程的工具，增加智能体创建和使用自动化流程的能力",
+                "inputParams": [
+                    {
+                        "label": "Zapier NLA Api密匙",
+                        "name": "apiKey",
+                        "type": "password",
+                        "id": "zapierNLA_0-input-apiKey-password"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "zapierNLA_0-output-zapierNLA-Zapier工具|Tool",
+                        "name": "zapierNLA",
+                        "label": "Zapier工具",
+                        "type": "Zapier工具 | Tool"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 557.5256452626865,
+                "y": 669.7860358159277
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 456,
+            "id": "makeWebhook_0",
+            "position": {
+                "x": 185.5574809687468,
+                "y": 490.2914126824617
+            },
+            "type": "customNode",
+            "data": {
+                "id": "makeWebhook_0",
+                "label": "Make网页工具",
+                "name": "makeWebhook",
+                "type": "Make网页工具",
+                "baseClasses": ["Make网页工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Make Webhook：授权使用make.com中的webhook流程工具，增加智能体使用自动化流程的能力",
+                "inputParams": [
+                    {
+                        "label": "Webhook Url链接",
+                        "name": "url",
+                        "type": "string",
+                        "placeholder": "https://hook.eu1.make.com/abcdefg",
+                        "id": "makeWebhook_0-input-url-string"
+                    },
+                    {
+                        "label": "工具作用描述",
+                        "name": "desc",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "一个帮你自动发送邮件的工具",
+                        "id": "makeWebhook_0-input-desc-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "url": "",
+                    "desc": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "makeWebhook_0-output-makeWebhook-Make网页工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "makeWebhook",
+                        "label": "Make网页工具",
+                        "type": "Make网页工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 185.5574809687468,
+                "y": 490.2914126824617
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "serpAPI_0",
+            "position": {
+                "x": 179.84577527524135,
+                "y": 78.87869193919425
+            },
+            "type": "customNode",
+            "data": {
+                "id": "serpAPI_0",
+                "label": "SerpAPI工具",
+                "name": "serpAPI",
+                "type": "SerpAPI工具",
+                "baseClasses": ["SerpAPI工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力",
+                "inputParams": [
+                    {
+                        "label": "SerpAPI密匙",
+                        "name": "apiKey",
+                        "type": "password",
+                        "id": "serpAPI_0-input-apiKey-password"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "serpAPI",
+                        "label": "SerpAPI工具",
+                        "type": "SerpAPI工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 179.84577527524135,
+                "y": 78.87869193919425
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "chatOpenAI_1",
+            "sourceHandle": "chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_1-chatOpenAI_1-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "aiPlugin_1",
+            "sourceHandle": "aiPlugin_1-output-aiPlugin-AI插件工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "aiPlugin_1-aiPlugin_1-output-aiPlugin-AI插件工具|Tool|StructuredTool|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "requestsPost_1",
+            "sourceHandle": "requestsPost_1-output-requestsPost-POST请求工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "requestsPost_1-requestsPost_1-output-requestsPost-POST请求工具|Tool|StructuredTool|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "requestsGet_1",
+            "sourceHandle": "requestsGet_1-output-requestsGet-GET请求工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "requestsGet_1-requestsGet_1-output-requestsGet-GET请求工具|Tool|StructuredTool|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "zapierNLA_0",
+            "sourceHandle": "zapierNLA_0-output-zapierNLA-Zapier工具|Tool",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "zapierNLA_0-zapierNLA_0-output-zapierNLA-Zapier工具|Tool-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "makeWebhook_0",
+            "sourceHandle": "makeWebhook_0-output-makeWebhook-Make网页工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "makeWebhook_0-makeWebhook_0-output-makeWebhook-Make网页工具|Tool|StructuredTool|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "serpAPI_0",
+            "sourceHandle": "serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentChat_1",
+            "targetHandle": "mrklAgentChat_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "serpAPI_0-serpAPI_0-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain-mrklAgentChat_1-mrklAgentChat_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

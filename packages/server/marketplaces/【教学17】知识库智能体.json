@@ -1,0 +1,1300 @@
+{
+    "description": "使用链工具赋予智能体招募员工的能力",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_4",
+            "position": {
+                "x": -313.91232810521115,
+                "y": 161.0043830032639
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_4",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAI_4-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_4-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_4-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_4-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": 0.7,
+                    "maxTokens": "",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -313.91232810521115,
+                "y": 161.0043830032639
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_4",
+            "position": {
+                "x": -722.5272039604192,
+                "y": -516.6991842731494
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_4",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_4-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_4-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_4-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_4-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_4-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -722.5272039604192,
+                "y": -516.6991842731494
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 455,
+            "id": "chromaExistingIndex_2",
+            "position": {
+                "x": -314.7564134805443,
+                "y": -338.6584165988378
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chromaExistingIndex_2",
+                "label": "Chroma读取存储",
+                "name": "chromaExistingIndex",
+                "type": "Chroma向量",
+                "baseClasses": ["Chroma向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Chroma Existing Index：从Chroma数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Chroma数据库名称",
+                        "name": "collectionName",
+                        "type": "string",
+                        "id": "chromaExistingIndex_2-input-collectionName-string"
+                    },
+                    {
+                        "label": "Chroma URL链接",
+                        "name": "chromaURL",
+                        "type": "string",
+                        "optional": true,
+                        "id": "chromaExistingIndex_2-input-chromaURL-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "chromaExistingIndex_2-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_4.data.instance}}",
+                    "collectionName": "",
+                    "chromaURL": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "chromaExistingIndex_2-output-retriever-Chroma向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Chroma向量检索器",
+                                "type": "Chroma向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "chromaExistingIndex_2-output-vectorStore-Chroma向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Chroma向量存储器",
+                                "type": "Chroma向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -314.7564134805443,
+                "y": -338.6584165988378
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_6",
+            "position": {
+                "x": -314.7564134805443,
+                "y": -927.3416000380937
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_6",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAI_6-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_6-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_6-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_6-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": 0.7,
+                    "maxTokens": "",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_6-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -314.7564134805443,
+                "y": -927.3416000380937
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "vectorDBQAChain_4",
+            "position": {
+                "x": 101.62925285453909,
+                "y": -508.0843084179408
+            },
+            "type": "customNode",
+            "data": {
+                "id": "vectorDBQAChain_4",
+                "label": "向量数据库QA链",
+                "name": "vectorDBQAChain",
+                "type": "向量数据库链",
+                "baseClasses": ["向量数据库链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "vector DB QA Chain：无上下文记忆，使用向量数据库来查询问题",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "vectorDBQAChain_4-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "向量数据库",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "vectorDBQAChain_4-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_6.data.instance}}",
+                    "vectorStore": "{{chromaExistingIndex_2.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "vectorDBQAChain_4-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain",
+                        "name": "vectorDBQAChain",
+                        "label": "向量数据库链",
+                        "type": "向量数据库链 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 101.62925285453909,
+                "y": -508.0843084179408
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 603,
+            "id": "chainTool_4",
+            "position": {
+                "x": 518.4419251456793,
+                "y": -668.8953243818345
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chainTool_4",
+                "label": "链工具",
+                "name": "chainTool",
+                "type": "链工具",
+                "baseClasses": ["链工具", "DynamicTool", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Chain Tool：授权使用外接链（Chain）的工具，增加智能体使用其他语言模型得到回复数据的能力",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "state-of-union-qa",
+                        "id": "chainTool_4-input-name-string"
+                    },
+                    {
+                        "label": "链作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "placeholder": "游戏术语QA链：当您需要询问某一游戏术语的含义时，它能帮助到您",
+                        "id": "chainTool_4-input-description-string"
+                    },
+                    {
+                        "label": "是否直接返回数据",
+                        "name": "returnDirect",
+                        "type": "boolean",
+                        "optional": true,
+                        "id": "chainTool_4-input-returnDirect-boolean"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "链",
+                        "name": "baseChain",
+                        "type": "BaseChain",
+                        "id": "chainTool_4-input-baseChain-BaseChain"
+                    }
+                ],
+                "inputs": {
+                    "name": "热门手游数据模块",
+                    "description": "内含热门手游的游戏类型，玩法，相关运营数据，以及现状概况，当需要相关数据时可使用",
+                    "returnDirect": "",
+                    "baseChain": "{{vectorDBQAChain_4.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chainTool_4-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+                        "name": "chainTool",
+                        "label": "链工具",
+                        "type": "链工具 | DynamicTool | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 518.4419251456793,
+                "y": -668.8953243818345
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 143,
+            "id": "calculator_2",
+            "position": {
+                "x": 77.24737360857432,
+                "y": 80.1107432314979
+            },
+            "type": "customNode",
+            "data": {
+                "id": "calculator_2",
+                "label": "计算器工具",
+                "name": "calculator",
+                "type": "计算器工具",
+                "baseClasses": ["计算器工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Calculator：授权使用一个简单计算器的工具，增强智能体数学计算方面的表现",
+                "inputParams": [],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "calculator_2-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "calculator",
+                        "label": "计算器工具",
+                        "type": "计算器工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 77.24737360857432,
+                "y": 80.1107432314979
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "serpAPI_1",
+            "position": {
+                "x": 522.9524233614136,
+                "y": 6.873531238091033
+            },
+            "type": "customNode",
+            "data": {
+                "id": "serpAPI_1",
+                "label": "SerpAPI工具",
+                "name": "serpAPI",
+                "type": "SerpAPI工具",
+                "baseClasses": ["SerpAPI工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力",
+                "inputParams": [
+                    {
+                        "label": "SerpAPI密匙",
+                        "name": "apiKey",
+                        "type": "password",
+                        "id": "serpAPI_1-input-apiKey-password"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "serpAPI",
+                        "label": "SerpAPI工具",
+                        "type": "SerpAPI工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 522.9524233614136,
+                "y": 6.873531238091033
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "mrklAgentLLM_1",
+            "position": {
+                "x": 1387.6832074172007,
+                "y": -2.441726458396147
+            },
+            "type": "customNode",
+            "data": {
+                "id": "mrklAgentLLM_1",
+                "label": "查询型智能体（普通语言模型核心）",
+                "name": "mrklAgentLLM",
+                "type": "代理执行器",
+                "baseClasses": ["代理执行器", "BaseChain", "BaseLangChain"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "MRKL Agent LLM：单次查询场景使用（适用于外接非对话语言模型），可以根据指令，去选择合适工具以增强回复的智能体",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "允许工具列表",
+                        "name": "tools",
+                        "type": "Tool",
+                        "list": true,
+                        "id": "mrklAgentLLM_1-input-tools-Tool"
+                    },
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "mrklAgentLLM_1-input-model-BaseLanguageModel"
+                    }
+                ],
+                "inputs": {
+                    "tools": ["{{chainTool_4.data.instance}}", "{{serpAPI_1.data.instance}}", "{{calculator_2.data.instance}}"],
+                    "model": "{{openAI_3.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "mrklAgentLLM_1-output-mrklAgentLLM-代理执行器|BaseChain|BaseLangChain",
+                        "name": "mrklAgentLLM",
+                        "label": "代理执行器",
+                        "type": "代理执行器 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1387.6832074172007,
+                "y": -2.441726458396147
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "openAI_3",
+            "position": {
+                "x": 944.3892139027989,
+                "y": 440.62016434747835
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAI_3",
+                "label": "OpenAI语言模型",
+                "name": "openAI",
+                "type": "OpenAI语言模型",
+                "baseClasses": ["OpenAI语言模型", "BaseLLM", "BaseLanguageModel", "BaseLangChain"],
+                "category": "普通语言模型-LLM　　　　　　　　　　　　　　作用：无对话聊天能力的生成式语言模型，后接链或智能体",
+                "description": "OpenAI：OpenAI公司的普通语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAI_3-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "普通语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "text-davinci-003",
+                                "name": "text-davinci-003"
+                            },
+                            {
+                                "label": "text-davinci-002",
+                                "name": "text-davinci-002"
+                            },
+                            {
+                                "label": "text-curie-001",
+                                "name": "text-curie-001"
+                            },
+                            {
+                                "label": "text-babbage-001",
+                                "name": "text-babbage-001"
+                            }
+                        ],
+                        "default": "text-davinci-003",
+                        "optional": true,
+                        "id": "openAI_3-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.7,
+                        "optional": true,
+                        "id": "openAI_3-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-topP-number"
+                    },
+                    {
+                        "label": "输出候选数量",
+                        "name": "bestOf",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-bestOf-number"
+                    },
+                    {
+                        "label": "频率惩罚值",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚值",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "description": "最大允许文档数据输入的个数",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAI_3-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "text-davinci-003",
+                    "temperature": 0.7,
+                    "maxTokens": "",
+                    "topP": "",
+                    "bestOf": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAI_3-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+                        "name": "openAI",
+                        "label": "OpenAI语言模型",
+                        "type": "OpenAI语言模型 | BaseLLM | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 944.3892139027989,
+                "y": 440.62016434747835
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_2",
+            "position": {
+                "x": -721.6831185850858,
+                "y": 551.5454217727214
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_2",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_2-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -721.6831185850858,
+                "y": 551.5454217727214
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 705,
+            "id": "pineconeExistingIndex_0",
+            "position": {
+                "x": -311.7912616432536,
+                "y": 737.4678318001155
+            },
+            "type": "customNode",
+            "data": {
+                "id": "pineconeExistingIndex_0",
+                "label": "Pinecone读取存储",
+                "name": "pineconeExistingIndex",
+                "type": "Pinecone向量",
+                "baseClasses": ["Pinecone向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Pinecone Existing Index：从Pinecone数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Pinecone Api密匙",
+                        "name": "pineconeApiKey",
+                        "type": "password",
+                        "id": "pineconeExistingIndex_0-input-pineconeApiKey-password"
+                    },
+                    {
+                        "label": "Pinecone环境",
+                        "name": "pineconeEnv",
+                        "placeholder": "my-pinecone-environment",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_0-input-pineconeEnv-string"
+                    },
+                    {
+                        "label": "Pinecone索引",
+                        "name": "pineconeIndex",
+                        "placeholder": "my-pinecone-index",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_0-input-pineconeIndex-string"
+                    },
+                    {
+                        "label": "Pinecone命名空间",
+                        "name": "pineconeNamespace",
+                        "type": "string",
+                        "placeholder": "my-pinecone-namespace",
+                        "optional": true,
+                        "id": "pineconeExistingIndex_0-input-pineconeNamespace-string"
+                    },
+                    {
+                        "label": "Pinecone元数据过滤器",
+                        "name": "pineconeMetadataFilter",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "pineconeExistingIndex_0-input-pineconeMetadataFilter-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "pineconeExistingIndex_0-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_2.data.instance}}",
+                    "pineconeEnv": "",
+                    "pineconeIndex": "",
+                    "pineconeNamespace": "",
+                    "pineconeMetadataFilter": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "pineconeExistingIndex_0-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Pinecone向量检索器",
+                                "type": "Pinecone向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "pineconeExistingIndex_0-output-vectorStore-Pinecone向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Pinecone向量存储器",
+                                "type": "Pinecone向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -311.7912616432536,
+                "y": 737.4678318001155
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 281,
+            "id": "vectorDBQAChain_1",
+            "position": {
+                "x": 105.3449635149419,
+                "y": 591.748175763695
+            },
+            "type": "customNode",
+            "data": {
+                "id": "vectorDBQAChain_1",
+                "label": "向量数据库QA链",
+                "name": "vectorDBQAChain",
+                "type": "向量数据库链",
+                "baseClasses": ["向量数据库链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "vector DB QA Chain：无上下文记忆，使用向量数据库来查询问题",
+                "inputParams": [],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "vectorDBQAChain_1-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "向量数据库",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "vectorDBQAChain_1-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{openAI_4.data.instance}}",
+                    "vectorStore": "{{pineconeExistingIndex_0.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "vectorDBQAChain_1-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain",
+                        "name": "vectorDBQAChain",
+                        "label": "向量数据库链",
+                        "type": "向量数据库链 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 105.3449635149419,
+                "y": 591.748175763695
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 603,
+            "id": "chainTool_2",
+            "position": {
+                "x": 527.2332726260739,
+                "y": 443.78153364158425
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chainTool_2",
+                "label": "链工具",
+                "name": "chainTool",
+                "type": "链工具",
+                "baseClasses": ["链工具", "DynamicTool", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Chain Tool：授权使用外接链（Chain）的工具，增加智能体使用其他语言模型得到回复数据的能力",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "state-of-union-qa",
+                        "id": "chainTool_2-input-name-string"
+                    },
+                    {
+                        "label": "链作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "placeholder": "游戏术语QA链：当您需要询问某一游戏术语的含义时，它能帮助到您",
+                        "id": "chainTool_2-input-description-string"
+                    },
+                    {
+                        "label": "是否直接返回数据",
+                        "name": "returnDirect",
+                        "type": "boolean",
+                        "optional": true,
+                        "id": "chainTool_2-input-returnDirect-boolean"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "链",
+                        "name": "baseChain",
+                        "type": "BaseChain",
+                        "id": "chainTool_2-input-baseChain-BaseChain"
+                    }
+                ],
+                "inputs": {
+                    "name": "AI论文模块",
+                    "description": "内含近期最热门的AI研究方向和论文，当需要相关数据时可使用",
+                    "returnDirect": "",
+                    "baseChain": "{{vectorDBQAChain_1.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chainTool_2-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+                        "name": "chainTool",
+                        "label": "链工具",
+                        "type": "链工具 | DynamicTool | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 527.2332726260739,
+                "y": 443.78153364158425
+            },
+            "selected": false,
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "openAIEmbeddings_4",
+            "sourceHandle": "openAIEmbeddings_4-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "chromaExistingIndex_2",
+            "targetHandle": "chromaExistingIndex_2-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_4-openAIEmbeddings_4-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-chromaExistingIndex_2-chromaExistingIndex_2-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_6",
+            "sourceHandle": "openAI_6-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "vectorDBQAChain_4",
+            "targetHandle": "vectorDBQAChain_4-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_6-openAI_6-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-vectorDBQAChain_4-vectorDBQAChain_4-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chromaExistingIndex_2",
+            "sourceHandle": "chromaExistingIndex_2-output-vectorStore-Chroma向量|VectorStore",
+            "target": "vectorDBQAChain_4",
+            "targetHandle": "vectorDBQAChain_4-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "chromaExistingIndex_2-chromaExistingIndex_2-output-vectorStore-Chroma向量|VectorStore-vectorDBQAChain_4-vectorDBQAChain_4-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "vectorDBQAChain_4",
+            "sourceHandle": "vectorDBQAChain_4-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain",
+            "target": "chainTool_4",
+            "targetHandle": "chainTool_4-input-baseChain-BaseChain",
+            "type": "buttonedge",
+            "id": "vectorDBQAChain_4-vectorDBQAChain_4-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain-chainTool_4-chainTool_4-input-baseChain-BaseChain",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chainTool_4",
+            "sourceHandle": "chainTool_4-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentLLM_1",
+            "targetHandle": "mrklAgentLLM_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "chainTool_4-chainTool_4-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_1-mrklAgentLLM_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_3",
+            "sourceHandle": "openAI_3-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "mrklAgentLLM_1",
+            "targetHandle": "mrklAgentLLM_1-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_3-openAI_3-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-mrklAgentLLM_1-mrklAgentLLM_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "serpAPI_1",
+            "sourceHandle": "serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentLLM_1",
+            "targetHandle": "mrklAgentLLM_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "serpAPI_1-serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_1-mrklAgentLLM_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "calculator_2",
+            "sourceHandle": "calculator_2-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain",
+            "target": "mrklAgentLLM_1",
+            "targetHandle": "mrklAgentLLM_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "calculator_2-calculator_2-output-calculator-计算器工具|Tool|StructuredTool|BaseLangChain-mrklAgentLLM_1-mrklAgentLLM_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_2",
+            "sourceHandle": "openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "pineconeExistingIndex_0",
+            "targetHandle": "pineconeExistingIndex_0-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_2-openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-pineconeExistingIndex_0-pineconeExistingIndex_0-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "pineconeExistingIndex_0",
+            "sourceHandle": "pineconeExistingIndex_0-output-vectorStore-Pinecone向量|VectorStore",
+            "target": "vectorDBQAChain_1",
+            "targetHandle": "vectorDBQAChain_1-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "pineconeExistingIndex_0-pineconeExistingIndex_0-output-vectorStore-Pinecone向量|VectorStore-vectorDBQAChain_1-vectorDBQAChain_1-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAI_4",
+            "sourceHandle": "openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain",
+            "target": "vectorDBQAChain_1",
+            "targetHandle": "vectorDBQAChain_1-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "openAI_4-openAI_4-output-openAI-OpenAI语言模型|BaseLLM|BaseLanguageModel|BaseLangChain-vectorDBQAChain_1-vectorDBQAChain_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "vectorDBQAChain_1",
+            "sourceHandle": "vectorDBQAChain_1-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain",
+            "target": "chainTool_2",
+            "targetHandle": "chainTool_2-input-baseChain-BaseChain",
+            "type": "buttonedge",
+            "id": "vectorDBQAChain_1-vectorDBQAChain_1-output-vectorDBQAChain-向量数据库链|BaseChain|BaseLangChain-chainTool_2-chainTool_2-input-baseChain-BaseChain",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

@@ -1,0 +1,614 @@
+{
+    "description": "当我们把所有工具，都交给一位产生自我意识智能体身上的时候",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 628,
+            "id": "autoGPT_1",
+            "position": {
+                "x": 1640.1595827723777,
+                "y": 83.16911150782087
+            },
+            "type": "customNode",
+            "data": {
+                "id": "autoGPT_1",
+                "label": "AutoGPT智能体",
+                "name": "autoGPT",
+                "type": "AutoGPT智能体",
+                "baseClasses": ["AutoGPT"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "AutoGPT：一个具有综合能力的智能体，它通过自我引导形成思维链，使用一切它能利用的网络信息，工具和手段，完成一个复杂的目标",
+                "inputParams": [
+                    {
+                        "label": "智能体名称",
+                        "name": "aiName",
+                        "type": "string",
+                        "placeholder": "Tom",
+                        "optional": true,
+                        "id": "autoGPT_1-input-aiName-string"
+                    },
+                    {
+                        "label": "智能体扮演角色",
+                        "name": "aiRole",
+                        "type": "string",
+                        "placeholder": "Assistant",
+                        "optional": true,
+                        "id": "autoGPT_1-input-aiRole-string"
+                    },
+                    {
+                        "label": "最大循环次数",
+                        "name": "maxLoop",
+                        "type": "number",
+                        "default": 5,
+                        "optional": true,
+                        "id": "autoGPT_1-input-maxLoop-number"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "允许工具列表",
+                        "name": "tools",
+                        "type": "Tool",
+                        "list": true,
+                        "id": "autoGPT_1-input-tools-Tool"
+                    },
+                    {
+                        "label": "对话语言模型",
+                        "name": "model",
+                        "type": "BaseChatModel",
+                        "id": "autoGPT_1-input-model-BaseChatModel"
+                    },
+                    {
+                        "label": "向量检索器",
+                        "name": "vectorStoreRetriever",
+                        "type": "BaseRetriever",
+                        "id": "autoGPT_1-input-vectorStoreRetriever-BaseRetriever"
+                    }
+                ],
+                "inputs": {
+                    "tools": ["{{readFile_0.data.instance}}", "{{writeFile_0.data.instance}}", "{{serpAPI_1.data.instance}}"],
+                    "model": "{{chatOpenAI_0.data.instance}}",
+                    "vectorStoreRetriever": "{{pineconeExistingIndex_2.data.instance}}",
+                    "aiName": "",
+                    "aiRole": "",
+                    "maxLoop": 5
+                },
+                "outputAnchors": [
+                    {
+                        "id": "autoGPT_1-output-autoGPT-AutoGPT",
+                        "name": "autoGPT",
+                        "label": "AutoGPT智能体",
+                        "type": "AutoGPT"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1640.1595827723777,
+                "y": 83.16911150782087
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "serpAPI_1",
+            "position": {
+                "x": 1229.1163163101178,
+                "y": -254.87033156731943
+            },
+            "type": "customNode",
+            "data": {
+                "id": "serpAPI_1",
+                "label": "SerpAPI工具",
+                "name": "serpAPI",
+                "type": "SerpAPI工具",
+                "baseClasses": ["SerpAPI工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "SerpAPI：授权使用SerpAPI去得到谷歌搜索结果的工具，增加智能体联网搜索的能力",
+                "inputParams": [
+                    {
+                        "label": "SerpAPI密匙",
+                        "name": "apiKey",
+                        "type": "password",
+                        "id": "serpAPI_1-input-apiKey-password"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {},
+                "outputAnchors": [
+                    {
+                        "id": "serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "serpAPI",
+                        "label": "SerpAPI工具",
+                        "type": "SerpAPI工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1229.1163163101178,
+                "y": -254.87033156731943
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "readFile_0",
+            "position": {
+                "x": 862.5101597356698,
+                "y": -127.9071604592855
+            },
+            "type": "customNode",
+            "data": {
+                "id": "readFile_0",
+                "label": "文件读取工具",
+                "name": "readFile",
+                "type": "文件读取工具",
+                "baseClasses": ["文件读取工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Read File：授权从磁盘中读取文件的工具，增加智能体读取文件的能力",
+                "inputParams": [
+                    {
+                        "label": "文件夹根目录",
+                        "name": "basePath",
+                        "placeholder": "C:\\Users\\User\\Desktop",
+                        "type": "string",
+                        "optional": true,
+                        "id": "readFile_0-input-basePath-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "basePath": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "readFile_0-output-readFile-文件读取工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "readFile",
+                        "label": "文件读取工具",
+                        "type": "文件读取工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 862.5101597356698,
+                "y": -127.9071604592855
+            },
+            "selected": false
+        },
+        {
+            "width": 300,
+            "height": 279,
+            "id": "writeFile_0",
+            "position": {
+                "x": 498.96595760489083,
+                "y": 12.45687292152013
+            },
+            "type": "customNode",
+            "data": {
+                "id": "writeFile_0",
+                "label": "修改文件工具",
+                "name": "writeFile",
+                "type": "修改文件工具",
+                "baseClasses": ["修改文件工具", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Write File：授权从磁盘中创建与修改文件的工具，增加智能体修改文件的能力",
+                "inputParams": [
+                    {
+                        "label": "文件夹根目录",
+                        "name": "basePath",
+                        "placeholder": "C:\\Users\\User\\Desktop",
+                        "type": "string",
+                        "optional": true,
+                        "id": "writeFile_0-input-basePath-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "basePath": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "writeFile_0-output-writeFile-修改文件工具|Tool|StructuredTool|BaseLangChain",
+                        "name": "writeFile",
+                        "label": "修改文件工具",
+                        "type": "修改文件工具 | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 498.96595760489083,
+                "y": 12.45687292152013
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_0",
+            "position": {
+                "x": 123.72005767422235,
+                "y": -94.55980391569489
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_0",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_0-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-4",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 123.72005767422235,
+                "y": -94.55980391569489
+            }
+        },
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_0",
+            "position": {
+                "x": 822.8341687644095,
+                "y": 494.21237797008075
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_0",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_0-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_0-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 822.8341687644095,
+                "y": 494.21237797008075
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 705,
+            "id": "pineconeExistingIndex_2",
+            "position": {
+                "x": 1213.2459199216134,
+                "y": 310.1157798634315
+            },
+            "type": "customNode",
+            "data": {
+                "id": "pineconeExistingIndex_2",
+                "label": "Pinecone读取存储",
+                "name": "pineconeExistingIndex",
+                "type": "Pinecone向量",
+                "baseClasses": ["Pinecone向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Pinecone Existing Index：从Pinecone数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Pinecone Api密匙",
+                        "name": "pineconeApiKey",
+                        "type": "password",
+                        "id": "pineconeExistingIndex_2-input-pineconeApiKey-password"
+                    },
+                    {
+                        "label": "Pinecone环境",
+                        "name": "pineconeEnv",
+                        "placeholder": "my-pinecone-environment",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_2-input-pineconeEnv-string"
+                    },
+                    {
+                        "label": "Pinecone索引",
+                        "name": "pineconeIndex",
+                        "placeholder": "my-pinecone-index",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_2-input-pineconeIndex-string"
+                    },
+                    {
+                        "label": "Pinecone命名空间",
+                        "name": "pineconeNamespace",
+                        "type": "string",
+                        "placeholder": "my-pinecone-namespace",
+                        "optional": true,
+                        "id": "pineconeExistingIndex_2-input-pineconeNamespace-string"
+                    },
+                    {
+                        "label": "Pinecone元数据过滤器",
+                        "name": "pineconeMetadataFilter",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "pineconeExistingIndex_2-input-pineconeMetadataFilter-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "pineconeExistingIndex_2-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_0.data.instance}}",
+                    "pineconeEnv": "",
+                    "pineconeIndex": "",
+                    "pineconeNamespace": "",
+                    "pineconeMetadataFilter": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "pineconeExistingIndex_2-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Pinecone向量检索器",
+                                "type": "Pinecone向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "pineconeExistingIndex_2-output-vectorStore-Pinecone向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Pinecone向量存储器",
+                                "type": "Pinecone向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "retriever"
+                },
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1213.2459199216134,
+                "y": 310.1157798634315
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "pineconeExistingIndex_2",
+            "sourceHandle": "pineconeExistingIndex_2-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+            "target": "autoGPT_1",
+            "targetHandle": "autoGPT_1-input-vectorStoreRetriever-BaseRetriever",
+            "type": "buttonedge",
+            "id": "pineconeExistingIndex_2-pineconeExistingIndex_2-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever-autoGPT_1-autoGPT_1-input-vectorStoreRetriever-BaseRetriever",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_0",
+            "sourceHandle": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "pineconeExistingIndex_2",
+            "targetHandle": "pineconeExistingIndex_2-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_0-openAIEmbeddings_0-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-pineconeExistingIndex_2-pineconeExistingIndex_2-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "serpAPI_1",
+            "sourceHandle": "serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain",
+            "target": "autoGPT_1",
+            "targetHandle": "autoGPT_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "serpAPI_1-serpAPI_1-output-serpAPI-SerpAPI工具|Tool|StructuredTool|BaseLangChain-autoGPT_1-autoGPT_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "readFile_0",
+            "sourceHandle": "readFile_0-output-readFile-文件读取工具|Tool|StructuredTool|BaseLangChain",
+            "target": "autoGPT_1",
+            "targetHandle": "autoGPT_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "readFile_0-readFile_0-output-readFile-文件读取工具|Tool|StructuredTool|BaseLangChain-autoGPT_1-autoGPT_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "writeFile_0",
+            "sourceHandle": "writeFile_0-output-writeFile-修改文件工具|Tool|StructuredTool|BaseLangChain",
+            "target": "autoGPT_1",
+            "targetHandle": "autoGPT_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "writeFile_0-writeFile_0-output-writeFile-修改文件工具|Tool|StructuredTool|BaseLangChain-autoGPT_1-autoGPT_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_0",
+            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "autoGPT_1",
+            "targetHandle": "autoGPT_1-input-model-BaseChatModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-autoGPT_1-autoGPT_1-input-model-BaseChatModel",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

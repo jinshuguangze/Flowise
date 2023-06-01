@@ -1,0 +1,412 @@
+{
+    "description": "当智能体拥有思维链，产生了自我意识",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 331,
+            "id": "openAIEmbeddings_2",
+            "position": {
+                "x": -116.15532226306682,
+                "y": 207.52880798632364
+            },
+            "type": "customNode",
+            "data": {
+                "id": "openAIEmbeddings_2",
+                "label": "OpenAI向量化模型",
+                "name": "openAIEmbeddings",
+                "type": "OpenAI向量化模型",
+                "baseClasses": ["OpenAI向量化模型", "Embeddings"],
+                "category": "向量化模型-Embedding　　　　　　　　　　　　作用：将文本转化为向量，后续进行向量的储存和比对，后接向量存储器",
+                "description": "OpenAI Embeddings：使用OpenAI的向量化模型，给定文本输出向量",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "openAIEmbeddings_2-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "每行去除首尾空格",
+                        "name": "stripNewLines",
+                        "type": "boolean",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-stripNewLines-boolean"
+                    },
+                    {
+                        "label": "Batch Size",
+                        "name": "batchSize",
+                        "type": "number",
+                        "optional": true,
+                        "description": "单次调用时最大文档数据请求数量，默认为最大值2048",
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-batchSize-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "openAIEmbeddings_2-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "stripNewLines": "",
+                    "batchSize": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+                        "name": "openAIEmbeddings",
+                        "label": "OpenAI向量化模型",
+                        "type": "OpenAI向量化模型 | Embeddings"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -116.15532226306682,
+                "y": 207.52880798632364
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 705,
+            "id": "pineconeExistingIndex_2",
+            "position": {
+                "x": 269.000003548894,
+                "y": -167.20142449565913
+            },
+            "type": "customNode",
+            "data": {
+                "id": "pineconeExistingIndex_2",
+                "label": "Pinecone读取存储",
+                "name": "pineconeExistingIndex",
+                "type": "Pinecone向量",
+                "baseClasses": ["Pinecone向量", "VectorStoreRetriever", "BaseRetriever"],
+                "category": "向量存储器-VectorStore　　　　　　　　　　　作用：使用各种方式存储向量，前接文档数据和向量化模型，后接向量检索器，链或智能体",
+                "description": "Pinecone Existing Index：从Pinecone数据库里读取已保存的向量存储",
+                "inputParams": [
+                    {
+                        "label": "Pinecone Api密匙",
+                        "name": "pineconeApiKey",
+                        "type": "password",
+                        "id": "pineconeExistingIndex_2-input-pineconeApiKey-password"
+                    },
+                    {
+                        "label": "Pinecone环境",
+                        "name": "pineconeEnv",
+                        "placeholder": "my-pinecone-environment",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_2-input-pineconeEnv-string"
+                    },
+                    {
+                        "label": "Pinecone索引",
+                        "name": "pineconeIndex",
+                        "placeholder": "my-pinecone-index",
+                        "type": "string",
+                        "id": "pineconeExistingIndex_2-input-pineconeIndex-string"
+                    },
+                    {
+                        "label": "Pinecone命名空间",
+                        "name": "pineconeNamespace",
+                        "type": "string",
+                        "placeholder": "my-pinecone-namespace",
+                        "optional": true,
+                        "id": "pineconeExistingIndex_2-input-pineconeNamespace-string"
+                    },
+                    {
+                        "label": "Pinecone元数据过滤器",
+                        "name": "pineconeMetadataFilter",
+                        "type": "json",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "pineconeExistingIndex_2-input-pineconeMetadataFilter-json"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "向量化模型",
+                        "name": "embeddings",
+                        "type": "Embeddings",
+                        "id": "pineconeExistingIndex_2-input-embeddings-Embeddings"
+                    }
+                ],
+                "inputs": {
+                    "embeddings": "{{openAIEmbeddings_2.data.instance}}",
+                    "pineconeEnv": "",
+                    "pineconeIndex": "",
+                    "pineconeNamespace": "",
+                    "pineconeMetadataFilter": ""
+                },
+                "outputAnchors": [
+                    {
+                        "name": "output",
+                        "label": "Output",
+                        "type": "options",
+                        "options": [
+                            {
+                                "id": "pineconeExistingIndex_2-output-retriever-Pinecone向量|VectorStoreRetriever|BaseRetriever",
+                                "name": "retriever",
+                                "label": "Pinecone向量检索器",
+                                "type": "Pinecone向量 | VectorStoreRetriever | BaseRetriever"
+                            },
+                            {
+                                "id": "pineconeExistingIndex_2-output-vectorStore-Pinecone向量|VectorStore",
+                                "name": "vectorStore",
+                                "label": "Pinecone向量存储器",
+                                "type": "Pinecone向量 | VectorStore"
+                            }
+                        ],
+                        "default": "retriever"
+                    }
+                ],
+                "outputs": {
+                    "output": "vectorStore"
+                },
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 269.000003548894,
+                "y": -167.20142449565913
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_2",
+            "position": {
+                "x": 614.1534261689472,
+                "y": -351.67997796499793
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_2",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_2-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_2-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_2-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_2-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-3.5-turbo",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 614.1534261689472,
+                "y": -351.67997796499793
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 380,
+            "id": "babyAGI_0",
+            "position": {
+                "x": 994.0182889883233,
+                "y": 147.30370923541759
+            },
+            "type": "customNode",
+            "data": {
+                "id": "babyAGI_0",
+                "label": "BabyAGI智能体",
+                "name": "babyAGI",
+                "type": "BabyAGI智能体",
+                "baseClasses": ["BabyAGI"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "BabyAGI：另一个具有综合能力的智能体，它无法使用外部工具，但它能提前规划好一连串思维链上的子目标，并根据前一个子目标的生成来决定下一个子目标的优先级，这使得它更能专注于原始目标",
+                "inputParams": [
+                    {
+                        "label": "任务循环次数",
+                        "name": "taskLoop",
+                        "type": "number",
+                        "default": 3,
+                        "id": "babyAGI_0-input-taskLoop-number"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "对话语言模型",
+                        "name": "model",
+                        "type": "BaseChatModel",
+                        "id": "babyAGI_0-input-model-BaseChatModel"
+                    },
+                    {
+                        "label": "向量存储器",
+                        "name": "vectorStore",
+                        "type": "VectorStore",
+                        "id": "babyAGI_0-input-vectorStore-VectorStore"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_2.data.instance}}",
+                    "vectorStore": "{{pineconeExistingIndex_2.data.instance}}",
+                    "taskLoop": 3
+                },
+                "outputAnchors": [
+                    {
+                        "id": "babyAGI_0-output-babyAGI-BabyAGI",
+                        "name": "babyAGI",
+                        "label": "BabyAGI智能体",
+                        "type": "BabyAGI"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 994.0182889883233,
+                "y": 147.30370923541759
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "chatOpenAI_2",
+            "sourceHandle": "chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "babyAGI_0",
+            "targetHandle": "babyAGI_0-input-model-BaseChatModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_2-chatOpenAI_2-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-babyAGI_0-babyAGI_0-input-model-BaseChatModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "pineconeExistingIndex_2",
+            "sourceHandle": "pineconeExistingIndex_2-output-vectorStore-Pinecone向量|VectorStore",
+            "target": "babyAGI_0",
+            "targetHandle": "babyAGI_0-input-vectorStore-VectorStore",
+            "type": "buttonedge",
+            "id": "pineconeExistingIndex_2-pineconeExistingIndex_2-output-vectorStore-Pinecone向量|VectorStore-babyAGI_0-babyAGI_0-input-vectorStore-VectorStore",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "openAIEmbeddings_2",
+            "sourceHandle": "openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings",
+            "target": "pineconeExistingIndex_2",
+            "targetHandle": "pineconeExistingIndex_2-input-embeddings-Embeddings",
+            "type": "buttonedge",
+            "id": "openAIEmbeddings_2-openAIEmbeddings_2-output-openAIEmbeddings-OpenAI向量化模型|Embeddings-pineconeExistingIndex_2-pineconeExistingIndex_2-input-embeddings-Embeddings",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

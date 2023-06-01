@@ -1,0 +1,950 @@
+{
+    "description": "使用GET_POST让智能体自由翱翔在网络世界",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_3",
+            "position": {
+                "x": 502.44758879280164,
+                "y": 929.0156022065836
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_3",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_3-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_3-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_3-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_3-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_3-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_3-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_3-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_3-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-3.5-turbo",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_3-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 502.44758879280164,
+                "y": 929.0156022065836
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_4",
+            "position": {
+                "x": 501.88094831761714,
+                "y": 352.2884785320286
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_4",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_4-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_4-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_4-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_4-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_4-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_4-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_4-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_4-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-3.5-turbo",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_4-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 501.88094831761714,
+                "y": 352.2884785320286
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatOpenAI_5",
+            "position": {
+                "x": 918.0482416511502,
+                "y": 1533.9975765042159
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatOpenAI_5",
+                "label": "OpenAI对话语言模型",
+                "name": "chatOpenAI",
+                "type": "OpenAI对话语言模型",
+                "baseClasses": ["OpenAI对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat OpenAI：OpenAI公司的对话语言模型，GPT系列",
+                "inputParams": [
+                    {
+                        "label": "OpenAI Api密匙",
+                        "name": "openAIApiKey",
+                        "type": "password",
+                        "id": "chatOpenAI_5-input-openAIApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "gpt-4",
+                                "name": "gpt-4"
+                            },
+                            {
+                                "label": "gpt-4-0314",
+                                "name": "gpt-4-0314"
+                            },
+                            {
+                                "label": "gpt-4-32k-0314",
+                                "name": "gpt-4-32k-0314"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo",
+                                "name": "gpt-3.5-turbo"
+                            },
+                            {
+                                "label": "gpt-3.5-turbo-0301",
+                                "name": "gpt-3.5-turbo-0301"
+                            }
+                        ],
+                        "default": "gpt-3.5-turbo",
+                        "optional": true,
+                        "id": "chatOpenAI_5-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatOpenAI_5-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokens",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_5-input-maxTokens-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_5-input-topP-number"
+                    },
+                    {
+                        "label": "频率惩罚",
+                        "name": "frequencyPenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_5-input-frequencyPenalty-number"
+                    },
+                    {
+                        "label": "存在惩罚",
+                        "name": "presencePenalty",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_5-input-presencePenalty-number"
+                    },
+                    {
+                        "label": "超时时长",
+                        "name": "timeout",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatOpenAI_5-input-timeout-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "gpt-3.5-turbo",
+                    "temperature": 0.9,
+                    "maxTokens": "",
+                    "topP": "",
+                    "frequencyPenalty": "",
+                    "presencePenalty": "",
+                    "timeout": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatOpenAI_5-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatOpenAI",
+                        "label": "OpenAI对话语言模型",
+                        "type": "OpenAI对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 918.0482416511502,
+                "y": 1533.9975765042159
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 378,
+            "id": "bufferMemory_1",
+            "position": {
+                "x": 1339.0886337913928,
+                "y": 1667.915455178946
+            },
+            "type": "customNode",
+            "data": {
+                "id": "bufferMemory_1",
+                "label": "全缓存记忆模式",
+                "name": "bufferMemory",
+                "type": "全缓存记忆模式",
+                "baseClasses": ["全缓存记忆模式", "BaseChatMemory", "BaseMemory"],
+                "category": "记忆模式-Memory　　　　　　　　　　　　　　作用：提供不同策略的记忆方式，后接需要记忆的链或智能体",
+                "description": "Buffer Memory：直接将所有上下文记忆全部进行缓存，提出新的问题时将所有缓存记忆全部添加进提示词",
+                "inputParams": [
+                    {
+                        "label": "记忆数据的变量名称",
+                        "name": "memoryKey",
+                        "type": "string",
+                        "default": "chat_history",
+                        "id": "bufferMemory_1-input-memoryKey-string"
+                    },
+                    {
+                        "label": "人类输入数据的变量名称",
+                        "name": "inputKey",
+                        "type": "string",
+                        "default": "input",
+                        "id": "bufferMemory_1-input-inputKey-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "memoryKey": "chat_history",
+                    "inputKey": "input"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+                        "name": "bufferMemory",
+                        "label": "全缓存记忆模式",
+                        "type": "全缓存记忆模式 | BaseChatMemory | BaseMemory"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 1339.0886337913928,
+                "y": 1667.915455178946
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 385,
+            "id": "conversationalAgent_1",
+            "position": {
+                "x": 2074.244184456294,
+                "y": 975.0766363964409
+            },
+            "type": "customNode",
+            "data": {
+                "id": "conversationalAgent_1",
+                "label": "对话型智能体",
+                "name": "conversationalAgent",
+                "type": "代理执行器",
+                "baseClasses": ["代理执行器", "BaseChain", "BaseLangChain"],
+                "category": "智能体-Agent　　　　　　　　　　　　　　　　作用：复杂目标的处理中心，前接语言模型和允许工具列表等",
+                "description": "Conversational Agent：聊天场景使用，可以根据聊天内容，选择合适工具增强答案的智能体",
+                "inputParams": [
+                    {
+                        "label": "前置系统信息",
+                        "name": "systemMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "conversationalAgent_1-input-systemMessage-string"
+                    },
+                    {
+                        "label": "前置人类信息",
+                        "name": "humanMessage",
+                        "type": "string",
+                        "rows": 4,
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "conversationalAgent_1-input-humanMessage-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "允许工具列表",
+                        "name": "tools",
+                        "type": "Tool",
+                        "list": true,
+                        "id": "conversationalAgent_1-input-tools-Tool"
+                    },
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "conversationalAgent_1-input-model-BaseLanguageModel"
+                    },
+                    {
+                        "label": "记忆模式",
+                        "name": "memory",
+                        "type": "BaseChatMemory",
+                        "id": "conversationalAgent_1-input-memory-BaseChatMemory"
+                    }
+                ],
+                "inputs": {
+                    "tools": ["{{chainTool_2.data.instance}}", "{{chainTool_1.data.instance}}"],
+                    "model": "{{chatOpenAI_5.data.instance}}",
+                    "memory": "{{bufferMemory_1.data.instance}}",
+                    "systemMessage": "",
+                    "humanMessage": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "conversationalAgent_1-output-conversationalAgent-代理执行器|BaseChain|BaseLangChain",
+                        "name": "conversationalAgent",
+                        "label": "代理执行器",
+                        "type": "代理执行器 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 2074.244184456294,
+                "y": 975.0766363964409
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 460,
+            "id": "postApiChain_0",
+            "position": {
+                "x": 915.4732104693436,
+                "y": 937.8918449325025
+            },
+            "type": "customNode",
+            "data": {
+                "id": "postApiChain_0",
+                "label": "POST API链",
+                "name": "postApiChain",
+                "type": "POST API链",
+                "baseClasses": ["POST API链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "POST Api Chain：根据API文档去POST网页的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "API文档",
+                        "name": "apiDocs",
+                        "type": "string",
+                        "description": "如果您想了解API文档是什么，请阅读<a target=\"_blank\" href=\"https://github.com/hwchase17/langchain/blob/master/langchain/chains/api/open_meteo_docs.py\">此链接</a>获取更多信息",
+                        "rows": 4,
+                        "id": "postApiChain_0-input-apiDocs-string"
+                    },
+                    {
+                        "label": "Headers信息",
+                        "name": "headers",
+                        "type": "json",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "postApiChain_0-input-headers-json"
+                    },
+                    {
+                        "label": "URL提示词",
+                        "name": "urlPrompt",
+                        "type": "string",
+                        "description": "指导语言模型如何去构建URL的提示词，必须包含 {api_docs} 和 {question} 两个变量",
+                        "default": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, which is the API url to call for answering the user question.\nThe value of \"data\" should be a dictionary of key-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string.\nYou should build the json string in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\njson string:",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "id": "postApiChain_0-input-urlPrompt-string"
+                    },
+                    {
+                        "label": "响应提示词",
+                        "name": "ansPrompt",
+                        "type": "string",
+                        "description": "指导语言模型如何去返回API响应的提示词，必须包含 {api_response}, {api_url}, 和 {question} 三个变量",
+                        "default": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, which is the API url to call for answering the user question.\nThe value of \"data\" should be a dictionary of key-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string.\nYou should build the json string in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\njson string: {api_url_body}\n\nHere is the response from the API:\n\n{api_response}\n\nSummarize this response to answer the original question.\n\nSummary:",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "id": "postApiChain_0-input-ansPrompt-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "postApiChain_0-input-model-BaseLanguageModel"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_3.data.instance}}",
+                    "apiDocs": "API documentation:\nEndpoint: https://eog776prcv6dg0j.m.pipedream.net\n\nThis API is for sending Discord message\n\nQuery body table:\nmessage | string | Message to send | required\n\nResponse schema (string):\nresult | string",
+                    "headers": "",
+                    "urlPrompt": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, which is the API url to call for answering the user question.\nThe value of \"data\" should be a dictionary of key-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string.\nYou should build the json string in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\njson string:",
+                    "ansPrompt": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate a json string with two keys: \"url\" and \"data\".\nThe value of \"url\" should be a string, which is the API url to call for answering the user question.\nThe value of \"data\" should be a dictionary of key-value pairs you want to POST to the url as a JSON body.\nBe careful to always use double quotes for strings in the json string.\nYou should build the json string in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\njson string: {api_url_body}\n\nHere is the response from the API:\n\n{api_response}\n\nSummarize this response to answer the original question.\n\nSummary:"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "postApiChain_0-output-postApiChain-POST API链|BaseChain|BaseLangChain",
+                        "name": "postApiChain",
+                        "label": "POST API链",
+                        "type": "POST API链 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 915.4732104693436,
+                "y": 937.8918449325025
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 603,
+            "id": "chainTool_1",
+            "position": {
+                "x": 1335.0705996330737,
+                "y": 936.4214376826778
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chainTool_1",
+                "label": "链工具",
+                "name": "chainTool",
+                "type": "链工具",
+                "baseClasses": ["链工具", "DynamicTool", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Chain Tool：授权使用外接链（Chain）的工具，增加智能体使用其他语言模型得到回复数据的能力",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "state-of-union-qa",
+                        "id": "chainTool_1-input-name-string"
+                    },
+                    {
+                        "label": "链作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "placeholder": "游戏术语QA链：当您需要询问某一游戏术语的含义时，它能帮助到您",
+                        "id": "chainTool_1-input-description-string"
+                    },
+                    {
+                        "label": "是否直接返回数据",
+                        "name": "returnDirect",
+                        "type": "boolean",
+                        "optional": true,
+                        "id": "chainTool_1-input-returnDirect-boolean"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "链",
+                        "name": "baseChain",
+                        "type": "BaseChain",
+                        "id": "chainTool_1-input-baseChain-BaseChain"
+                    }
+                ],
+                "inputs": {
+                    "name": "discord发送模块",
+                    "description": "让你可以发送discord消息",
+                    "returnDirect": "",
+                    "baseChain": "{{postApiChain_0.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chainTool_1-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+                        "name": "chainTool",
+                        "label": "链工具",
+                        "type": "链工具 | DynamicTool | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1335.0705996330737,
+                "y": 936.4214376826778
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 460,
+            "id": "getApiChain_0",
+            "position": {
+                "x": 917.9123349997014,
+                "y": 417.2728930165673
+            },
+            "type": "customNode",
+            "data": {
+                "id": "getApiChain_0",
+                "label": "GET API链",
+                "name": "getApiChain",
+                "type": "GET API链",
+                "baseClasses": ["GET API链", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "GET Api Chain：根据API文档去GET网页的链，无上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "API文档",
+                        "name": "apiDocs",
+                        "type": "string",
+                        "description": "如果您想了解API文档是什么，请阅读<a target=\"_blank\" href=\"https://github.com/hwchase17/langchain/blob/master/langchain/chains/api/open_meteo_docs.py\">此链接</a>获取更多信息",
+                        "rows": 4,
+                        "id": "getApiChain_0-input-apiDocs-string"
+                    },
+                    {
+                        "label": "Headers信息",
+                        "name": "headers",
+                        "type": "json",
+                        "additionalParams": true,
+                        "optional": true,
+                        "id": "getApiChain_0-input-headers-json"
+                    },
+                    {
+                        "label": "URL提示词",
+                        "name": "urlPrompt",
+                        "type": "string",
+                        "description": "指导语言模型如何去构建URL的提示词，必须包含 {api_docs} 和 {question} 两个变量",
+                        "default": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate the full API url to call for answering the user question.\nYou should build the API url in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\nAPI url:",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "id": "getApiChain_0-input-urlPrompt-string"
+                    },
+                    {
+                        "label": "响应提示词",
+                        "name": "ansPrompt",
+                        "type": "string",
+                        "description": "指导语言模型如何去返回API响应的提示词，必须包含 {api_response}, {api_url}, 和 {question} 三个变量",
+                        "default": "Given this {api_response} response for {api_url}. use the given response to answer this {question}",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "id": "getApiChain_0-input-ansPrompt-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseLanguageModel",
+                        "id": "getApiChain_0-input-model-BaseLanguageModel"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatOpenAI_4.data.instance}}",
+                    "apiDocs": "BASE URL: https://api.open-meteo.com/\n\nAPI Documentation\nThe API endpoint /v1/forecast accepts a geographical coordinate, a list of weather variables and responds with a JSON hourly weather forecast for 7 days. Time always starts at 0:00 today and contains 168 hours. All URL parameters are listed below:\n\nParameter\tFormat\tRequired\tDefault\tDescription\nlatitude, longitude\tFloating point\tYes\t\tGeographical WGS84 coordinate of the location\nhourly\tString array\tNo\t\tA list of weather variables which should be returned. Values can be comma separated, or multiple &hourly= parameter in the URL can be used.\ndaily\tString array\tNo\t\tA list of daily weather variable aggregations which should be returned. Values can be comma separated, or multiple &daily= parameter in the URL can be used. If daily weather variables are specified, parameter timezone is required.\ncurrent_weather\tBool\tNo\tfalse\tInclude current weather conditions in the JSON output.\ntemperature_unit\tString\tNo\tcelsius\tIf fahrenheit is set, all temperature values are converted to Fahrenheit.\nwindspeed_unit\tString\tNo\tkmh\tOther wind speed speed units: ms, mph and kn\nprecipitation_unit\tString\tNo\tmm\tOther precipitation amount units: inch\ntimeformat\tString\tNo\tiso8601\tIf format unixtime is selected, all time values are returned in UNIX epoch time in seconds. Please note that all timestamp are in GMT+0! For daily values with unix timestamps, please apply utc_offset_seconds again to get the correct date.\ntimezone\tString\tNo\tGMT\tIf timezone is set, all timestamps are returned as local-time and data is returned starting at 00:00 local-time. Any time zone name from the time zone database is supported. If auto is set as a time zone, the coordinates will be automatically resolved to the local time zone.\npast_days\tInteger (0-2)\tNo\t0\tIf past_days is set, yesterday or the day before yesterday data are also returned.\nstart_date\nend_date\tString (yyyy-mm-dd)\tNo\t\tThe time interval to get weather data. A day must be specified as an ISO8601 date (e.g. 2022-06-30).\nmodels\tString array\tNo\tauto\tManually select one or more weather models. Per default, the best suitable weather models will be combined.\n\nHourly Parameter Definition\nThe parameter &hourly= accepts the following values. Most weather variables are given as an instantaneous value for the indicated hour. Some variables like precipitation are calculated from the preceding hour as an average or sum.\n\nVariable\tValid time\tUnit\tDescription\ntemperature_2m\tInstant\t°C (°F)\tAir temperature at 2 meters above ground\nsnowfall\tPreceding hour sum\tcm (inch)\tSnowfall amount of the preceding hour in centimeters. For the water equivalent in millimeter, divide by 7. E.g. 7 cm snow = 10 mm precipitation water equivalent\nrain\tPreceding hour sum\tmm (inch)\tRain from large scale weather systems of the preceding hour in millimeter\nshowers\tPreceding hour sum\tmm (inch)\tShowers from convective precipitation in millimeters from the preceding hour\nweathercode\tInstant\tWMO code\tWeather condition as a numeric code. Follow WMO weather interpretation codes. See table below for details.\nsnow_depth\tInstant\tmeters\tSnow depth on the ground\nfreezinglevel_height\tInstant\tmeters\tAltitude above sea level of the 0°C level\nvisibility\tInstant\tmeters\tViewing distance in meters. Influenced by low clouds, humidity and aerosols. Maximum visibility is approximately 24 km.",
+                    "headers": "",
+                    "urlPrompt": "You are given the below API Documentation:\n{api_docs}\nUsing this documentation, generate the full API url to call for answering the user question.\nYou should build the API url in order to get a response that is as short as possible, while still getting the necessary information to answer the question. Pay attention to deliberately exclude any unnecessary pieces of data in the API call.\n\nQuestion:{question}\nAPI url:",
+                    "ansPrompt": "Given this {api_response} response for {api_url}. use the given response to answer this {question}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "getApiChain_0-output-getApiChain-GET API链|BaseChain|BaseLangChain",
+                        "name": "getApiChain",
+                        "label": "GET API链",
+                        "type": "GET API链 | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 917.9123349997014,
+                "y": 417.2728930165673
+            }
+        },
+        {
+            "width": 300,
+            "height": 603,
+            "id": "chainTool_2",
+            "position": {
+                "x": 1330.3742763747975,
+                "y": 273.03790422137774
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chainTool_2",
+                "label": "链工具",
+                "name": "chainTool",
+                "type": "链工具",
+                "baseClasses": ["链工具", "DynamicTool", "Tool", "StructuredTool", "BaseLangChain"],
+                "category": "工具-Tool　　　　　　　　　　　　　　　　　　作用：给智能体提供不同种类的工具以增强其能力，后接智能体",
+                "description": "Chain Tool：授权使用外接链（Chain）的工具，增加智能体使用其他语言模型得到回复数据的能力",
+                "inputParams": [
+                    {
+                        "label": "链名称",
+                        "name": "name",
+                        "type": "string",
+                        "placeholder": "state-of-union-qa",
+                        "id": "chainTool_2-input-name-string"
+                    },
+                    {
+                        "label": "链作用描述",
+                        "name": "description",
+                        "type": "string",
+                        "rows": 3,
+                        "placeholder": "游戏术语QA链：当您需要询问某一游戏术语的含义时，它能帮助到您",
+                        "id": "chainTool_2-input-description-string"
+                    },
+                    {
+                        "label": "是否直接返回数据",
+                        "name": "returnDirect",
+                        "type": "boolean",
+                        "optional": true,
+                        "id": "chainTool_2-input-returnDirect-boolean"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "链",
+                        "name": "baseChain",
+                        "type": "BaseChain",
+                        "id": "chainTool_2-input-baseChain-BaseChain"
+                    }
+                ],
+                "inputs": {
+                    "name": "天气预测模块",
+                    "description": "让你可以询问城市的天气预测",
+                    "returnDirect": "",
+                    "baseChain": "{{getApiChain_0.data.instance}}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chainTool_2-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+                        "name": "chainTool",
+                        "label": "链工具",
+                        "type": "链工具 | DynamicTool | Tool | StructuredTool | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1330.3742763747975,
+                "y": 273.03790422137774
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "bufferMemory_1",
+            "sourceHandle": "bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-memory-BaseChatMemory",
+            "type": "buttonedge",
+            "id": "bufferMemory_1-bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory-conversationalAgent_1-conversationalAgent_1-input-memory-BaseChatMemory",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_5",
+            "sourceHandle": "chatOpenAI_5-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_5-chatOpenAI_5-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chatOpenAI_3",
+            "sourceHandle": "chatOpenAI_3-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "postApiChain_0",
+            "targetHandle": "postApiChain_0-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_3-chatOpenAI_3-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-postApiChain_0-postApiChain_0-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            },
+            "selected": false
+        },
+        {
+            "source": "chatOpenAI_4",
+            "sourceHandle": "chatOpenAI_4-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "getApiChain_0",
+            "targetHandle": "getApiChain_0-input-model-BaseLanguageModel",
+            "type": "buttonedge",
+            "id": "chatOpenAI_4-chatOpenAI_4-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-getApiChain_0-getApiChain_0-input-model-BaseLanguageModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "getApiChain_0",
+            "sourceHandle": "getApiChain_0-output-getApiChain-GET API链|BaseChain|BaseLangChain",
+            "target": "chainTool_2",
+            "targetHandle": "chainTool_2-input-baseChain-BaseChain",
+            "type": "buttonedge",
+            "id": "getApiChain_0-getApiChain_0-output-getApiChain-GET API链|BaseChain|BaseLangChain-chainTool_2-chainTool_2-input-baseChain-BaseChain",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chainTool_2",
+            "sourceHandle": "chainTool_2-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "chainTool_2-chainTool_2-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "chainTool_1",
+            "sourceHandle": "chainTool_1-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain",
+            "target": "conversationalAgent_1",
+            "targetHandle": "conversationalAgent_1-input-tools-Tool",
+            "type": "buttonedge",
+            "id": "chainTool_1-chainTool_1-output-chainTool-链工具|DynamicTool|Tool|StructuredTool|BaseLangChain-conversationalAgent_1-conversationalAgent_1-input-tools-Tool",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "postApiChain_0",
+            "sourceHandle": "postApiChain_0-output-postApiChain-POST API链|BaseChain|BaseLangChain",
+            "target": "chainTool_1",
+            "targetHandle": "chainTool_1-input-baseChain-BaseChain",
+            "type": "buttonedge",
+            "id": "postApiChain_0-postApiChain_0-output-postApiChain-POST API链|BaseChain|BaseLangChain-chainTool_1-chainTool_1-input-baseChain-BaseChain",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}

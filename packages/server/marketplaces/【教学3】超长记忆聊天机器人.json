@@ -1,0 +1,288 @@
+{
+    "description": "使用Claude模型来获得最长的记忆存储",
+    "nodes": [
+        {
+            "width": 300,
+            "height": 526,
+            "id": "chatAnthropic_0",
+            "position": {
+                "x": -39.611654142965534,
+                "y": 578.483312042035
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatAnthropic_0",
+                "label": "Anthropic对话语言模型",
+                "name": "chatAnthropic",
+                "type": "Anthropic对话语言模型",
+                "baseClasses": ["Anthropic对话语言模型", "BaseChatModel", "BaseLanguageModel", "BaseLangChain"],
+                "category": "对话语言模型-ChatModel　　　　　　　　　　　作用：拥有对话能力的生成式语言模型，后接链或智能体",
+                "description": "Chat Anthropic：Anthropic公司的对话语言模型，Claude系列",
+                "inputParams": [
+                    {
+                        "label": "ChatAnthropic Api密匙",
+                        "name": "anthropicApiKey",
+                        "type": "password",
+                        "id": "chatAnthropic_0-input-anthropicApiKey-password"
+                    },
+                    {
+                        "label": "对话语言模型选择",
+                        "name": "modelName",
+                        "type": "options",
+                        "options": [
+                            {
+                                "label": "claude-v1",
+                                "name": "claude-v1"
+                            },
+                            {
+                                "label": "claude-v1-100k",
+                                "name": "claude-v1-100k"
+                            },
+                            {
+                                "label": "claude-v1.0",
+                                "name": "claude-v1.0"
+                            },
+                            {
+                                "label": "claude-v1.2",
+                                "name": "claude-v1.2"
+                            },
+                            {
+                                "label": "claude-v1.3",
+                                "name": "claude-v1.3"
+                            },
+                            {
+                                "label": "claude-v1.3-100k",
+                                "name": "claude-v1.3-100k"
+                            },
+                            {
+                                "label": "claude-instant-v1",
+                                "name": "claude-instant-v1"
+                            },
+                            {
+                                "label": "claude-instant-v1-100k",
+                                "name": "claude-instant-v1-100k"
+                            },
+                            {
+                                "label": "claude-instant-v1.0",
+                                "name": "claude-instant-v1.0"
+                            },
+                            {
+                                "label": "claude-instant-v1.1",
+                                "name": "claude-instant-v1.1"
+                            },
+                            {
+                                "label": "claude-instant-v1.1-100k",
+                                "name": "claude-instant-v1.1-100k"
+                            }
+                        ],
+                        "default": "claude-v1",
+                        "optional": true,
+                        "id": "chatAnthropic_0-input-modelName-options"
+                    },
+                    {
+                        "label": "温度值",
+                        "name": "temperature",
+                        "type": "number",
+                        "default": 0.9,
+                        "optional": true,
+                        "id": "chatAnthropic_0-input-temperature-number"
+                    },
+                    {
+                        "label": "最大Token上限",
+                        "name": "maxTokensToSample",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatAnthropic_0-input-maxTokensToSample-number"
+                    },
+                    {
+                        "label": "Top P值",
+                        "name": "topP",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatAnthropic_0-input-topP-number"
+                    },
+                    {
+                        "label": "Top K值",
+                        "name": "topK",
+                        "type": "number",
+                        "optional": true,
+                        "additionalParams": true,
+                        "id": "chatAnthropic_0-input-topK-number"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "modelName": "claude-v1.3-100k",
+                    "temperature": 0.9,
+                    "maxTokensToSample": "",
+                    "topP": "",
+                    "topK": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatAnthropic_0-output-chatAnthropic-Anthropic对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+                        "name": "chatAnthropic",
+                        "label": "Anthropic对话语言模型",
+                        "type": "Anthropic对话语言模型 | BaseChatModel | BaseLanguageModel | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": -39.611654142965534,
+                "y": 578.483312042035
+            },
+            "selected": false,
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 334,
+            "id": "conversationChain_0",
+            "position": {
+                "x": 426.60198036437544,
+                "y": 959.7949157648196
+            },
+            "type": "customNode",
+            "data": {
+                "id": "conversationChain_0",
+                "label": "对话链",
+                "name": "conversationChain",
+                "type": "对话链",
+                "baseClasses": ["对话链", "LLMChain", "BaseChain", "BaseLangChain"],
+                "category": "链-Chain　　　　　　　　　　　　　　　　　　作用：单一目标的处理中心，前接语言模型等，后可接链工具，作为工具连接在智能体上",
+                "description": "Conversation Chain：适用于对话场景的链，带有上下文记忆",
+                "inputParams": [
+                    {
+                        "label": "前置系统消息",
+                        "name": "systemMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "additionalParams": true,
+                        "optional": true,
+                        "placeholder": "You are a helpful assistant that write codes",
+                        "id": "conversationChain_0-input-systemMessagePrompt-string"
+                    }
+                ],
+                "inputAnchors": [
+                    {
+                        "label": "语言模型",
+                        "name": "model",
+                        "type": "BaseChatModel",
+                        "id": "conversationChain_0-input-model-BaseChatModel"
+                    },
+                    {
+                        "label": "记忆模式",
+                        "name": "memory",
+                        "type": "BaseMemory",
+                        "id": "conversationChain_0-input-memory-BaseMemory"
+                    }
+                ],
+                "inputs": {
+                    "model": "{{chatAnthropic_0.data.instance}}",
+                    "memory": "{{bufferMemory_0.data.instance}}",
+                    "systemMessagePrompt": ""
+                },
+                "outputAnchors": [
+                    {
+                        "id": "conversationChain_0-output-conversationChain-对话链|LLMChain|BaseChain|BaseLangChain",
+                        "name": "conversationChain",
+                        "label": "对话链",
+                        "type": "对话链 | LLMChain | BaseChain | BaseLangChain"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 426.60198036437544,
+                "y": 959.7949157648196
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 378,
+            "id": "bufferMemory_0",
+            "position": {
+                "x": -39.170077043443484,
+                "y": 1144.962603252945
+            },
+            "type": "customNode",
+            "data": {
+                "id": "bufferMemory_0",
+                "label": "全缓存记忆模式",
+                "name": "bufferMemory",
+                "type": "全缓存记忆模式",
+                "baseClasses": ["全缓存记忆模式", "BaseChatMemory", "BaseMemory"],
+                "category": "记忆模式-Memory　　　　　　　　　　　　　　作用：提供不同策略的记忆方式，后接需要记忆的链或智能体",
+                "description": "Buffer Memory：直接将所有上下文记忆全部进行缓存，提出新的问题时将所有缓存记忆全部添加进提示词",
+                "inputParams": [
+                    {
+                        "label": "记忆数据的变量名称",
+                        "name": "memoryKey",
+                        "type": "string",
+                        "default": "chat_history",
+                        "id": "bufferMemory_0-input-memoryKey-string"
+                    },
+                    {
+                        "label": "人类输入数据的变量名称",
+                        "name": "inputKey",
+                        "type": "string",
+                        "default": "input",
+                        "id": "bufferMemory_0-input-inputKey-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "memoryKey": "chat_history",
+                    "inputKey": "input"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+                        "name": "bufferMemory",
+                        "label": "全缓存记忆模式",
+                        "type": "全缓存记忆模式 | BaseChatMemory | BaseMemory"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": -39.170077043443484,
+                "y": 1144.962603252945
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "chatAnthropic_0",
+            "sourceHandle": "chatAnthropic_0-output-chatAnthropic-Anthropic对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "conversationChain_0",
+            "targetHandle": "conversationChain_0-input-model-BaseChatModel",
+            "type": "buttonedge",
+            "id": "chatAnthropic_0-chatAnthropic_0-output-chatAnthropic-Anthropic对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationChain_0-conversationChain_0-input-model-BaseChatModel",
+            "data": {
+                "label": ""
+            }
+        },
+        {
+            "source": "bufferMemory_0",
+            "sourceHandle": "bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+            "target": "conversationChain_0",
+            "targetHandle": "conversationChain_0-input-memory-BaseMemory",
+            "type": "buttonedge",
+            "id": "bufferMemory_0-bufferMemory_0-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory-conversationChain_0-conversationChain_0-input-memory-BaseMemory",
+            "data": {
+                "label": ""
+            }
+        }
+    ]
+}
