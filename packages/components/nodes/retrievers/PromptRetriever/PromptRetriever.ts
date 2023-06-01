@@ -24,7 +24,7 @@ class PromptRetriever_Retrievers implements INode {
                 label: '提示词名称',
                 name: 'name',
                 type: 'string',
-                placeholder: 'physics-qa'
+                placeholder: '都市怪谈游戏名生成'
             },
             {
                 label: '提示词作用描述',

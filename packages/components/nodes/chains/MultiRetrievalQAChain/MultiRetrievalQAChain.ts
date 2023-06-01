@@ -32,7 +32,7 @@ class MultiRetrievalQAChain_Chains implements INode {
             {
                 label: '向量检索器',
                 name: 'vectorStoreRetriever',
-                type: 'VectorStoreRetriever',
+                type: '向量检索器',
                 list: true
             }
         ]

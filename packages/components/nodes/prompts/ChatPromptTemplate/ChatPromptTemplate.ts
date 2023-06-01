@@ -34,7 +34,7 @@ class ChatPromptTemplate_Prompts implements INode {
                 name: 'humanMessagePrompt',
                 type: 'string',
                 rows: 4,
-                placeholder: `{text}`
+                placeholder: `{input}`
             },
             {
                 label: '设定提示词变量值',

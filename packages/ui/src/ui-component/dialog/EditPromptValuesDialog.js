@@ -130,7 +130,7 @@ const EditPromptValuesDialog = ({ show, dialogProps, onCancel, onConfirm }) => {
                     {!dialogProps.disabled && inputParam && inputParam.acceptVariable && (
                         <div style={{ flex: 30 }}>
                             <Stack flexDirection='row' sx={{ mb: 1, ml: 2 }}>
-                                <Typography variant='h4'>Select Variable</Typography>
+                                <Typography variant='h4'>选择变量</Typography>
                             </Stack>
                             <PerfectScrollbar style={{ height: '100%', maxHeight: 'calc(100vh - 220px)', overflowX: 'hidden' }}>
                                 <Box sx={{ pl: 2, pr: 2 }}>
@@ -169,8 +169,8 @@ const EditPromptValuesDialog = ({ show, dialogProps, onCancel, onConfirm }) => {
                                                 </ListItemAvatar>
                                                 <ListItemText
                                                     sx={{ ml: 1 }}
-                                                    primary='question'
-                                                    secondary={`User's question from chatbox`}
+                                                    primary='用户输入的问题'
+                                                    secondary={`用户从聊天框内所提出的问题`}
                                                 />
                                             </ListItem>
                                         </ListItemButton>

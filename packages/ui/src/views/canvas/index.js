@@ -154,7 +154,7 @@ const Canvas = () => {
     const handleDeleteFlow = async () => {
         const confirmPayload = {
             title: `删除Mapp`,
-            description: `Delete chatflow ${chatflow.name}?`,
+            description: `删除Mapp： ${chatflow.name}吗?`,
             confirmButtonName: '删除',
             cancelButtonName: '取消'
         }
