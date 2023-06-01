@@ -244,7 +244,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                                     {/* Display the correct icon depending on the message type */}
                                     {message.type === 'apiMessage' ? (
                                         <img
-                                            src='	https://github.com/jinshuguangze/Flowise/blob/main…rc/assets/images/changyou_logo_small.jpg?raw=true'
+                                            src='https://raw.githubusercontent.com/jinshuguangze/Flowise/main/packages/ui/src/assets/images/changyou_logo_small.jpg'
                                             alt='AI'
                                             width='30'
                                             height='30'
