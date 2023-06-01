@@ -31,7 +31,7 @@ class MultiPromptChain_Chains implements INode {
             {
                 label: '提示词检索器',
                 name: 'promptRetriever',
-                type: 'PromptRetriever',
+                type: '提示词检索器',
                 list: true
             }
         ]
