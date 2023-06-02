@@ -373,7 +373,7 @@ const Canvas = () => {
         } else if (updateChatflowApi.error) {
             const error = updateChatflowApi.error
             const errorData = error.response.data || `${error.response.status}: ${error.response.statusText}`
-            errorFailed(`Failed to save chatflow: ${errorData}`)
+            errorFailed(`保存Mapp失败: ${errorData}`)
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
