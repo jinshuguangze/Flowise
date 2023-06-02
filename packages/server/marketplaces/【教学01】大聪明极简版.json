@@ -1,81 +1,17 @@
 {
-    "description": "使用对话总结记忆模式部分解决记忆力问题",
+    "description": "使用对话链10秒做出你的第一个Mapp，使用模板后，填入api密匙，点击上方保存，即可在右边聊天栏内与大聪明极简版对话啦。对话链相当于一个应用，而记忆模式和语言模型是这个应用的可拼装组件。",
     "nodes": [
         {
             "width": 300,
-            "height": 428,
-            "id": "conversationSummaryMemory_0",
-            "position": {
-                "x": 841.1690769921679,
-                "y": 371
-            },
-            "type": "customNode",
-            "data": {
-                "id": "conversationSummaryMemory_0",
-                "label": "对话总结记忆模式",
-                "name": "conversationSummaryMemory",
-                "type": "对话总结记忆模式",
-                "baseClasses": ["对话总结记忆模式", "BaseChatMemory", "BaseMemory"],
-                "category": "记忆模式-Memory　　　　　　　　　　　　　　作用：提供不同策略的记忆方式，后接需要记忆的链或智能体",
-                "description": "Conversation Summary Memory：将不断总结上下文对话，提炼出概要后缓存",
-                "inputParams": [
-                    {
-                        "label": "记忆数据的变量名称",
-                        "name": "memoryKey",
-                        "type": "string",
-                        "default": "chat_history",
-                        "id": "conversationSummaryMemory_0-input-memoryKey-string"
-                    },
-                    {
-                        "label": "人类输入数据的变量名称",
-                        "name": "inputKey",
-                        "type": "string",
-                        "default": "input",
-                        "id": "conversationSummaryMemory_0-input-inputKey-string"
-                    }
-                ],
-                "inputAnchors": [
-                    {
-                        "label": "对话语言模型",
-                        "name": "model",
-                        "type": "BaseChatModel",
-                        "id": "conversationSummaryMemory_0-input-model-BaseChatModel"
-                    }
-                ],
-                "inputs": {
-                    "model": "",
-                    "memoryKey": "chat_history",
-                    "inputKey": "input"
-                },
-                "outputAnchors": [
-                    {
-                        "id": "conversationSummaryMemory_0-output-conversationSummaryMemory-对话总结记忆模式|BaseChatMemory|BaseMemory",
-                        "name": "conversationSummaryMemory",
-                        "label": "对话总结记忆模式",
-                        "type": "对话总结记忆模式 | BaseChatMemory | BaseMemory"
-                    }
-                ],
-                "outputs": {},
-                "selected": false
-            },
-            "selected": false,
-            "positionAbsolute": {
-                "x": 841.1690769921679,
-                "y": 371
-            },
-            "dragging": false
-        },
-        {
-            "width": 300,
             "height": 334,
-            "id": "conversationChain_0",
+            "id": "conversationChain_1",
             "position": {
-                "x": 1282.336443378555,
-                "y": 194.54019426167937
+                "x": 1201.3628465138124,
+                "y": 546.4989431626967
             },
             "type": "customNode",
             "data": {
-                "id": "conversationChain_0",
+                "id": "conversationChain_1",
                 "label": "对话链",
                 "name": "conversationChain",
                 "type": "对话链",
@@ -91,7 +27,7 @@
                         "additionalParams": true,
                         "optional": true,
                         "placeholder": "You are a helpful assistant that write codes",
-                        "id": "conversationChain_0-input-systemMessagePrompt-string"
+                        "id": "conversationChain_1-input-systemMessagePrompt-string"
                     }
                 ],
                 "inputAnchors": [
@@ -99,23 +35,23 @@
                         "label": "语言模型",
                         "name": "model",
                         "type": "BaseChatModel",
-                        "id": "conversationChain_0-input-model-BaseChatModel"
+                        "id": "conversationChain_1-input-model-BaseChatModel"
                     },
                     {
                         "label": "记忆模式",
                         "name": "memory",
                         "type": "BaseMemory",
-                        "id": "conversationChain_0-input-memory-BaseMemory"
+                        "id": "conversationChain_1-input-memory-BaseMemory"
                     }
                 ],
                 "inputs": {
                     "model": "{{chatOpenAI_0.data.instance}}",
-                    "memory": "{{conversationSummaryMemory_0.data.instance}}",
+                    "memory": "{{bufferMemory_1.data.instance}}",
                     "systemMessagePrompt": ""
                 },
                 "outputAnchors": [
                     {
-                        "id": "conversationChain_0-output-conversationChain-对话链|LLMChain|BaseChain|BaseLangChain",
+                        "id": "conversationChain_1-output-conversationChain-对话链|LLMChain|BaseChain|BaseLangChain",
                         "name": "conversationChain",
                         "label": "对话链",
                         "type": "对话链 | LLMChain | BaseChain | BaseLangChain"
@@ -126,9 +62,65 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 1282.336443378555,
-                "y": 194.54019426167937
+                "x": 1201.3628465138124,
+                "y": 546.4989431626967
             },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 378,
+            "id": "bufferMemory_1",
+            "position": {
+                "x": 775.7140528573536,
+                "y": 748.4676569676783
+            },
+            "type": "customNode",
+            "data": {
+                "id": "bufferMemory_1",
+                "label": "全缓存记忆模式",
+                "name": "bufferMemory",
+                "type": "全缓存记忆模式",
+                "baseClasses": ["全缓存记忆模式", "BaseChatMemory", "BaseMemory"],
+                "category": "记忆模式-Memory　　　　　　　　　　　　　　作用：提供不同策略的记忆方式，后接需要记忆的链或智能体",
+                "description": "Buffer Memory：直接将所有上下文记忆全部进行缓存，提出新的问题时将所有缓存记忆全部添加进提示词",
+                "inputParams": [
+                    {
+                        "label": "记忆数据的变量名称",
+                        "name": "memoryKey",
+                        "type": "string",
+                        "default": "chat_history",
+                        "id": "bufferMemory_1-input-memoryKey-string"
+                    },
+                    {
+                        "label": "人类输入数据的变量名称",
+                        "name": "inputKey",
+                        "type": "string",
+                        "default": "input",
+                        "id": "bufferMemory_1-input-inputKey-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "memoryKey": "chat_history",
+                    "inputKey": "input"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+                        "name": "bufferMemory",
+                        "label": "全缓存记忆模式",
+                        "type": "全缓存记忆模式 | BaseChatMemory | BaseMemory"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "positionAbsolute": {
+                "x": 775.7140528573536,
+                "y": 748.4676569676783
+            },
+            "selected": false,
             "dragging": false
         },
         {
@@ -136,8 +128,8 @@
             "height": 526,
             "id": "chatOpenAI_0",
             "position": {
-                "x": 837.6069928116684,
-                "y": -205.47051937541914
+                "x": 768.3321540799432,
+                "y": 154.1299061520972
             },
             "type": "customNode",
             "data": {
@@ -152,7 +144,6 @@
                     {
                         "label": "OpenAI Api密匙",
                         "name": "openAIApiKey",
-                        "default": "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",
                         "type": "password",
                         "id": "chatOpenAI_0-input-openAIApiKey-password"
                     },
@@ -239,7 +230,7 @@
                 "inputs": {
                     "modelName": "gpt-3.5-turbo",
                     "temperature": 0.9,
-                    "maxTokens": "3500",
+                    "maxTokens": "",
                     "topP": "",
                     "frequencyPenalty": "",
                     "presencePenalty": "",
@@ -258,31 +249,31 @@
             },
             "selected": false,
             "positionAbsolute": {
-                "x": 837.6069928116684,
-                "y": -205.47051937541914
+                "x": 768.3321540799432,
+                "y": 154.1299061520972
             },
             "dragging": false
         }
     ],
     "edges": [
         {
-            "source": "chatOpenAI_0",
-            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
-            "target": "conversationChain_0",
-            "targetHandle": "conversationChain_0-input-model-BaseChatModel",
+            "source": "bufferMemory_1",
+            "sourceHandle": "bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory",
+            "target": "conversationChain_1",
+            "targetHandle": "conversationChain_1-input-memory-BaseMemory",
             "type": "buttonedge",
-            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationChain_0-conversationChain_0-input-model-BaseChatModel",
+            "id": "bufferMemory_1-bufferMemory_1-output-bufferMemory-全缓存记忆模式|BaseChatMemory|BaseMemory-conversationChain_1-conversationChain_1-input-memory-BaseMemory",
             "data": {
                 "label": ""
             }
         },
         {
-            "source": "conversationSummaryMemory_0",
-            "sourceHandle": "conversationSummaryMemory_0-output-conversationSummaryMemory-对话总结记忆模式|BaseChatMemory|BaseMemory",
-            "target": "conversationChain_0",
-            "targetHandle": "conversationChain_0-input-memory-BaseMemory",
+            "source": "chatOpenAI_0",
+            "sourceHandle": "chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain",
+            "target": "conversationChain_1",
+            "targetHandle": "conversationChain_1-input-model-BaseChatModel",
             "type": "buttonedge",
-            "id": "conversationSummaryMemory_0-conversationSummaryMemory_0-output-conversationSummaryMemory-对话总结记忆模式|BaseChatMemory|BaseMemory-conversationChain_0-conversationChain_0-input-memory-BaseMemory",
+            "id": "chatOpenAI_0-chatOpenAI_0-output-chatOpenAI-OpenAI对话语言模型|BaseChatModel|BaseLanguageModel|BaseLangChain-conversationChain_1-conversationChain_1-input-model-BaseChatModel",
             "data": {
                 "label": ""
             }
